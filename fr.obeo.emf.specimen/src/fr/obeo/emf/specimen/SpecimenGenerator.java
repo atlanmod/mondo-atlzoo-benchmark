@@ -49,7 +49,7 @@ import static com.google.common.primitives.Primitives.unwrap;
 
 /**
  * @author <a href="mailto:mikael.barbero@obeo.fr">Mikael Barbero</a>
- *
+ * 
  */
 public class SpecimenGenerator {
 
@@ -60,24 +60,24 @@ public class SpecimenGenerator {
 	/* inner Variable state */
 	private int currentDepth;
 	private int currentMaxDepth;
-	
+
 	public SpecimenGenerator(ISpecimenConfiguration configuration) {
 		c = configuration;
 		ePackagesData = new EPackagesData(c.ePackages(), c.ignoredEClasses());
 		generator = new Random();
 	}
-	
+
 	public List<EObject> generate(ResourceSet resourceSet) {
 		List<EObject> ret = newArrayList();
 		ListMultimap<EClass, EObject> indexByKind = ArrayListMultimap.create();
 
 		currentDepth = 0;
 		currentMaxDepth = 0;
-		
+
 		for (EClass eClass : c.possibleRootEClasses()) {
 			currentMaxDepth = c.getDepthDistributionFor(eClass).sample();
 			int nbInstance = c.getRootDistributionFor(eClass).sample();
-			for(int i = 0; i < nbInstance; i++) {
+			for (int i = 0; i < nbInstance; i++) {
 				System.out.println("Generating root " + eClass.getName() + " " + i + "/" + nbInstance);
 				Optional<EObject> generateEObject = generateEObject(eClass, indexByKind);
 				if (generateEObject.isPresent()) {
@@ -85,9 +85,9 @@ public class SpecimenGenerator {
 				}
 			}
 		}
-		
+
 		System.out.println("Generating XRef");
-		
+
 		for (EObject eObjectRoot : ret) {
 			TreeIterator<EObject> eAllContents = eObjectRoot.eAllContents();
 			while (eAllContents.hasNext()) {
@@ -95,14 +95,14 @@ public class SpecimenGenerator {
 				generateCrossReferences(eObject, indexByKind);
 			}
 		}
-		
+
 		Map<EClass, Integer> resourcesSize = newHashMap();
 		for (EClass eClass : c.possibleRootEClasses()) {
 			setNextResourceSizeForType(resourcesSize, eClass);
 		}
-		
+
 		System.out.println("Generating resources");
-		
+
 		for (EObject eObjectRoot : ret) {
 			TreeIterator<EObject> eAllContents = eObjectRoot.eAllContents();
 			createResource(resourceSet, resourcesSize, eAllContents, eObjectRoot, ret);
@@ -111,16 +111,16 @@ public class SpecimenGenerator {
 				createResource(resourceSet, resourcesSize, eAllContents, eObject, ret);
 			}
 		}
-		
-		
+
 		System.out.println("#EObject=" + ImmutableSet.copyOf(indexByKind.values()).size());
 		System.out.println("#Resource=" + resourceSet.getResources().size());
-		
+
 		for (Map.Entry<EClass, Collection<EObject>> entry : indexByKind.asMap().entrySet()) {
 			EClass eClass = entry.getKey();
-			System.out.println("#"+eClass.getEPackage().getNsURI()+"::"+entry.getKey().getName()+"=" + entry.getValue().size());
+			System.out.println("#" + eClass.getEPackage().getNsURI() + "::" + entry.getKey().getName() + "="
+					+ entry.getValue().size());
 		}
-		
+
 		return ret;
 	}
 
@@ -154,14 +154,14 @@ public class SpecimenGenerator {
 
 	/**
 	 * @param eObject
-	 * @param indexByKind 
+	 * @param indexByKind
 	 */
-	private void generateCrossReferences(EObject eObject, ListMultimap<EClass,EObject> indexByKind) {
+	private void generateCrossReferences(EObject eObject, ListMultimap<EClass, EObject> indexByKind) {
 		Iterable<EReference> eAllNonContainment = ePackagesData.eAllNonContainment(eObject.eClass());
 		for (EReference eReference : eAllNonContainment) {
 			EClass eReferenceType = eReference.getEReferenceType();
 			IntegerDistribution distribution = c.getDistributionFor(eReference);
-			
+
 			if (eReference.isMany()) {
 				List<Object> values = (List<Object>) eObject.eGet(eReference);
 				int sample = distribution.sample();
@@ -184,7 +184,7 @@ public class SpecimenGenerator {
 		}
 	}
 
-	private Optional<EObject> generateEObject(EClass eClass, ListMultimap<EClass,EObject> indexByKind) {
+	private Optional<EObject> generateEObject(EClass eClass, ListMultimap<EClass, EObject> indexByKind) {
 		final EObject eObject;
 		if (currentDepth <= currentMaxDepth) {
 			eObject = createEObject(eClass, indexByKind);
@@ -196,23 +196,23 @@ public class SpecimenGenerator {
 		return Optional.fromNullable(eObject);
 	}
 
-	private EObject createEObject(EClass eClass, ListMultimap<EClass,EObject> indexByKind) {
+	private EObject createEObject(EClass eClass, ListMultimap<EClass, EObject> indexByKind) {
 		EObject eObject = eClass.getEPackage().getEFactoryInstance().create(eClass);
-		
+
 		indexByKind.put(eClass, eObject);
 		for (EClass eSuperType : eClass.getEAllSuperTypes()) {
 			indexByKind.put(eSuperType, eObject);
 		}
-		
+
 		return eObject;
 	}
-	
+
 	/**
 	 * @param eObject
-	 * @return 
+	 * @return
 	 */
 	private Resource createResource(ResourceSet resourceSet, EObject root) {
-		Resource resource = resourceSet.createResource(URI.createURI(Gpw.generate(16)+".xmi"));
+		Resource resource = resourceSet.createResource(URI.createURI(Gpw.generate(16) + ".xmi"));
 		resource.getContents().add(root);
 		return resource;
 	}
@@ -220,26 +220,29 @@ public class SpecimenGenerator {
 	/**
 	 * @param eObject
 	 * @param eClass
-	 * @param indexByKind 
+	 * @param indexByKind
 	 */
-	private void generateEContainmentReferences(EObject eObject, EClass eClass, ListMultimap<EClass,EObject> indexByKind) {
+	private void generateEContainmentReferences(EObject eObject, EClass eClass,
+			ListMultimap<EClass, EObject> indexByKind) {
 		for (EReference eReference : ePackagesData.eAllContainment(eClass)) {
 			generateEContainmentReference(eObject, eReference, indexByKind);
 		}
-		
+
 	}
 
 	/**
 	 * @param eObject
 	 * @param eReference
-	 * @param indexByKind 
+	 * @param indexByKind
 	 */
-	private void generateEContainmentReference(EObject eObject, EReference eReference, ListMultimap<EClass,EObject> indexByKind) {
+	private void generateEContainmentReference(EObject eObject, EReference eReference,
+			ListMultimap<EClass, EObject> indexByKind) {
 		currentDepth++;
-		
+
 		ImmutableList<EClass> eAllConcreteSubTypeOrSelf = ePackagesData.eAllConcreteSubTypeOrSelf(eReference);
-		ImmutableMultiset<EClass> eAllConcreteSubTypesOrSelf = getEReferenceTypesWithWeight(eReference, eAllConcreteSubTypeOrSelf);
-		
+		ImmutableMultiset<EClass> eAllConcreteSubTypesOrSelf = getEReferenceTypesWithWeight(eReference,
+				eAllConcreteSubTypeOrSelf);
+
 		if (!eAllConcreteSubTypesOrSelf.isEmpty()) {
 			if (eReference.isMany()) {
 				generateManyContainmentReference(eObject, eReference, indexByKind, eAllConcreteSubTypesOrSelf);
@@ -251,7 +254,8 @@ public class SpecimenGenerator {
 		currentDepth--;
 	}
 
-	private void generateSingleContainmentReference(EObject eObject, EReference eReference, ListMultimap<EClass, EObject> indexByKind, ImmutableMultiset<EClass> eAllConcreteSubTypesOrSelf) {
+	private void generateSingleContainmentReference(EObject eObject, EReference eReference,
+			ListMultimap<EClass, EObject> indexByKind, ImmutableMultiset<EClass> eAllConcreteSubTypesOrSelf) {
 		IntegerDistribution distribution = c.getDistributionFor(eReference);
 		if (booleanInDistribution(distribution)) {
 			int idx = generator.nextInt(eAllConcreteSubTypesOrSelf.size());
@@ -262,7 +266,8 @@ public class SpecimenGenerator {
 		}
 	}
 
-	private void generateManyContainmentReference(EObject eObject, EReference eReference, ListMultimap<EClass, EObject> indexByKind, ImmutableMultiset<EClass> eAllConcreteSubTypesOrSelf) {
+	private void generateManyContainmentReference(EObject eObject, EReference eReference,
+			ListMultimap<EClass, EObject> indexByKind, ImmutableMultiset<EClass> eAllConcreteSubTypesOrSelf) {
 		IntegerDistribution distribution = c.getDistributionFor(eReference);
 		List<EObject> values = (List<EObject>) eObject.eGet(eReference);
 		int sample = distribution.sample();
@@ -275,7 +280,8 @@ public class SpecimenGenerator {
 		}
 	}
 
-	private ImmutableMultiset<EClass> getEReferenceTypesWithWeight(EReference eReference, ImmutableList<EClass> eAllSubTypesOrSelf) {
+	private ImmutableMultiset<EClass> getEReferenceTypesWithWeight(EReference eReference,
+			ImmutableList<EClass> eAllSubTypesOrSelf) {
 		ImmutableMultiset.Builder<EClass> eAllSubTypesOrSelfWithWeights = ImmutableMultiset.builder();
 		for (EClass eClass : eAllSubTypesOrSelf) {
 			eAllSubTypesOrSelfWithWeights.addCopies(eClass, c.getWeightFor(eReference, eClass));
@@ -283,7 +289,6 @@ public class SpecimenGenerator {
 		return eAllSubTypesOrSelfWithWeights.build();
 	}
 
-	
 	/**
 	 * @param eObject
 	 * @param eClass
@@ -305,14 +310,16 @@ public class SpecimenGenerator {
 		}
 	}
 
-	private void generateSingleAttribute(EObject eObject, EAttribute eAttribute, IntegerDistribution distribution, Class<?> instanceClass) {
+	private void generateSingleAttribute(EObject eObject, EAttribute eAttribute, IntegerDistribution distribution,
+			Class<?> instanceClass) {
 		if (booleanInDistribution(distribution)) {
 			final Object value = nextValue(instanceClass);
 			eObject.eSet(eAttribute, value);
 		}
 	}
 
-	private void generateManyAttribute(EObject eObject, EAttribute eAttribute, IntegerDistribution distribution, Class<?> instanceClass) {
+	private void generateManyAttribute(EObject eObject, EAttribute eAttribute, IntegerDistribution distribution,
+			Class<?> instanceClass) {
 		List<Object> values = (List<Object>) eObject.eGet(eAttribute);
 		for (int i = distribution.getSupportLowerBound(); i < distribution.sample(); i++) {
 			final Object value = nextValue(instanceClass);
@@ -362,7 +369,7 @@ public class SpecimenGenerator {
 			generator.nextBytes(buff);
 			return buff[0];
 		} else if (instanceClass == char.class) {
-			char nextChar = (char)generator.nextInt();
+			char nextChar = (char) generator.nextInt();
 			return nextChar;
 		} else if (instanceClass == double.class) {
 			return generator.nextDouble();
@@ -373,7 +380,7 @@ public class SpecimenGenerator {
 		} else if (instanceClass == long.class) {
 			return generator.nextLong();
 		} else if (instanceClass == short.class) {
-			short nextShort = (short)generator.nextInt();
+			short nextShort = (short) generator.nextInt();
 			return nextShort;
 		} else {
 			throw new IllegalArgumentException();
@@ -382,6 +389,6 @@ public class SpecimenGenerator {
 
 	private boolean booleanInDistribution(IntegerDistribution distribution) {
 		int sample = distribution.sample();
-		return sample < distribution.getNumericalMean(); 
+		return sample < distribution.getNumericalMean();
 	}
 }

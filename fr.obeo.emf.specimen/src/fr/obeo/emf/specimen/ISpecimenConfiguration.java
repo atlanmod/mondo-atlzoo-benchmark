@@ -20,51 +20,61 @@ import com.google.common.collect.ImmutableSet;
 
 /**
  * @author <a href="mailto:mikael.barbero@obeo.fr">Mikael Barbero</a>
- *
+ * 
  */
 public interface ISpecimenConfiguration {
 
 	/**
-	 * Returns the set of EPackages to consider as the metamodel of the model to be generated
+	 * Returns the set of EPackages to consider as the metamodel of the model to
+	 * be generated
+	 * 
 	 * @return
 	 */
 	ImmutableSet<EPackage> ePackages();
 
 	/**
-	 * Returns the list of EClass to be instantiated as root objects. 
+	 * Returns the list of EClass to be instantiated as root objects.
+	 * 
 	 * @return
 	 */
 	ImmutableSet<EClass> possibleRootEClasses();
-	
+
 	/**
 	 * Those Eclass will never be generated.
+	 * 
 	 * @return
 	 */
 	ImmutableSet<EClass> ignoredEClasses();
 
 	/**
 	 * Returns the distribution to follow to generate root classes.
+	 * 
 	 * @param rootEClass
 	 * @return
 	 */
 	IntegerDistribution getRootDistributionFor(EClass rootEClass);
 
 	/**
-	 * Size of resources (in number of EObjects) will be distributed following the returned the distribution.
+	 * Size of resources (in number of EObjects) will be distributed following
+	 * the returned the distribution.
 	 * 
-	 * Note that the real distribution may be shifted up in some SpecimenGenerator.
+	 * Note that the real distribution may be shifted up in some
+	 * SpecimenGenerator.
 	 * 
-	 * @param eClass an EClass from the {@link #possibleRootEClasses()}
+	 * @param eClass
+	 *            an EClass from the {@link #possibleRootEClasses()}
 	 * @return the distribution
 	 */
 	IntegerDistribution getResourceSizeDistribution(EClass eClass);
 
 	/**
-	 * Returns how many element has to be generated to fill an instance of the given reference.
+	 * Returns how many element has to be generated to fill an instance of the
+	 * given reference.
 	 * 
 	 * e.g: the EReference EClass.eSuperTypes
 	 * 
-	 * return a BinomialDistribution(3,0.5) and you will get a model with the eSuperType reference filled with a mean of 1.5 elements.   
+	 * return a BinomialDistribution(3,0.5) and you will get a model with the
+	 * eSuperType reference filled with a mean of 1.5 elements.
 	 * 
 	 * @param eReference
 	 * @return
@@ -72,11 +82,13 @@ public interface ISpecimenConfiguration {
 	IntegerDistribution getDistributionFor(EReference eReference);
 
 	/**
-	 * Returns the weight of the possibles concrete EClass for the given reference.
+	 * Returns the weight of the possibles concrete EClass for the given
+	 * reference.
 	 * 
 	 * e.g.: the EReference EClass.eStructuralFeatures
 	 * 
-	 * returns the wieght: EAttibute=10, EReference=8 and EOperation=2 to have those ratio in the eStructuralFeatures references.
+	 * returns the wieght: EAttibute=10, EReference=8 and EOperation=2 to have
+	 * those ratio in the eStructuralFeatures references.
 	 * 
 	 * @param eReference
 	 * @param eClass
@@ -86,16 +98,20 @@ public interface ISpecimenConfiguration {
 
 	/**
 	 * Same as for {@link #getDistributionFor(EReference)}.
+	 * 
 	 * @param eAttribute
 	 * @return
 	 */
 	IntegerDistribution getDistributionFor(EAttribute eAttribute);
 
 	/**
-	 * Returns the distribution to follow describing the depth of an instance of the given ECLass.
+	 * Returns the distribution to follow describing the depth of an instance of
+	 * the given ECLass.
 	 * 
-	 * e.g: the EClass EPackage is a {@link #possibleRootEClasses()}. The specimen generator will generate a number 
-	 * of instance following {@link #getRootDistributionFor(EClass)}. The Depth from those objects to leaves will follow the returned distribution.
+	 * e.g: the EClass EPackage is a {@link #possibleRootEClasses()}. The
+	 * specimen generator will generate a number of instance following
+	 * {@link #getRootDistributionFor(EClass)}. The Depth from those objects to
+	 * leaves will follow the returned distribution.
 	 * 
 	 * @param eClass
 	 * @return

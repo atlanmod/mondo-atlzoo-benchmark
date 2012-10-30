@@ -40,7 +40,7 @@ import static com.google.common.collect.Iterators.filter;
 
 /**
  * @author <a href="mailto:mikael.barbero@obeo.fr">Mikael Barbero</a>
- *
+ * 
  */
 public class EPackagesData {
 
@@ -51,65 +51,68 @@ public class EPackagesData {
 		this.ePackages = ePackages;
 		this.ignoredEClasses = ignoredEClasses;
 	}
-	
-	private Cache<EClass, ImmutableList<EAttribute>> eAllAttributesCache = CacheBuilder.newBuilder().build(new CacheLoader<EClass, ImmutableList<EAttribute>>() {
-		@Override
-		public ImmutableList<EAttribute> load(EClass eClass) throws Exception {
-			EList<EAttribute> eAllAttributes = eClass.getEAllAttributes();
-			return ImmutableList.copyOf(filter(eAllAttributes, VALID_EATTRIBUTE));
-		}
-	});
-	
+
+	private Cache<EClass, ImmutableList<EAttribute>> eAllAttributesCache = CacheBuilder.newBuilder().build(
+			new CacheLoader<EClass, ImmutableList<EAttribute>>() {
+				@Override
+				public ImmutableList<EAttribute> load(EClass eClass) throws Exception {
+					EList<EAttribute> eAllAttributes = eClass.getEAllAttributes();
+					return ImmutableList.copyOf(filter(eAllAttributes, VALID_EATTRIBUTE));
+				}
+			});
+
 	public ImmutableList<EAttribute> eAllAttributes(EClass eClass) {
 		return eAllAttributesCache.getUnchecked(eClass);
 	}
 
-	private Cache<EClass, ImmutableList<EReference>> eAllNonContainmentCache = CacheBuilder.newBuilder().build(new CacheLoader<EClass, ImmutableList<EReference>>() {
-		@Override
-		public ImmutableList<EReference> load(EClass eClass) throws Exception {
-			EList<EReference> eAllReferences = eClass.getEAllReferences();
-			return ImmutableList.copyOf(filter(eAllReferences, NON_CONTAINMENT_EREFERENCE));
-		}
-	});
-	
+	private Cache<EClass, ImmutableList<EReference>> eAllNonContainmentCache = CacheBuilder.newBuilder().build(
+			new CacheLoader<EClass, ImmutableList<EReference>>() {
+				@Override
+				public ImmutableList<EReference> load(EClass eClass) throws Exception {
+					EList<EReference> eAllReferences = eClass.getEAllReferences();
+					return ImmutableList.copyOf(filter(eAllReferences, NON_CONTAINMENT_EREFERENCE));
+				}
+			});
+
 	public ImmutableList<EReference> eAllNonContainment(EClass eClass) {
 		return eAllNonContainmentCache.getUnchecked(eClass);
 	}
 
-	private Cache<EClass, ImmutableList<EReference>> eAllContainmentCache = CacheBuilder.newBuilder().build(new CacheLoader<EClass, ImmutableList<EReference>>() {
-		@Override
-		public ImmutableList<EReference> load(EClass eClass) throws Exception {
-			EList<EReference> eAllContainments = eClass.getEAllContainments();
-			return ImmutableList.copyOf(filter(eAllContainments, VALID_EREFERENCE));
-		}
-	});
+	private Cache<EClass, ImmutableList<EReference>> eAllContainmentCache = CacheBuilder.newBuilder().build(
+			new CacheLoader<EClass, ImmutableList<EReference>>() {
+				@Override
+				public ImmutableList<EReference> load(EClass eClass) throws Exception {
+					EList<EReference> eAllContainments = eClass.getEAllContainments();
+					return ImmutableList.copyOf(filter(eAllContainments, VALID_EREFERENCE));
+				}
+			});
 
 	public Iterable<EReference> eAllContainment(EClass eClass) {
 		return eAllContainmentCache.getUnchecked(eClass);
 	}
 
-	private Cache<EReference, ImmutableList<EClass>> eAllConcreteSubTypeOrSelfCache = CacheBuilder.newBuilder().build(new CacheLoader<EReference, ImmutableList<EClass>>() {
-		@Override
-		public ImmutableList<EClass> load(EReference eReference) throws Exception {
-			EClass eReferenceType = eReference.getEReferenceType();
-			ImmutableList<EClass> eAllSubTypesOrSelf = eAllSubTypesOrSelf(eReferenceType);
-			
-			List<EClass> eAllConcreteSubTypeOrSelf = newArrayList(filter(eAllSubTypesOrSelf, CONCRETE_CLASS));
-			eAllConcreteSubTypeOrSelf.removeAll(ignoredEClasses);
-			
-			return ImmutableList.copyOf(eAllConcreteSubTypeOrSelf);
-		}
-	});
+	private Cache<EReference, ImmutableList<EClass>> eAllConcreteSubTypeOrSelfCache = CacheBuilder.newBuilder().build(
+			new CacheLoader<EReference, ImmutableList<EClass>>() {
+				@Override
+				public ImmutableList<EClass> load(EReference eReference) throws Exception {
+					EClass eReferenceType = eReference.getEReferenceType();
+					ImmutableList<EClass> eAllSubTypesOrSelf = eAllSubTypesOrSelf(eReferenceType);
+
+					List<EClass> eAllConcreteSubTypeOrSelf = newArrayList(filter(eAllSubTypesOrSelf, CONCRETE_CLASS));
+					eAllConcreteSubTypeOrSelf.removeAll(ignoredEClasses);
+
+					return ImmutableList.copyOf(eAllConcreteSubTypeOrSelf);
+				}
+			});
 
 	public ImmutableList<EClass> eAllConcreteSubTypeOrSelf(EReference eReference) {
 		return eAllConcreteSubTypeOrSelfCache.getUnchecked(eReference);
 	}
 
-	
 	private ImmutableList<EClass> eAllSubTypesOrSelf(final EClass eClass) {
 		return ImmutableList.copyOf(concat(eAllSubTypes(eClass), ImmutableList.of(eClass)));
 	}
-	
+
 	private ImmutableList<EClass> eAllSubTypes(final EClass eClass) {
 		Iterator<EClass> eAllClasses = filter(eAllContents(ePackages), EClass.class);
 		return ImmutableList.copyOf(filter(eAllClasses, new Predicate<EClass>() {
@@ -118,22 +121,23 @@ public class EPackagesData {
 			}
 		}));
 	}
-	
+
 	private Iterator<EObject> eAllContents(Iterable<? extends EObject> eObjects) {
-		Iterable<TreeIterator<EObject>> eAllContents = transform(eObjects, new Function<EObject, TreeIterator<EObject>>() {
-			public TreeIterator<EObject> apply(EObject eObject) {
-				return eObject.eAllContents();
-			}
-		});
+		Iterable<TreeIterator<EObject>> eAllContents = transform(eObjects,
+				new Function<EObject, TreeIterator<EObject>>() {
+					public TreeIterator<EObject> apply(EObject eObject) {
+						return eObject.eAllContents();
+					}
+				});
 		return concat(eAllContents.iterator());
 	}
-	
+
 	private static final Predicate<EClass> CONCRETE_CLASS = new Predicate<EClass>() {
 		public boolean apply(EClass eClass) {
 			return !eClass.isAbstract() && !eClass.isInterface();
 		}
 	};
-	
+
 	private static final Predicate<EReference> VALID_EREFERENCE = new Predicate<EReference>() {
 		public boolean apply(EReference eReference) {
 			return eReference.isChangeable() && !eReference.isTransient() && !eReference.isDerived();
@@ -145,11 +149,11 @@ public class EPackagesData {
 			return eAttribute.isChangeable() && !eAttribute.isTransient() && !eAttribute.isDerived();
 		}
 	};
-	
+
 	private static final Predicate<EReference> NON_CONTAINMENT_EREFERENCE = new Predicate<EReference>() {
 		public boolean apply(EReference eReference) {
-			return !eReference.isContainment() && !eReference.isContainer()
-					&& eReference.isChangeable() && !eReference.isTransient() && !eReference.isDerived();
+			return !eReference.isContainment() && !eReference.isContainer() && eReference.isChangeable()
+					&& !eReference.isTransient() && !eReference.isDerived();
 		}
 	};
 }
