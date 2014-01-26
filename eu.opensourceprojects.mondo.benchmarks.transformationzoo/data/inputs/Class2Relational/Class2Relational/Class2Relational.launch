@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launchConfiguration type="org.eclipse.m2m.atl.adt.launching.atlTransformation">
+<stringAttribute key="ATL File Name" value="/org.eclipse.m2m.atl.tests/data/inputs/Class2Relational/Class2Relational/Class2Relational.atl"/>
+<stringAttribute key="ATL VM" value="Regular VM"/>
+<stringAttribute key="ATL_COMPILER" value="atl2006"/>
+<booleanAttribute key="AllowInterModelReferences" value="false"/>
+<booleanAttribute key="IS_REFINING" value="false"/>
+<mapAttribute key="Input">
+<mapEntry key="IN" value="Class"/>
+</mapAttribute>
+<mapAttribute key="Libs"/>
+<booleanAttribute key="Mode Debug" value="false"/>
+<mapAttribute key="Model Handler">
+<mapEntry key="Class" value="EMF"/>
+<mapEntry key="Relational" value="EMF"/>
+</mapAttribute>
+<mapAttribute key="ModelType">
+<mapEntry key="OUT" value="MODELOUTPUT"/>
+<mapEntry key="Class" value="METAMODELINPUT"/>
+<mapEntry key="Relational" value="METAMODELOUTPUT"/>
+<mapEntry key="IN" value="MODELINPUT"/>
+</mapAttribute>
+<mapAttribute key="Options">
+<mapEntry key="OPTION_CLEAR" value="false"/>
+<mapEntry key="printExecutionTime" value="false"/>
+<mapEntry key="disableAttributeHelperCache" value="false"/>
+<mapEntry key="OPTION_DERIVED" value="true"/>
+<mapEntry key="allowInterModelReferences" value="false"/>
+<mapEntry key="continueAfterError" value="false"/>
+<mapEntry key="showSummary" value="false"/>
+<mapEntry key="step" value="false"/>
+<mapEntry key="profile" value="false"/>
+</mapAttribute>
+<mapAttribute key="Output">
+<mapEntry key="OUT" value="Relational"/>
+</mapAttribute>
+<mapAttribute key="Path">
+<mapEntry key="OUT" value="/org.eclipse.m2m.atl.tests/data/inputs/Class2Relational/Class2Relational/outRelational.xmi"/>
+<mapEntry key="Class" value="/org.eclipse.m2m.atl.tests/data/inputs/Class2Relational/Class.ecore"/>
+<mapEntry key="Relational" value="/org.eclipse.m2m.atl.tests/data/inputs/Class2Relational/Relational.ecore"/>
+<mapEntry key="IN" value="/org.eclipse.m2m.atl.tests/data/inputs/Class2Relational/Class2Relational/inClass.xmi"/>
+</mapAttribute>
+<stringAttribute key="Project Name" value="org.eclipse.m2m.atl.engine.emftest"/>
+<listAttribute key="Superimpose"/>
+<booleanAttribute key="continueAfterError" value="false"/>
+<booleanAttribute key="disableAttributeHelperCache" value="false"/>
+<booleanAttribute key="printExecutionTime" value="false"/>
+<booleanAttribute key="profile" value="false"/>
+<booleanAttribute key="showSummary" value="false"/>
+<booleanAttribute key="step" value="false"/>
+</launchConfiguration>
