@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<description xmlns="http://www.w3.org/2006/01/wsdl"
+	targetNamespace="http://www.bookingservice.com/?wsdl"
+	xmlns:tns="http://www.bookingservice.com/?wsdl"
+	xmlns:wsoap="http://www.w3.org/2006/01/wsdl/soap"
+	xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+    xmlns:ex="http://www.bookingservice.com/schema">
+
+	<documentation>
+		My WSDL for bookings
+	</documentation>
+
+	<types>
+	<!-- from R2ML vocabulary -->
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://www.bookingservice.com/schema"
+			xmlns="http://www.bookingservice.com/schema">
+
+			<xs:element name="ex:CheckAvailability">
+				<xs:complexType>
+				<!-- like this the order matters but in fact we don't need order here -->
+					<xs:sequence>
+						<xs:element name="ex:CheckAvailability.checkInDate" type="xs:dateTime" />
+						<xs:element name="ex:CheckAvailability.checkOutDate" type="xs:dateTime" />
+						<xs:element name="ex:CheckAvailability.roomType" type="xs:string" />
+						<xs:element ref="ex:Customer"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+
+			<xs:element name="ex:Customer">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ex:Customer.custNo" type="xs:decimal" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+
+			<xs:element name="ex:CheckAvailabilityResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ex:CheckAvailabilityResponse.yesNoAnswer" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>	
+			</xs:element>
+
+			<xs:element name="ex:InvalidDataError">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ex:InvalidDataError.message" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>	
+			</xs:element>
+
+		</xs:schema>
+	</types>
+
+	<interface name="tns:reservationInterface">
+
+		<fault name="tns:InvalidDataFault" element="ex:InvalidDataError" />
+
+		<operation name="tns:checkAvailability"
+			pattern="http://www.w3.org/2006/01/wsdl/in-out">
+			<input messageLabel="In" element="ex:CheckAvailability" />
+			<output messageLabel="Out"
+				element="ex:CheckAvailabilityResponse" />
+			<outfault ref="tns:InvalidDataFault" messageLabel="Out" />
+		</operation>
+	</interface>
+
+	<binding name="tns:reservationSOAPBinding"
+		interface="tns:reservationInterface"
+		type="http://www.w3.org/2006/01/wsdl/soap"
+		wsoap:protocol="http://www.w3.org/2003/05/soap/bindings/HTTP">
+
+		<operation ref="tns:checkAvailability"
+			wsoap:mep="http://www.w3.org/2003/05/soap/mep/request-response" />
+
+		<fault ref="tns:InvalidDataFault" wsoap:code="soap:Sender" />
+
+	</binding>
+
+	<service name="tns:reservationService"
+		interface="tns:reservationInterface">
+
+		<endpoint name="tns:reservationEndpoint"
+			binding="tns:reservationSOAPBinding"
+			address="http://www.bookingservice.com" />
+
+	</service>
+
+</description>

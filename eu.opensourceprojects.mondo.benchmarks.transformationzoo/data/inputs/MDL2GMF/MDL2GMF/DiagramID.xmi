@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="ASCII"?>
+<Property:Properties xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Property="http://www.eclipse.org/gmt/property" xsi:schemaLocation="http://www.eclipse.org/gmt/property Property.ecore">
+  <content key="id" value="0002"/>
+</Property:Properties>

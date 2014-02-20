@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Grafcet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="Grafcet" location="1:1-126:2" name="exemple1">
+  <elements xsi:type="Step" location="3:9-6:10" name="s1" isInitial="true" isActive="true" action="action1" outgoingConnections="//@connections.0"/>
+  <elements xsi:type="Step" location="8:9-11:10" name="s2" isInitial="false" isActive="false" action="action2" incomingConnections="//@connections.6" outgoingConnections="//@connections.1"/>
+  <elements xsi:type="Step" location="13:9-16:10" name="s3" isInitial="false" isActive="false" action="action3" incomingConnections="//@connections.7" outgoingConnections="//@connections.2"/>
+  <elements xsi:type="Step" location="18:9-21:10" name="s4" isInitial="false" isActive="false" action="action4" incomingConnections="//@connections.8" outgoingConnections="//@connections.3"/>
+  <elements xsi:type="Step" location="23:9-26:10" name="s5" isInitial="false" isActive="false" action="action5" incomingConnections="//@connections.9 //@connections.10" outgoingConnections="//@connections.4 //@connections.5"/>
+  <elements xsi:type="Step" location="28:9-30:10" name="s6" isInitial="false" isActive="false" action="action6" incomingConnections="//@connections.11 //@connections.12"/>
+  <elements xsi:type="Transition" location="32:9-35:10" name="t1" condition="condition1" incomingConnections="//@connections.0" outgoingConnections="//@connections.6 //@connections.7"/>
+  <elements xsi:type="Transition" location="37:9-40:10" name="t2" condition="condition2" incomingConnections="//@connections.1" outgoingConnections="//@connections.8 //@connections.9"/>
+  <elements xsi:type="Transition" location="42:9-45:10" name="t3" condition="condition3" incomingConnections="//@connections.2" outgoingConnections="//@connections.10"/>
+  <elements xsi:type="Transition" location="47:9-50:10" name="t4" condition="condition4" incomingConnections="//@connections.3 //@connections.4" outgoingConnections="//@connections.11"/>
+  <elements xsi:type="Transition" location="52:9-55:10" name="t5" condition="condition5" incomingConnections="//@connections.5" outgoingConnections="//@connections.12"/>
+  <connections xsi:type="StepToTransition" location="59:9-61:10" name="st1" from="//@elements.0" to="//@elements.6"/>
+  <connections xsi:type="StepToTransition" location="63:9-65:10" name="st2" from="//@elements.1" to="//@elements.7"/>
+  <connections xsi:type="StepToTransition" location="67:9-69:10" name="st3" from="//@elements.2" to="//@elements.8"/>
+  <connections xsi:type="StepToTransition" location="71:9-73:10" name="st4" from="//@elements.3" to="//@elements.9"/>
+  <connections xsi:type="StepToTransition" location="75:9-77:10" name="st5" from="//@elements.4" to="//@elements.9"/>
+  <connections xsi:type="StepToTransition" location="79:9-81:10" name="st6" from="//@elements.4" to="//@elements.10"/>
+  <connections xsi:type="TransitionToStep" location="85:9-87:10" name="ts1" from="//@elements.6" to="//@elements.1"/>
+  <connections xsi:type="TransitionToStep" location="89:9-91:10" name="ts2" from="//@elements.6" to="//@elements.2"/>
+  <connections xsi:type="TransitionToStep" location="93:9-95:10" name="ts3" from="//@elements.7" to="//@elements.3"/>
+  <connections xsi:type="TransitionToStep" location="97:9-99:10" name="ts4" from="//@elements.7" to="//@elements.4"/>
+  <connections xsi:type="TransitionToStep" location="101:9-103:10" name="ts5" from="//@elements.8" to="//@elements.4"/>
+  <connections xsi:type="TransitionToStep" location="105:9-107:10" name="ts6" from="//@elements.9" to="//@elements.5"/>
+  <connections xsi:type="TransitionToStep" location="109:9-111:10" name="ts7" from="//@elements.10" to="//@elements.5"/>
+</Grafcet>

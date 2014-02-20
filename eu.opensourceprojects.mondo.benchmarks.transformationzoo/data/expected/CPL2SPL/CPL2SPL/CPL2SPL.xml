@@ -1,0 +1,88 @@
+<project name="CPL2SPL" default="transformAll">
+	<property name="cplPath" value="/CPL2SPL/CPL/"/>
+	<property name="cplXcsPath" value="/CPL2SPL/CPL/XMLSyntax/"/>
+	<property name="samplesPath" value="/CPL2SPL/Samples/"/>
+
+	<property name="splPath" value="/CPL2SPL/SPL/"/>
+	<property name="splTcsPath" value="/CPL2SPL/SPL/TextualSyntax/"/>
+
+	<target name="transformAll" depends="loadModels">
+		<antcall target="transformOne" inheritall="true" inheritrefs="true">
+			<param name="sample" value="AComplexExample"/>
+		</antcall>
+		<antcall target="transformOne" inheritall="true" inheritrefs="true">
+			<param name="sample" value="CallForwardBusyNoAnswer"/>
+		</antcall>
+		<antcall target="transformOne" inheritall="true" inheritrefs="true">
+			<param name="sample" value="CallForwardRedirectAndDefault"/>
+		</antcall>
+		<antcall target="transformOne" inheritall="true" inheritrefs="true">
+			<param name="sample" value="CallRedirectUnconditional"/>
+		</antcall>
+	</target>
+	
+	<!-- parameters: sample -->
+	<target name="transformOne">
+		<property name="sourceModel" value="${samplesPath}${sample}.cpl"/>
+		<property name="targetModel" value="${samplesPath}${sample}.spl"/>
+
+		<echo message="Transforming ${sample}"/>
+		
+		<!-- Inject source model -->
+		<am3.loadModel modelHandler="EMF" name="xmlModel" metamodel="XML" path="${sourceModel}">
+			<injector name="xml"/>
+		</am3.loadModel>
+
+		<!-- Transform XML model into CPL model -->
+		<am3.atl path="${cplXcsPath}XML2CPL.atl">
+			<inModel name="IN" model="xmlModel"/>
+			<inModel name="XML" model="XML"/>
+			<inModel name="CPL" model="CPL"/>
+			<outModel name="OUT" model="cplModel" metamodel="CPL"/>
+			<library name="XMLHelpers" path="${cplXcsPath}XMLHelpers.asm" />
+		</am3.atl>
+
+		<!-- Transform CPL model into SPL model -->
+		<am3.atl path="/CPL2SPL/CPL2SPL.atl">
+			<inModel name="IN" model="cplModel"/>
+			<inModel name="CPL" model="CPL"/>
+			<inModel name="SPL" model="SPL"/>
+			<outModel name="OUT" model="splModel" metamodel="SPL"/>
+		</am3.atl>
+
+		<!-- Serialize SPL model to text -->
+		<am3.saveModel model="splModel" path="${targetModel}">
+			<extractor name="ebnf">
+				<param name="format" value="SPL.tcs"/>
+				<param name="identEsc" value=""/>
+				<param name="indentString" value="&#9;"/>
+			</extractor>
+		</am3.saveModel>
+
+		<!-- Serialize all models for debugging purpose -->
+		<am3.saveModel model="xmlModel" path="/CPL2SPL/DebuggingInformation/${sample}-XMLModel.ecore"/>
+		<am3.saveModel model="cplModel" path="/CPL2SPL/DebuggingInformation/${sample}-CPLModel.ecore"/>	
+		<am3.saveModel model="splModel" path="/CPL2SPL/DebuggingInformation/${sample}-SPLModel.ecore"/>	
+	</target>
+
+	<target name="loadModels">
+		<!-- Load XML metamodel -->
+		<am3.loadModel modelHandler="EMF" name="XML" metamodel="MOF" path="/CPL2SPL/AMMACore/XML.ecore" />
+
+		<!-- Load CPL metamodel -->
+		<am3.loadModel modelHandler="EMF" name="CPL" metamodel="MOF" path="${cplPath}CPL.ecore" />
+
+		<!-- Load SPL metamodel -->
+		<am3.loadModel modelHandler="EMF" name="SPL" metamodel="MOF" path="${splPath}SPL.ecore" />
+
+		<!-- Load TCS metamodel -->
+		<am3.loadModel modelHandler="EMF" name="TCS" metamodel="MOF" path="/CPL2SPL/AMMACore/TCS.ecore" />
+		
+		<!-- Load SPL.tcs model -->
+		<am3.loadModel modelHandler="EMF" name="SPL.tcs" metamodel="TCS" path="${splTcsPath}SPL.tcs">
+			<injector name="ebnf">
+				<param name="name" value="TCS"/>
+			</injector>
+		</am3.loadModel>
+	</target>	
+</project>

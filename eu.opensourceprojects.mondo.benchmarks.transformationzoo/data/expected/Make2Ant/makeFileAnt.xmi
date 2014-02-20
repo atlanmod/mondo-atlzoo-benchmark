@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="Ant" name="makefile" description="Test d'un fichier makefile" default="//@targets.0">
+  <properties xsi:type="PropertyValue" name="CC" value="gcc"/>
+  <properties xsi:type="PropertyValue" name="CFLAGS" value="-wall -ansi"/>
+  <properties xsi:type="PropertyValue" name="LDFLAGS" value="-wall -ansi"/>
+  <targets name="hello" depends="//@targets.2 //@targets.1">
+    <tasks xsi:type="Exec" executable="$(CC) -o hello hello.o main.o $(LDFLAGS)"/>
+    <tasks xsi:type="Echo" message="skip"/>
+    <tasks xsi:type="Exec" executable="skip"/>
+  </targets>
+  <targets name="hello.o">
+    <tasks xsi:type="Exec" executable="$(CC) -o hello.o -c hello.c $(CFLAGS)"/>
+  </targets>
+  <targets name="main.o">
+    <tasks xsi:type="Echo" message="$(CC) -o main.o -c main.c $(CFLAGS)"/>
+    <tasks xsi:type="Exec" executable="$(CC) -o main.o -c main.c $(CFLAGS)"/>
+  </targets>
+  <targets name="clean">
+    <tasks xsi:type="Echo" message="rm -rf *.o"/>
+    <tasks xsi:type="Exec" executable="rm -rf *.o"/>
+  </targets>
+  <targets name="mrproper" depends="//@targets.3">
+    <tasks xsi:type="Exec" executable="rm -rf $(EXEC)"/>
+  </targets>
+</Project>

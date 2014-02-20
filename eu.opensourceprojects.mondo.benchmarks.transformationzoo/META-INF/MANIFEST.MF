@@ -11,9 +11,7 @@ Export-Package: eu.opensourceprojects.mondo.benchmarks.transformationzoo,
  eu.opensourceprojects.mondo.benchmarks.transformationzoo.unit.atlvm,
  eu.opensourceprojects.mondo.benchmarks.transformationzoo.util
 Bundle-ClassPath: .
-Require-Bundle: org.eclipse.emf.compare.match;bundle-version="[1.2.0,1.4.0)",
- org.eclipse.emf.compare.diff;bundle-version="[1.2.0,1.4.0)",
- org.junit;visibility:=reexport,
+Require-Bundle: org.junit;visibility:=reexport,
  org.eclipse.m2m.atl.engine,
  org.eclipse.m2m.atl.drivers.emf4atl,
  org.eclipse.core.resources,
@@ -23,11 +21,14 @@ Require-Bundle: org.eclipse.emf.compare.match;bundle-version="[1.2.0,1.4.0)",
  org.eclipse.m2m.atl.adt.editor,
  org.eclipse.m2m.atl.engine.emfvm.launch,
  org.eclipse.m2m.atl.core.ui.vm,
- org.eclipse.uml2.uml,
- org.eclipse.emf.compare;bundle-version="[1.2.0,1.4.0)"
+ org.eclipse.uml2.uml
 Bundle-Activator: eu.opensourceprojects.mondo.benchmarks.transformationzoo.ZooBenchmarksPlugin
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Import-Package: com.google.common.base,
  com.google.common.collect,
+ org.eclipse.emf.compare.diff.metamodel,
+ org.eclipse.emf.compare.diff.service,
+ org.eclipse.emf.compare.match.metamodel,
+ org.eclipse.emf.compare.match.service,
  org.eclipse.jface.text

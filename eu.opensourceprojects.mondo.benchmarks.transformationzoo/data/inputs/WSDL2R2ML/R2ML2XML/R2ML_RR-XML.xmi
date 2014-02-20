@@ -1,0 +1,1109 @@
+<?xml version = '1.0' encoding = 'ISO-8859-1' ?>
+<XMI xmi.version = '1.2' timestamp = 'Tue Jul 24 16:40:13 CEST 2007'>
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>Netbeans XMI Writer</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+  </XMI.header>
+  <XMI.content>
+    <XML.Root xmi.id = 'a1' startLine = '6' startColumn = '117' endLine = '234'
+      endColumn = '17' name = 'r2ml:RuleBase'>
+      <XML.Element.children>
+        <XML.Attribute xmi.id = 'a2' name = 'xmlns:r2ml' value = 'http://www.rewerse.net/I1/2006/R2ML'/>
+        <XML.Attribute xmi.id = 'a3' name = 'xmlns:r2mlv' value = 'http://www.rewerse.net/I1/2006/R2ML/R2MLV'/>
+        <XML.Attribute xmi.id = 'a4' name = 'xmlns:xsi' value = 'http://www.w3.org/2001/XMLSchema-instance'/>
+        <XML.Attribute xmi.id = 'a5' name = 'xmlns:ex' value = 'http://www.bookingservice.com/schema'/>
+        <XML.Attribute xmi.id = 'a6' name = 'xsi:schemaLocation' value = 'http://www.rewerse.net/I1/2006/R2ML http://oxygen.informatik.tu-cottbus.de/R2ML/0.4/R2ML.xsd'/>
+        <XML.Text xmi.id = 'a7' startLine = '7' startColumn = '5' name = '#text'
+          value = '&#10;    '/>
+        <XML.Text xmi.id = 'a8' startLine = '8' startColumn = '2' name = '#text'
+          value = '&#10;&#9;'/>
+        <XML.Element xmi.id = 'a9' startLine = '8' startColumn = '20' endLine = '93'
+          endColumn = '24' name = 'r2mlv:Vocabulary'>
+          <XML.Element.children>
+            <XML.Text xmi.id = 'a10' startLine = '10' startColumn = '9' name = '#text'
+              value = '&#10;&#10;        '/>
+            <XML.Element xmi.id = 'a11' startLine = '10' startColumn = '45' endLine = '16'
+              endColumn = '23' name = 'r2mlv:Class'>
+              <XML.Element.children>
+                <XML.Attribute xmi.id = 'a12' name = 'r2mlv:ID' value = 'ex:Customer'/>
+                <XML.Text xmi.id = 'a13' startLine = '11' startColumn = '13' name = '#text'
+                  value = '&#10;            '/>
+                <XML.Element xmi.id = 'a14' startLine = '11' startColumn = '60' endLine = '15'
+                  endColumn = '31' name = 'r2mlv:Attribute'>
+                  <XML.Element.children>
+                    <XML.Attribute xmi.id = 'a15' name = 'r2mlv:ID' value = 'ex:Customer.custNo'/>
+                    <XML.Text xmi.id = 'a16' startLine = '12' startColumn = '17' name = '#text'
+                      value = '&#10;                '/>
+                    <XML.Element xmi.id = 'a17' startLine = '12' startColumn = '30' endLine = '14'
+                      endColumn = '31' name = 'r2mlv:range'>
+                      <XML.Element.children>
+                        <XML.Text xmi.id = 'a18' startLine = '13' startColumn = '21' name = '#text'
+                          value = '&#10;                    '/>
+                        <XML.Element xmi.id = 'a19' startLine = '13' startColumn = '60' endLine = '13'
+                          endColumn = '60' name = 'r2mlv:Datatype'>
+                          <XML.Element.children>
+                            <XML.Attribute xmi.id = 'a20' name = 'r2mlv:ID' value = 'xs:integer'/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a21' startLine = '14' startColumn = '17' name = '#text'
+                          value = '&#10;                '/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a22' startLine = '15' startColumn = '13' name = '#text'
+                      value = '&#10;            '/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a23' startLine = '16' startColumn = '9' name = '#text'
+                  value = '&#10;        '/>
+              </XML.Element.children>
+            </XML.Element>
+            <XML.Text xmi.id = 'a24' startLine = '18' startColumn = '9' name = '#text'
+              value = '&#10;&#10;        '/>
+            <XML.Element xmi.id = 'a25' startLine = '18' startColumn = '60' endLine = '39'
+              endColumn = '29' name = 'r2mlv:MessageType'>
+              <XML.Element.children>
+                <XML.Attribute xmi.id = 'a26' name = 'r2mlv:ID' value = 'ex:CheckAvailability'/>
+                <XML.Text xmi.id = 'a27' startLine = '19' startColumn = '13' name = '#text'
+                  value = '&#10;            '/>
+                <XML.Element xmi.id = 'a28' startLine = '19' startColumn = '74' endLine = '23'
+                  endColumn = '31' name = 'r2mlv:Attribute'>
+                  <XML.Element.children>
+                    <XML.Attribute xmi.id = 'a29' name = 'r2mlv:ID' value = 'ex:CheckAvailability.checkInDate'/>
+                    <XML.Text xmi.id = 'a30' startLine = '20' startColumn = '17' name = '#text'
+                      value = '&#10;                '/>
+                    <XML.Element xmi.id = 'a31' startLine = '20' startColumn = '30' endLine = '22'
+                      endColumn = '31' name = 'r2mlv:range'>
+                      <XML.Element.children>
+                        <XML.Text xmi.id = 'a32' startLine = '21' startColumn = '21' name = '#text'
+                          value = '&#10;                    '/>
+                        <XML.Element xmi.id = 'a33' startLine = '21' startColumn = '61' endLine = '21'
+                          endColumn = '61' name = 'r2mlv:Datatype'>
+                          <XML.Element.children>
+                            <XML.Attribute xmi.id = 'a34' name = 'r2mlv:ID' value = 'xs:dateTime'/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a35' startLine = '22' startColumn = '17' name = '#text'
+                          value = '&#10;                '/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a36' startLine = '23' startColumn = '13' name = '#text'
+                      value = '&#10;            '/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a37' startLine = '24' startColumn = '13' name = '#text'
+                  value = '&#10;            '/>
+                <XML.Element xmi.id = 'a38' startLine = '24' startColumn = '75' endLine = '28'
+                  endColumn = '31' name = 'r2mlv:Attribute'>
+                  <XML.Element.children>
+                    <XML.Attribute xmi.id = 'a39' name = 'r2mlv:ID' value = 'ex:CheckAvailability.checkOutDate'/>
+                    <XML.Text xmi.id = 'a40' startLine = '25' startColumn = '17' name = '#text'
+                      value = '&#10;                '/>
+                    <XML.Element xmi.id = 'a41' startLine = '25' startColumn = '30' endLine = '27'
+                      endColumn = '31' name = 'r2mlv:range'>
+                      <XML.Element.children>
+                        <XML.Text xmi.id = 'a42' startLine = '26' startColumn = '21' name = '#text'
+                          value = '&#10;                    '/>
+                        <XML.Element xmi.id = 'a43' startLine = '26' startColumn = '61' endLine = '26'
+                          endColumn = '61' name = 'r2mlv:Datatype'>
+                          <XML.Element.children>
+                            <XML.Attribute xmi.id = 'a44' name = 'r2mlv:ID' value = 'xs:dateTime'/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a45' startLine = '27' startColumn = '17' name = '#text'
+                          value = '&#10;                '/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a46' startLine = '28' startColumn = '13' name = '#text'
+                      value = '&#10;            '/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a47' startLine = '29' startColumn = '13' name = '#text'
+                  value = '&#10;            '/>
+                <XML.Element xmi.id = 'a48' startLine = '29' startColumn = '71' endLine = '33'
+                  endColumn = '31' name = 'r2mlv:Attribute'>
+                  <XML.Element.children>
+                    <XML.Attribute xmi.id = 'a49' name = 'r2mlv:ID' value = 'ex:CheckAvailability.roomType'/>
+                    <XML.Text xmi.id = 'a50' startLine = '30' startColumn = '17' name = '#text'
+                      value = '&#10;                '/>
+                    <XML.Element xmi.id = 'a51' startLine = '30' startColumn = '30' endLine = '32'
+                      endColumn = '31' name = 'r2mlv:range'>
+                      <XML.Element.children>
+                        <XML.Text xmi.id = 'a52' startLine = '31' startColumn = '21' name = '#text'
+                          value = '&#10;                    '/>
+                        <XML.Element xmi.id = 'a53' startLine = '31' startColumn = '60' endLine = '31'
+                          endColumn = '60' name = 'r2mlv:Datatype'>
+                          <XML.Element.children>
+                            <XML.Attribute xmi.id = 'a54' name = 'r2mlv:ID' value = 'xs:integer'/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a55' startLine = '32' startColumn = '17' name = '#text'
+                          value = '&#10;                '/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a56' startLine = '33' startColumn = '13' name = '#text'
+                      value = '&#10;            '/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a57' startLine = '34' startColumn = '4' name = '#text'
+                  value = '&#10;&#9;&#9;&#9;'/>
+                <XML.Element xmi.id = 'a58' startLine = '34' startColumn = '70' endLine = '38'
+                  endColumn = '30' name = 'r2mlv:ReferenceProperty'>
+                  <XML.Element.children>
+                    <XML.Attribute xmi.id = 'a59' name = 'r2mlv:ID' value = 'ex:CheckAvailability.customer'/>
+                    <XML.Text xmi.id = 'a60' startLine = '35' startColumn = '5' name = '#text'
+                      value = '&#10;&#9;&#9;&#9;&#9;'/>
+                    <XML.Element xmi.id = 'a61' startLine = '35' startColumn = '18' endLine = '37'
+                      endColumn = '19' name = 'r2mlv:range'>
+                      <XML.Element.children>
+                        <XML.Text xmi.id = 'a62' startLine = '36' startColumn = '6' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;&#9;'/>
+                        <XML.Element xmi.id = 'a63' startLine = '36' startColumn = '43' endLine = '36'
+                          endColumn = '43' name = 'r2mlv:Class'>
+                          <XML.Element.children>
+                            <XML.Attribute xmi.id = 'a64' name = 'r2mlv:ID' value = 'ex:Customer'/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a65' startLine = '37' startColumn = '5' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;'/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a66' startLine = '38' startColumn = '4' name = '#text'
+                      value = '&#10;&#9;&#9;&#9;'/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a67' startLine = '39' startColumn = '9' name = '#text'
+                  value = '&#10;        '/>
+              </XML.Element.children>
+            </XML.Element>
+            <XML.Text xmi.id = 'a68' startLine = '41' startColumn = '9' name = '#text'
+              value = '&#10;&#10;        '/>
+            <XML.Element xmi.id = 'a69' startLine = '41' startColumn = '64' endLine = '47'
+              endColumn = '34' name = 'r2mlv:FaultMessageType'>
+              <XML.Element.children>
+                <XML.Attribute xmi.id = 'a70' name = 'r2mlv:ID' value = 'ex:InvalidDataError'/>
+                <XML.Text xmi.id = 'a71' startLine = '42' startColumn = '13' name = '#text'
+                  value = '&#10;            '/>
+                <XML.Element xmi.id = 'a72' startLine = '42' startColumn = '69' endLine = '46'
+                  endColumn = '31' name = 'r2mlv:Attribute'>
+                  <XML.Element.children>
+                    <XML.Attribute xmi.id = 'a73' name = 'r2mlv:ID' value = 'ex:InvalidDataError.message'/>
+                    <XML.Text xmi.id = 'a74' startLine = '43' startColumn = '17' name = '#text'
+                      value = '&#10;                '/>
+                    <XML.Element xmi.id = 'a75' startLine = '43' startColumn = '30' endLine = '45'
+                      endColumn = '31' name = 'r2mlv:range'>
+                      <XML.Element.children>
+                        <XML.Text xmi.id = 'a76' startLine = '44' startColumn = '21' name = '#text'
+                          value = '&#10;                    '/>
+                        <XML.Element xmi.id = 'a77' startLine = '44' startColumn = '59' endLine = '44'
+                          endColumn = '59' name = 'r2mlv:Datatype'>
+                          <XML.Element.children>
+                            <XML.Attribute xmi.id = 'a78' name = 'r2mlv:ID' value = 'xs:string'/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a79' startLine = '45' startColumn = '17' name = '#text'
+                          value = '&#10;                '/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a80' startLine = '46' startColumn = '13' name = '#text'
+                      value = '&#10;            '/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a81' startLine = '47' startColumn = '9' name = '#text'
+                  value = '&#10;        '/>
+              </XML.Element.children>
+            </XML.Element>
+            <XML.Text xmi.id = 'a82' startLine = '49' startColumn = '9' name = '#text'
+              value = '&#10;&#10;        '/>
+            <XML.Element xmi.id = 'a83' startLine = '49' startColumn = '68' endLine = '55'
+              endColumn = '29' name = 'r2mlv:MessageType'>
+              <XML.Element.children>
+                <XML.Attribute xmi.id = 'a84' name = 'r2mlv:ID' value = 'ex:CheckAvailabilityResponse'/>
+                <XML.Text xmi.id = 'a85' startLine = '50' startColumn = '12' name = '#text'
+                  value = '&#10;           '/>
+                <XML.Text xmi.id = 'a86' startLine = '50' startColumn = '13' name = '#text'
+                  value = ' '/>
+                <XML.Element xmi.id = 'a87' startLine = '50' startColumn = '82' endLine = '54'
+                  endColumn = '31' name = 'r2mlv:Attribute'>
+                  <XML.Element.children>
+                    <XML.Attribute xmi.id = 'a88' name = 'r2mlv:ID' value = 'ex:CheckAvailabilityResponse.yesNoAnswer'/>
+                    <XML.Text xmi.id = 'a89' startLine = '51' startColumn = '17' name = '#text'
+                      value = '&#10;                '/>
+                    <XML.Element xmi.id = 'a90' startLine = '51' startColumn = '30' endLine = '53'
+                      endColumn = '31' name = 'r2mlv:range'>
+                      <XML.Element.children>
+                        <XML.Text xmi.id = 'a91' startLine = '52' startColumn = '21' name = '#text'
+                          value = '&#10;                    '/>
+                        <XML.Element xmi.id = 'a92' startLine = '52' startColumn = '60' endLine = '52'
+                          endColumn = '60' name = 'r2mlv:Datatype'>
+                          <XML.Element.children>
+                            <XML.Attribute xmi.id = 'a93' name = 'r2mlv:ID' value = 'xs:boolean'/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a94' startLine = '53' startColumn = '17' name = '#text'
+                          value = '&#10;                '/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a95' startLine = '54' startColumn = '13' name = '#text'
+                      value = '&#10;            '/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a96' startLine = '55' startColumn = '9' name = '#text'
+                  value = '&#10;        '/>
+              </XML.Element.children>
+            </XML.Element>
+            <XML.Text xmi.id = 'a97' startLine = '57' startColumn = '9' name = '#text'
+              value = '&#10;&#10;        '/>
+            <XML.Element xmi.id = 'a98' startLine = '57' startColumn = '41' endLine = '73'
+              endColumn = '23' name = 'r2mlv:Class'>
+              <XML.Element.children>
+                <XML.Attribute xmi.id = 'a99' name = 'r2mlv:ID' value = 'ex:Room'/>
+                <XML.Text xmi.id = 'a100' startLine = '58' startColumn = '13' name = '#text'
+                  value = '&#10;            '/>
+                <XML.Element xmi.id = 'a101' startLine = '58' startColumn = '61' endLine = '62'
+                  endColumn = '31' name = 'r2mlv:Attribute'>
+                  <XML.Element.children>
+                    <XML.Attribute xmi.id = 'a102' name = 'r2mlv:ID' value = 'ex:Room.isAvailable'/>
+                    <XML.Text xmi.id = 'a103' startLine = '59' startColumn = '17' name = '#text'
+                      value = '&#10;                '/>
+                    <XML.Element xmi.id = 'a104' startLine = '59' startColumn = '30' endLine = '61'
+                      endColumn = '31' name = 'r2mlv:range'>
+                      <XML.Element.children>
+                        <XML.Text xmi.id = 'a105' startLine = '60' startColumn = '21' name = '#text'
+                          value = '&#10;                    '/>
+                        <XML.Element xmi.id = 'a106' startLine = '60' startColumn = '60' endLine = '60'
+                          endColumn = '60' name = 'r2mlv:Datatype'>
+                          <XML.Element.children>
+                            <XML.Attribute xmi.id = 'a107' name = 'r2mlv:ID' value = 'xs:boolean'/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a108' startLine = '61' startColumn = '17' name = '#text'
+                          value = '&#10;                '/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a109' startLine = '62' startColumn = '13' name = '#text'
+                      value = '&#10;            '/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a110' startLine = '63' startColumn = '13' name = '#text'
+                  value = '&#10;            '/>
+                <XML.Element xmi.id = 'a111' startLine = '63' startColumn = '56' endLine = '67'
+                  endColumn = '31' name = 'r2mlv:Attribute'>
+                  <XML.Element.children>
+                    <XML.Attribute xmi.id = 'a112' name = 'r2mlv:ID' value = 'ex:Room.roomNo'/>
+                    <XML.Text xmi.id = 'a113' startLine = '64' startColumn = '17' name = '#text'
+                      value = '&#10;                '/>
+                    <XML.Element xmi.id = 'a114' startLine = '64' startColumn = '30' endLine = '66'
+                      endColumn = '31' name = 'r2mlv:range'>
+                      <XML.Element.children>
+                        <XML.Text xmi.id = 'a115' startLine = '65' startColumn = '21' name = '#text'
+                          value = '&#10;                    '/>
+                        <XML.Element xmi.id = 'a116' startLine = '65' startColumn = '60' endLine = '65'
+                          endColumn = '60' name = 'r2mlv:Datatype'>
+                          <XML.Element.children>
+                            <XML.Attribute xmi.id = 'a117' name = 'r2mlv:ID' value = 'xs:integer'/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a118' startLine = '66' startColumn = '17' name = '#text'
+                          value = '&#10;                '/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a119' startLine = '67' startColumn = '13' name = '#text'
+                      value = '&#10;            '/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a120' startLine = '68' startColumn = '13' name = '#text'
+                  value = '&#10;            '/>
+                <XML.Element xmi.id = 'a121' startLine = '68' startColumn = '58' endLine = '72'
+                  endColumn = '31' name = 'r2mlv:Attribute'>
+                  <XML.Element.children>
+                    <XML.Attribute xmi.id = 'a122' name = 'r2mlv:ID' value = 'ex:Room.roomType'/>
+                    <XML.Text xmi.id = 'a123' startLine = '69' startColumn = '17' name = '#text'
+                      value = '&#10;                '/>
+                    <XML.Element xmi.id = 'a124' startLine = '69' startColumn = '30' endLine = '71'
+                      endColumn = '31' name = 'r2mlv:range'>
+                      <XML.Element.children>
+                        <XML.Text xmi.id = 'a125' startLine = '70' startColumn = '21' name = '#text'
+                          value = '&#10;                    '/>
+                        <XML.Element xmi.id = 'a126' startLine = '70' startColumn = '60' endLine = '70'
+                          endColumn = '60' name = 'r2mlv:Datatype'>
+                          <XML.Element.children>
+                            <XML.Attribute xmi.id = 'a127' name = 'r2mlv:ID' value = 'xs:integer'/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a128' startLine = '71' startColumn = '17' name = '#text'
+                          value = '&#10;                '/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a129' startLine = '72' startColumn = '13' name = '#text'
+                      value = '&#10;            '/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a130' startLine = '73' startColumn = '9' name = '#text'
+                  value = '&#10;        '/>
+              </XML.Element.children>
+            </XML.Element>
+            <XML.Text xmi.id = 'a131' startLine = '75' startColumn = '9' name = '#text'
+              value = '&#10;&#10;        '/>
+            <XML.Element xmi.id = 'a132' startLine = '75' startColumn = '44' endLine = '91'
+              endColumn = '23' name = 'r2mlv:Class'>
+              <XML.Element.children>
+                <XML.Attribute xmi.id = 'a133' name = 'r2mlv:ID' value = 'ex:Booking'/>
+                <XML.Text xmi.id = 'a134' startLine = '76' startColumn = '13' name = '#text'
+                  value = '&#10;            '/>
+                <XML.Element xmi.id = 'a135' startLine = '76' startColumn = '57' endLine = '80'
+                  endColumn = '31' name = 'r2mlv:Attribute'>
+                  <XML.Element.children>
+                    <XML.Attribute xmi.id = 'a136' name = 'r2mlv:ID' value = 'ex:Booking.from'/>
+                    <XML.Text xmi.id = 'a137' startLine = '77' startColumn = '17' name = '#text'
+                      value = '&#10;                '/>
+                    <XML.Element xmi.id = 'a138' startLine = '77' startColumn = '30' endLine = '79'
+                      endColumn = '31' name = 'r2mlv:range'>
+                      <XML.Element.children>
+                        <XML.Text xmi.id = 'a139' startLine = '78' startColumn = '21' name = '#text'
+                          value = '&#10;                    '/>
+                        <XML.Element xmi.id = 'a140' startLine = '78' startColumn = '58' endLine = '78'
+                          endColumn = '58' name = 'r2mlv:Datatype'>
+                          <XML.Element.children>
+                            <XML.Attribute xmi.id = 'a141' name = 'r2mlv:ID' value = 'xs:float'/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a142' startLine = '79' startColumn = '17' name = '#text'
+                          value = '&#10;                '/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a143' startLine = '80' startColumn = '13' name = '#text'
+                      value = '&#10;            '/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a144' startLine = '81' startColumn = '13' name = '#text'
+                  value = '&#10;            '/>
+                <XML.Element xmi.id = 'a145' startLine = '81' startColumn = '55' endLine = '85'
+                  endColumn = '31' name = 'r2mlv:Attribute'>
+                  <XML.Element.children>
+                    <XML.Attribute xmi.id = 'a146' name = 'r2mlv:ID' value = 'ex:Booking.to'/>
+                    <XML.Text xmi.id = 'a147' startLine = '82' startColumn = '17' name = '#text'
+                      value = '&#10;                '/>
+                    <XML.Element xmi.id = 'a148' startLine = '82' startColumn = '30' endLine = '84'
+                      endColumn = '31' name = 'r2mlv:range'>
+                      <XML.Element.children>
+                        <XML.Text xmi.id = 'a149' startLine = '83' startColumn = '21' name = '#text'
+                          value = '&#10;                    '/>
+                        <XML.Element xmi.id = 'a150' startLine = '83' startColumn = '58' endLine = '83'
+                          endColumn = '58' name = 'r2mlv:Datatype'>
+                          <XML.Element.children>
+                            <XML.Attribute xmi.id = 'a151' name = 'r2mlv:ID' value = 'xs:float'/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a152' startLine = '84' startColumn = '17' name = '#text'
+                          value = '&#10;                '/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a153' startLine = '85' startColumn = '13' name = '#text'
+                      value = '&#10;            '/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a154' startLine = '86' startColumn = '6' name = '#text'
+                  value = '&#10;&#9;&#9;   '/>
+                <XML.Element xmi.id = 'a155' startLine = '86' startColumn = '58' endLine = '90'
+                  endColumn = '32' name = 'r2mlv:ReferenceProperty'>
+                  <XML.Element.children>
+                    <XML.Attribute xmi.id = 'a156' name = 'r2mlv:ID' value = 'ex:Booking.room'/>
+                    <XML.Text xmi.id = 'a157' startLine = '87' startColumn = '5' name = '#text'
+                      value = '&#10;&#9;&#9;&#9;&#9;'/>
+                    <XML.Element xmi.id = 'a158' startLine = '87' startColumn = '18' endLine = '89'
+                      endColumn = '19' name = 'r2mlv:range'>
+                      <XML.Element.children>
+                        <XML.Text xmi.id = 'a159' startLine = '88' startColumn = '6' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;&#9;'/>
+                        <XML.Element xmi.id = 'a160' startLine = '88' startColumn = '39' endLine = '88'
+                          endColumn = '39' name = 'r2mlv:Class'>
+                          <XML.Element.children>
+                            <XML.Attribute xmi.id = 'a161' name = 'r2mlv:ID' value = 'ex:Room'/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a162' startLine = '89' startColumn = '5' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;'/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a163' startLine = '90' startColumn = '6' name = '#text'
+                      value = '&#10;&#9;&#9;   '/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a164' startLine = '91' startColumn = '9' name = '#text'
+                  value = '&#10;        '/>
+              </XML.Element.children>
+            </XML.Element>
+            <XML.Text xmi.id = 'a165' startLine = '93' startColumn = '5' name = '#text'
+              value = '&#10;&#10;    '/>
+          </XML.Element.children>
+        </XML.Element>
+        <XML.Text xmi.id = 'a166' startLine = '95' startColumn = '5' name = '#text'
+          value = '&#10;&#10;    '/>
+        <XML.Element xmi.id = 'a167' startLine = '95' startColumn = '67' endLine = '233'
+          endColumn = '28' name = 'r2ml:ReactionRuleSet'>
+          <XML.Element.children>
+            <XML.Attribute xmi.id = 'a168' name = 'r2ml:ruleSetID' value = 'tns:reservationService'/>
+            <XML.Text xmi.id = 'a169' startLine = '97' startColumn = '9' name = '#text'
+              value = '&#10;&#10;        '/>
+            <XML.Element xmi.id = 'a170' startLine = '97' startColumn = '87' endLine = '145'
+              endColumn = '29' name = 'r2ml:ReactionRule'>
+              <XML.Element.children>
+                <XML.Attribute xmi.id = 'a171' name = 'r2ml:ruleID' value = 'id52461'/>
+                <XML.Attribute xmi.id = 'a172' name = 'r2ml:groupID' value = 'tns:checkAvailability'/>
+                <XML.Text xmi.id = 'a173' startLine = '98' startColumn = '7' name = '#text'
+                  value = '&#10;&#9;&#9;    '/>
+                <XML.Element xmi.id = 'a174' startLine = '98' startColumn = '29' endLine = '102'
+                  endColumn = '36' name = 'r2ml:triggeringEvent'>
+                  <XML.Element.children>
+                    <XML.Text xmi.id = 'a175' startLine = '99' startColumn = '17' name = '#text'
+                      value = '&#10;                '/>
+                    <XML.Element xmi.id = 'a176' startLine = '99' startColumn = '128' endLine = '101'
+                      endColumn = '47' name = 'r2ml:MessageEventExpression'>
+                      <XML.Element.children>
+                        <XML.Attribute xmi.id = 'a177' name = 'r2ml:sender' value = 'http://www.trip.com/ws/client'/>
+                        <XML.Attribute xmi.id = 'a178' name = 'r2ml:eventType' value = 'ex:CheckAvailability'/>
+                        <XML.Text xmi.id = 'a179' startLine = '100' startColumn = '21' name = '#text'
+                          value = '&#10;                    '/>
+                        <XML.Element xmi.id = 'a180' startLine = '100' startColumn = '97' endLine = '100'
+                          endColumn = '97' name = 'r2ml:ObjectVariable'>
+                          <XML.Element.children>
+                            <XML.Attribute xmi.id = 'a181' name = 'r2ml:name' value = 'chkAv'/>
+                            <XML.Attribute xmi.id = 'a182' name = 'r2ml:classID' value = 'ex:CheckAvailability'/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a183' startLine = '101' startColumn = '17' name = '#text'
+                          value = '&#10;                '/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a184' startLine = '102' startColumn = '13' name = '#text'
+                      value = '&#10;            '/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a185' startLine = '104' startColumn = '13' name = '#text'
+                  value = '&#10;&#10;            '/>
+                <XML.Element xmi.id = 'a186' startLine = '104' startColumn = '30' endLine = '133'
+                  endColumn = '31' name = 'r2ml:conditions'>
+                  <XML.Element.children>
+                    <XML.Text xmi.id = 'a187' startLine = '105' startColumn = '17' name = '#text'
+                      value = '&#10;                '/>
+                    <XML.Element xmi.id = 'a188' startLine = '105' startColumn = '109' endLine = '118'
+                      endColumn = '46' name = 'r2ml:DatatypePredicateAtom'>
+                      <XML.Element.children>
+                        <XML.Attribute xmi.id = 'a189' name = 'r2ml:datatypePredicateID' value = 'swrlb:lessThen'/>
+                        <XML.Attribute xmi.id = 'a190' name = 'r2ml:isNegated' value = 'true'/>
+                        <XML.Text xmi.id = 'a191' startLine = '106' startColumn = '21' name = '#text'
+                          value = '&#10;                    '/>
+                        <XML.Element xmi.id = 'a192' startLine = '106' startColumn = '41' endLine = '117'
+                          endColumn = '42' name = 'r2ml:dataArguments'>
+                          <XML.Element.children>
+                            <XML.Text xmi.id = 'a193' startLine = '107' startColumn = '25' name = '#text'
+                              value = '&#10;                        '/>
+                            <XML.Element xmi.id = 'a194' startLine = '107' startColumn = '105' endLine = '111'
+                              endColumn = '54' name = 'r2ml:AttributeFunctionTerm'>
+                              <XML.Element.children>
+                                <XML.Attribute xmi.id = 'a195' name = 'r2ml:attributeID' value = 'ex:CheckAvailability.checkInDate'/>
+                                <XML.Text xmi.id = 'a196' startLine = '108' startColumn = '29' name = '#text'
+                                  value = '&#10;                            '/>
+                                <XML.Element xmi.id = 'a197' startLine = '108' startColumn = '51' endLine = '110'
+                                  endColumn = '52' name = 'r2ml:contextArgument'>
+                                  <XML.Element.children>
+                                    <XML.Text xmi.id = 'a198' startLine = '109' startColumn = '1' name = '#text'
+                                      value = '&#10;'/>
+                                    <XML.Element xmi.id = 'a199' startLine = '109' startColumn = '77' endLine = '109'
+                                      endColumn = '77' name = 'r2ml:ObjectVariable'>
+                                      <XML.Element.children>
+                                        <XML.Attribute xmi.id = 'a200' name = 'r2ml:name' value = 'chkAv'/>
+                                        <XML.Attribute xmi.id = 'a201' name = 'r2ml:classID' value = 'ex:CheckAvailability'/>
+                                      </XML.Element.children>
+                                    </XML.Element>
+                                    <XML.Text xmi.id = 'a202' startLine = '110' startColumn = '29' name = '#text'
+                                      value = '&#10;                            '/>
+                                  </XML.Element.children>
+                                </XML.Element>
+                                <XML.Text xmi.id = 'a203' startLine = '111' startColumn = '25' name = '#text'
+                                  value = '&#10;                        '/>
+                              </XML.Element.children>
+                            </XML.Element>
+                            <XML.Text xmi.id = 'a204' startLine = '112' startColumn = '25' name = '#text'
+                              value = '&#10;                        '/>
+                            <XML.Element xmi.id = 'a205' startLine = '112' startColumn = '106' endLine = '116'
+                              endColumn = '54' name = 'r2ml:AttributeFunctionTerm'>
+                              <XML.Element.children>
+                                <XML.Attribute xmi.id = 'a206' name = 'r2ml:attributeID' value = 'ex:CheckAvailability.checkOutDate'/>
+                                <XML.Text xmi.id = 'a207' startLine = '113' startColumn = '29' name = '#text'
+                                  value = '&#10;                            '/>
+                                <XML.Element xmi.id = 'a208' startLine = '113' startColumn = '51' endLine = '115'
+                                  endColumn = '52' name = 'r2ml:contextArgument'>
+                                  <XML.Element.children>
+                                    <XML.Text xmi.id = 'a209' startLine = '114' startColumn = '1' name = '#text'
+                                      value = '&#10;'/>
+                                    <XML.Element xmi.id = 'a210' startLine = '114' startColumn = '77' endLine = '114'
+                                      endColumn = '77' name = 'r2ml:ObjectVariable'>
+                                      <XML.Element.children>
+                                        <XML.Attribute xmi.id = 'a211' name = 'r2ml:name' value = 'chkAv'/>
+                                        <XML.Attribute xmi.id = 'a212' name = 'r2ml:classID' value = 'ex:CheckAvailability'/>
+                                      </XML.Element.children>
+                                    </XML.Element>
+                                    <XML.Text xmi.id = 'a213' startLine = '115' startColumn = '29' name = '#text'
+                                      value = '&#10;                            '/>
+                                  </XML.Element.children>
+                                </XML.Element>
+                                <XML.Text xmi.id = 'a214' startLine = '116' startColumn = '25' name = '#text'
+                                  value = '&#10;                        '/>
+                              </XML.Element.children>
+                            </XML.Element>
+                            <XML.Text xmi.id = 'a215' startLine = '117' startColumn = '21' name = '#text'
+                              value = '&#10;                    '/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a216' startLine = '118' startColumn = '17' name = '#text'
+                          value = '&#10;                '/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a217' startLine = '120' startColumn = '17' name = '#text'
+                      value = '&#10;&#10;                '/>
+                    <XML.Element xmi.id = 'a218' startLine = '120' startColumn = '84' endLine = '122'
+                      endColumn = '49' name = 'r2ml:ObjectClassificationAtom'>
+                      <XML.Element.children>
+                        <XML.Attribute xmi.id = 'a219' name = 'r2ml:classID' value = 'ex:CheckAvailability'/>
+                        <XML.Text xmi.id = 'a220' startLine = '121' startColumn = '21' name = '#text'
+                          value = '&#10;                    '/>
+                        <XML.Element xmi.id = 'a221' startLine = '121' startColumn = '61' endLine = '121'
+                          endColumn = '61' name = 'r2ml:ObjectVariable'>
+                          <XML.Element.children>
+                            <XML.Attribute xmi.id = 'a222' name = 'r2ml:name' value = 'chkAv'/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a223' startLine = '122' startColumn = '17' name = '#text'
+                          value = '&#10;                '/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a224' startLine = '123' startColumn = '5' name = '#text'
+                      value = '&#10;&#9;&#9;&#9;&#9;'/>
+                    <XML.Text xmi.id = 'a225' startLine = '124' startColumn = '5' name = '#text'
+                      value = '&#10;&#9;&#9;&#9;&#9;'/>
+                    <XML.Element xmi.id = 'a226' startLine = '124' startColumn = '90' endLine = '131'
+                      endColumn = '34' name = 'r2ml:ReferencePropertyAtom'>
+                      <XML.Element.children>
+                        <XML.Attribute xmi.id = 'a227' name = 'r2ml:referencePropertyID' value = 'ex:CheckAvailability.customer'/>
+                        <XML.Text xmi.id = 'a228' startLine = '125' startColumn = '7' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;  '/>
+                        <XML.Element xmi.id = 'a229' startLine = '125' startColumn = '21' endLine = '127'
+                          endColumn = '22' name = 'r2ml:subject'>
+                          <XML.Element.children>
+                            <XML.Text xmi.id = 'a230' startLine = '126' startColumn = '10' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;     '/>
+                            <XML.Element xmi.id = 'a231' startLine = '126' startColumn = '50' endLine = '126'
+                              endColumn = '50' name = 'r2ml:ObjectVariable'>
+                              <XML.Element.children>
+                                <XML.Attribute xmi.id = 'a232' name = 'r2ml:name' value = 'chkAv'/>
+                              </XML.Element.children>
+                            </XML.Element>
+                            <XML.Text xmi.id = 'a233' startLine = '127' startColumn = '7' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;  '/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a234' startLine = '128' startColumn = '7' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;  '/>
+                        <XML.Element xmi.id = 'a235' startLine = '128' startColumn = '20' endLine = '130'
+                          endColumn = '21' name = 'r2ml:object'>
+                          <XML.Element.children>
+                            <XML.Text xmi.id = 'a236' startLine = '129' startColumn = '7' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;&#9; '/>
+                            <XML.Element xmi.id = 'a237' startLine = '129' startColumn = '77' endLine = '129'
+                              endColumn = '77' name = 'r2ml:ObjectVariable'>
+                              <XML.Element.children>
+                                <XML.Attribute xmi.id = 'a238' name = 'r2ml:name' value = 'customer'/>
+                                <XML.Attribute xmi.id = 'a239' name = 'r2ml:classID' value = 'ex:Customer'/>
+                              </XML.Element.children>
+                            </XML.Element>
+                            <XML.Text xmi.id = 'a240' startLine = '130' startColumn = '7' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;  '/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a241' startLine = '131' startColumn = '5' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;'/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a242' startLine = '133' startColumn = '13' name = '#text'
+                      value = '&#10;&#10;            '/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a243' startLine = '135' startColumn = '13' name = '#text'
+                  value = '&#10;&#10;            '/>
+                <XML.Element xmi.id = 'a244' startLine = '135' startColumn = '34' endLine = '143'
+                  endColumn = '35' name = 'r2ml:producedAction'>
+                  <XML.Element.children>
+                    <XML.Text xmi.id = 'a245' startLine = '135' startColumn = '35' name = '#text'
+                      value = ' '/>
+                    <XML.Text xmi.id = 'a246' startLine = '136' startColumn = '10' name = '#text'
+                      value = '&#10; &#9;&#9;      '/>
+                    <XML.Element xmi.id = 'a247' startLine = '136' startColumn = '120' endLine = '142'
+                      endColumn = '45' name = 'r2ml:MessageEventExpression'>
+                      <XML.Element.children>
+                        <XML.Attribute xmi.id = 'a248' name = 'r2ml:sender' value = 'http://www.bookingservice.com'/>
+                        <XML.Attribute xmi.id = 'a249' name = 'r2ml:eventType' value = 'ex:InvalidDataError'/>
+                        <XML.Text xmi.id = 'a250' startLine = '137' startColumn = '18' name = '#text'
+                          value = '&#10;                 '/>
+                        <XML.Element xmi.id = 'a251' startLine = '137' startColumn = '80' endLine = '141'
+                          endColumn = '22' name = 'r2ml:DataSlot'>
+                          <XML.Element.children>
+                            <XML.Attribute xmi.id = 'a252' name = 'r2ml:attributeID' value = 'ex:InvalidDataError.message'/>
+                            <XML.Text xmi.id = 'a253' startLine = '138' startColumn = '8' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;   '/>
+                            <XML.Element xmi.id = 'a254' startLine = '138' startColumn = '20' endLine = '140'
+                              endColumn = '21' name = 'r2ml:value'>
+                              <XML.Element.children>
+                                <XML.Text xmi.id = 'a255' startLine = '139' startColumn = '15' name = '#text'
+                                  value = '&#10;&#9;&#9;&#9;&#9;          '/>
+                                <XML.Element xmi.id = 'a256' startLine = '139' startColumn = '171' endLine = '139'
+                                  endColumn = '171' name = 'r2ml:TypedLiteral'>
+                                  <XML.Element.children>
+                                    <XML.Attribute xmi.id = 'a257' name = 'r2ml:lexicalValue' value = '&lt;ex:InvalidDataError.message&gt;wrong input data!&lt;ex:InvalidDataError.message&gt;'/>
+                                    <XML.Attribute xmi.id = 'a258' name = 'r2ml:datatypeID' value = 'xs:string'/>
+                                  </XML.Element.children>
+                                </XML.Element>
+                                <XML.Text xmi.id = 'a259' startLine = '140' startColumn = '8' name = '#text'
+                                  value = '&#10;&#9;&#9;&#9;&#9;   '/>
+                              </XML.Element.children>
+                            </XML.Element>
+                            <XML.Text xmi.id = 'a260' startLine = '141' startColumn = '6' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9; '/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a261' startLine = '142' startColumn = '15' name = '#text'
+                          value = '&#10;              '/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a262' startLine = '143' startColumn = '13' name = '#text'
+                      value = '&#10;            '/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a263' startLine = '145' startColumn = '9' name = '#text'
+                  value = '&#10;&#10;        '/>
+              </XML.Element.children>
+            </XML.Element>
+            <XML.Text xmi.id = 'a264' startLine = '148' startColumn = '9' name = '#text'
+              value = '&#10;&#10;&#10;        '/>
+            <XML.Element xmi.id = 'a265' startLine = '148' startColumn = '87' endLine = '232'
+              endColumn = '29' name = 'r2ml:ReactionRule'>
+              <XML.Element.children>
+                <XML.Attribute xmi.id = 'a266' name = 'r2ml:ruleID' value = 'id52463'/>
+                <XML.Attribute xmi.id = 'a267' name = 'r2ml:groupID' value = 'tns:checkAvailability'/>
+                <XML.Text xmi.id = 'a268' startLine = '149' startColumn = '9' name = '#text'
+                  value = '&#10;        '/>
+                <XML.Text xmi.id = 'a269' startLine = '150' startColumn = '4' name = '#text'
+                  value = '&#10;&#9;&#9;&#9;'/>
+                <XML.Element xmi.id = 'a270' startLine = '150' startColumn = '26' endLine = '154'
+                  endColumn = '36' name = 'r2ml:triggeringEvent'>
+                  <XML.Element.children>
+                    <XML.Text xmi.id = 'a271' startLine = '151' startColumn = '17' name = '#text'
+                      value = '&#10;                '/>
+                    <XML.Element xmi.id = 'a272' startLine = '151' startColumn = '128' endLine = '153'
+                      endColumn = '47' name = 'r2ml:MessageEventExpression'>
+                      <XML.Element.children>
+                        <XML.Attribute xmi.id = 'a273' name = 'r2ml:sender' value = 'http://www.trip.com/ws/client'/>
+                        <XML.Attribute xmi.id = 'a274' name = 'r2ml:eventType' value = 'ex:CheckAvailability'/>
+                        <XML.Text xmi.id = 'a275' startLine = '152' startColumn = '21' name = '#text'
+                          value = '&#10;                    '/>
+                        <XML.Element xmi.id = 'a276' startLine = '152' startColumn = '97' endLine = '152'
+                          endColumn = '97' name = 'r2ml:ObjectVariable'>
+                          <XML.Element.children>
+                            <XML.Attribute xmi.id = 'a277' name = 'r2ml:name' value = 'chkAv'/>
+                            <XML.Attribute xmi.id = 'a278' name = 'r2ml:classID' value = 'ex:CheckAvailability'/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a279' startLine = '153' startColumn = '17' name = '#text'
+                          value = '&#10;                '/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a280' startLine = '154' startColumn = '13' name = '#text'
+                      value = '&#10;            '/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a281' startLine = '156' startColumn = '13' name = '#text'
+                  value = '&#10;&#10;            '/>
+                <XML.Element xmi.id = 'a282' startLine = '156' startColumn = '30' endLine = '220'
+                  endColumn = '31' name = 'r2ml:conditions'>
+                  <XML.Element.children>
+                    <XML.Text xmi.id = 'a283' startLine = '157' startColumn = '17' name = '#text'
+                      value = '&#10;                '/>
+                    <XML.Element xmi.id = 'a284' startLine = '157' startColumn = '87' endLine = '170'
+                      endColumn = '46' name = 'r2ml:DatatypePredicateAtom'>
+                      <XML.Element.children>
+                        <XML.Attribute xmi.id = 'a285' name = 'r2ml:datatypePredicateID' value = 'swrlb:lessThen'/>
+                        <XML.Text xmi.id = 'a286' startLine = '158' startColumn = '21' name = '#text'
+                          value = '&#10;                    '/>
+                        <XML.Element xmi.id = 'a287' startLine = '158' startColumn = '41' endLine = '169'
+                          endColumn = '42' name = 'r2ml:dataArguments'>
+                          <XML.Element.children>
+                            <XML.Text xmi.id = 'a288' startLine = '159' startColumn = '25' name = '#text'
+                              value = '&#10;                        '/>
+                            <XML.Element xmi.id = 'a289' startLine = '159' startColumn = '105' endLine = '163'
+                              endColumn = '54' name = 'r2ml:AttributeFunctionTerm'>
+                              <XML.Element.children>
+                                <XML.Attribute xmi.id = 'a290' name = 'r2ml:attributeID' value = 'ex:CheckAvailability.checkInDate'/>
+                                <XML.Text xmi.id = 'a291' startLine = '160' startColumn = '29' name = '#text'
+                                  value = '&#10;                            '/>
+                                <XML.Element xmi.id = 'a292' startLine = '160' startColumn = '51' endLine = '162'
+                                  endColumn = '52' name = 'r2ml:contextArgument'>
+                                  <XML.Element.children>
+                                    <XML.Text xmi.id = 'a293' startLine = '161' startColumn = '1' name = '#text'
+                                      value = '&#10;'/>
+                                    <XML.Element xmi.id = 'a294' startLine = '161' startColumn = '77' endLine = '161'
+                                      endColumn = '77' name = 'r2ml:ObjectVariable'>
+                                      <XML.Element.children>
+                                        <XML.Attribute xmi.id = 'a295' name = 'r2ml:name' value = 'chkAv'/>
+                                        <XML.Attribute xmi.id = 'a296' name = 'r2ml:classID' value = 'ex:CheckAvailability'/>
+                                      </XML.Element.children>
+                                    </XML.Element>
+                                    <XML.Text xmi.id = 'a297' startLine = '162' startColumn = '29' name = '#text'
+                                      value = '&#10;                            '/>
+                                  </XML.Element.children>
+                                </XML.Element>
+                                <XML.Text xmi.id = 'a298' startLine = '163' startColumn = '25' name = '#text'
+                                  value = '&#10;                        '/>
+                              </XML.Element.children>
+                            </XML.Element>
+                            <XML.Text xmi.id = 'a299' startLine = '164' startColumn = '25' name = '#text'
+                              value = '&#10;                        '/>
+                            <XML.Element xmi.id = 'a300' startLine = '164' startColumn = '106' endLine = '168'
+                              endColumn = '54' name = 'r2ml:AttributeFunctionTerm'>
+                              <XML.Element.children>
+                                <XML.Attribute xmi.id = 'a301' name = 'r2ml:attributeID' value = 'ex:CheckAvailability.checkOutDate'/>
+                                <XML.Text xmi.id = 'a302' startLine = '165' startColumn = '29' name = '#text'
+                                  value = '&#10;                            '/>
+                                <XML.Element xmi.id = 'a303' startLine = '165' startColumn = '51' endLine = '167'
+                                  endColumn = '52' name = 'r2ml:contextArgument'>
+                                  <XML.Element.children>
+                                    <XML.Text xmi.id = 'a304' startLine = '166' startColumn = '1' name = '#text'
+                                      value = '&#10;'/>
+                                    <XML.Element xmi.id = 'a305' startLine = '166' startColumn = '77' endLine = '166'
+                                      endColumn = '77' name = 'r2ml:ObjectVariable'>
+                                      <XML.Element.children>
+                                        <XML.Attribute xmi.id = 'a306' name = 'r2ml:name' value = 'chkAv'/>
+                                        <XML.Attribute xmi.id = 'a307' name = 'r2ml:classID' value = 'ex:CheckAvailability'/>
+                                      </XML.Element.children>
+                                    </XML.Element>
+                                    <XML.Text xmi.id = 'a308' startLine = '167' startColumn = '29' name = '#text'
+                                      value = '&#10;                            '/>
+                                  </XML.Element.children>
+                                </XML.Element>
+                                <XML.Text xmi.id = 'a309' startLine = '168' startColumn = '25' name = '#text'
+                                  value = '&#10;                        '/>
+                              </XML.Element.children>
+                            </XML.Element>
+                            <XML.Text xmi.id = 'a310' startLine = '169' startColumn = '21' name = '#text'
+                              value = '&#10;                    '/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a311' startLine = '170' startColumn = '17' name = '#text'
+                          value = '&#10;                '/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a312' startLine = '171' startColumn = '5' name = '#text'
+                      value = '&#10;&#9;&#9;&#9;&#9;'/>
+                    <XML.Text xmi.id = 'a313' startLine = '172' startColumn = '5' name = '#text'
+                      value = '&#10;&#9;&#9;&#9;&#9;'/>
+                    <XML.Element xmi.id = 'a314' startLine = '172' startColumn = '62' endLine = '174'
+                      endColumn = '37' name = 'r2ml:ObjectClassificationAtom'>
+                      <XML.Element.children>
+                        <XML.Attribute xmi.id = 'a315' name = 'r2ml:classID' value = 'ex:Booking'/>
+                        <XML.Text xmi.id = 'a316' startLine = '173' startColumn = '7' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;  '/>
+                        <XML.Element xmi.id = 'a317' startLine = '173' startColumn = '49' endLine = '173'
+                          endColumn = '49' name = 'r2ml:ObjectVariable'>
+                          <XML.Element.children>
+                            <XML.Attribute xmi.id = 'a318' name = 'r2ml:name' value = 'booking'/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a319' startLine = '174' startColumn = '5' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;'/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a320' startLine = '176' startColumn = '5' name = '#text'
+                      value = '&#10;&#10;&#9;&#9;&#9;&#9;'/>
+                    <XML.Element xmi.id = 'a321' startLine = '176' startColumn = '76' endLine = '183'
+                      endColumn = '34' name = 'r2ml:ReferencePropertyAtom'>
+                      <XML.Element.children>
+                        <XML.Attribute xmi.id = 'a322' name = 'r2ml:referencePropertyID' value = 'ex:Booking.room'/>
+                        <XML.Text xmi.id = 'a323' startLine = '177' startColumn = '7' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;  '/>
+                        <XML.Element xmi.id = 'a324' startLine = '177' startColumn = '21' endLine = '179'
+                          endColumn = '22' name = 'r2ml:subject'>
+                          <XML.Element.children>
+                            <XML.Text xmi.id = 'a325' startLine = '178' startColumn = '10' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;     '/>
+                            <XML.Element xmi.id = 'a326' startLine = '178' startColumn = '52' endLine = '178'
+                              endColumn = '52' name = 'r2ml:ObjectVariable'>
+                              <XML.Element.children>
+                                <XML.Attribute xmi.id = 'a327' name = 'r2ml:name' value = 'booking'/>
+                              </XML.Element.children>
+                            </XML.Element>
+                            <XML.Text xmi.id = 'a328' startLine = '179' startColumn = '7' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;  '/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a329' startLine = '180' startColumn = '7' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;  '/>
+                        <XML.Element xmi.id = 'a330' startLine = '180' startColumn = '20' endLine = '182'
+                          endColumn = '21' name = 'r2ml:object'>
+                          <XML.Element.children>
+                            <XML.Text xmi.id = 'a331' startLine = '181' startColumn = '7' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;&#9; '/>
+                            <XML.Element xmi.id = 'a332' startLine = '181' startColumn = '69' endLine = '181'
+                              endColumn = '69' name = 'r2ml:ObjectVariable'>
+                              <XML.Element.children>
+                                <XML.Attribute xmi.id = 'a333' name = 'r2ml:name' value = 'room'/>
+                                <XML.Attribute xmi.id = 'a334' name = 'r2ml:classID' value = 'ex:Room'/>
+                              </XML.Element.children>
+                            </XML.Element>
+                            <XML.Text xmi.id = 'a335' startLine = '182' startColumn = '7' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;  '/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a336' startLine = '183' startColumn = '5' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;'/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a337' startLine = '185' startColumn = '5' name = '#text'
+                      value = '&#10;&#10;&#9;&#9;&#9;&#9;'/>
+                    <XML.Element xmi.id = 'a338' startLine = '185' startColumn = '62' endLine = '196'
+                      endColumn = '28' name = 'r2ml:AttributionAtom'>
+                      <XML.Element.children>
+                        <XML.Attribute xmi.id = 'a339' name = 'r2ml:attributeID' value = 'ex:Booking.from'/>
+                        <XML.Text xmi.id = 'a340' startLine = '186' startColumn = '8' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;   '/>
+                        <XML.Element xmi.id = 'a341' startLine = '186' startColumn = '22' endLine = '188'
+                          endColumn = '23' name = 'r2ml:subject'>
+                          <XML.Element.children>
+                            <XML.Text xmi.id = 'a342' startLine = '187' startColumn = '10' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;     '/>
+                            <XML.Element xmi.id = 'a343' startLine = '187' startColumn = '52' endLine = '187'
+                              endColumn = '52' name = 'r2ml:ObjectVariable'>
+                              <XML.Element.children>
+                                <XML.Attribute xmi.id = 'a344' name = 'r2ml:name' value = 'booking'/>
+                              </XML.Element.children>
+                            </XML.Element>
+                            <XML.Text xmi.id = 'a345' startLine = '188' startColumn = '8' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;   '/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a346' startLine = '189' startColumn = '8' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;   '/>
+                        <XML.Element xmi.id = 'a347' startLine = '189' startColumn = '24' endLine = '195'
+                          endColumn = '25' name = 'r2ml:dataValue'>
+                          <XML.Element.children>
+                            <XML.Text xmi.id = 'a348' startLine = '190' startColumn = '7' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;&#9; '/>
+                            <XML.Element xmi.id = 'a349' startLine = '190' startColumn = '87' endLine = '194'
+                              endColumn = '36' name = 'r2ml:AttributeFunctionTerm'>
+                              <XML.Element.children>
+                                <XML.Attribute xmi.id = 'a350' name = 'r2ml:attributeID' value = 'ex:CheckAvailability.checkInDate'/>
+                                <XML.Text xmi.id = 'a351' startLine = '191' startColumn = '9' name = '#text'
+                                  value = '&#10;&#9;&#9;&#9;&#9;&#9;   '/>
+                                <XML.Element xmi.id = 'a352' startLine = '191' startColumn = '31' endLine = '193'
+                                  endColumn = '32' name = 'r2ml:contextArgument'>
+                                  <XML.Element.children>
+                                    <XML.Text xmi.id = 'a353' startLine = '192' startColumn = '8' name = '#text'
+                                      value = '&#10;&#9;&#9;&#9;&#9;&#9;&#9; '/>
+                                    <XML.Element xmi.id = 'a354' startLine = '192' startColumn = '84' endLine = '192'
+                                      endColumn = '84' name = 'r2ml:ObjectVariable'>
+                                      <XML.Element.children>
+                                        <XML.Attribute xmi.id = 'a355' name = 'r2ml:name' value = 'chkAv'/>
+                                        <XML.Attribute xmi.id = 'a356' name = 'r2ml:classID' value = 'ex:CheckAvailability'/>
+                                      </XML.Element.children>
+                                    </XML.Element>
+                                    <XML.Text xmi.id = 'a357' startLine = '193' startColumn = '9' name = '#text'
+                                      value = '&#10;&#9;&#9;&#9;&#9;&#9;   '/>
+                                  </XML.Element.children>
+                                </XML.Element>
+                                <XML.Text xmi.id = 'a358' startLine = '194' startColumn = '7' name = '#text'
+                                  value = '&#10;&#9;&#9;&#9;&#9;&#9; '/>
+                              </XML.Element.children>
+                            </XML.Element>
+                            <XML.Text xmi.id = 'a359' startLine = '195' startColumn = '8' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;   '/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a360' startLine = '196' startColumn = '5' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;'/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a361' startLine = '198' startColumn = '7' name = '#text'
+                      value = '&#10;&#10;&#9;&#9;&#9;   '/>
+                    <XML.Element xmi.id = 'a362' startLine = '198' startColumn = '62' endLine = '209'
+                      endColumn = '30' name = 'r2ml:AttributionAtom'>
+                      <XML.Element.children>
+                        <XML.Attribute xmi.id = 'a363' name = 'r2ml:attributeID' value = 'ex:Booking.to'/>
+                        <XML.Text xmi.id = 'a364' startLine = '199' startColumn = '7' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;  '/>
+                        <XML.Element xmi.id = 'a365' startLine = '199' startColumn = '21' endLine = '201'
+                          endColumn = '22' name = 'r2ml:subject'>
+                          <XML.Element.children>
+                            <XML.Text xmi.id = 'a366' startLine = '200' startColumn = '6' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;&#9;'/>
+                            <XML.Element xmi.id = 'a367' startLine = '200' startColumn = '48' endLine = '200'
+                              endColumn = '48' name = 'r2ml:ObjectVariable'>
+                              <XML.Element.children>
+                                <XML.Attribute xmi.id = 'a368' name = 'r2ml:name' value = 'booking'/>
+                              </XML.Element.children>
+                            </XML.Element>
+                            <XML.Text xmi.id = 'a369' startLine = '201' startColumn = '7' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;  '/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a370' startLine = '202' startColumn = '7' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;  '/>
+                        <XML.Element xmi.id = 'a371' startLine = '202' startColumn = '23' endLine = '208'
+                          endColumn = '24' name = 'r2ml:dataValue'>
+                          <XML.Element.children>
+                            <XML.Text xmi.id = 'a372' startLine = '203' startColumn = '6' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;&#9;'/>
+                            <XML.Element xmi.id = 'a373' startLine = '203' startColumn = '87' endLine = '207'
+                              endColumn = '35' name = 'r2ml:AttributeFunctionTerm'>
+                              <XML.Element.children>
+                                <XML.Attribute xmi.id = 'a374' name = 'r2ml:attributeID' value = 'ex:CheckAvailability.checkOutDate'/>
+                                <XML.Text xmi.id = 'a375' startLine = '204' startColumn = '8' name = '#text'
+                                  value = '&#10;&#9;&#9;&#9;&#9;&#9;  '/>
+                                <XML.Element xmi.id = 'a376' startLine = '204' startColumn = '30' endLine = '206'
+                                  endColumn = '31' name = 'r2ml:contextArgument'>
+                                  <XML.Element.children>
+                                    <XML.Text xmi.id = 'a377' startLine = '205' startColumn = '7' name = '#text'
+                                      value = '&#10;&#9;&#9;&#9;&#9;&#9;&#9;'/>
+                                    <XML.Element xmi.id = 'a378' startLine = '205' startColumn = '83' endLine = '205'
+                                      endColumn = '83' name = 'r2ml:ObjectVariable'>
+                                      <XML.Element.children>
+                                        <XML.Attribute xmi.id = 'a379' name = 'r2ml:name' value = 'chkAv'/>
+                                        <XML.Attribute xmi.id = 'a380' name = 'r2ml:classID' value = 'ex:CheckAvailability'/>
+                                      </XML.Element.children>
+                                    </XML.Element>
+                                    <XML.Text xmi.id = 'a381' startLine = '206' startColumn = '8' name = '#text'
+                                      value = '&#10;&#9;&#9;&#9;&#9;&#9;  '/>
+                                  </XML.Element.children>
+                                </XML.Element>
+                                <XML.Text xmi.id = 'a382' startLine = '207' startColumn = '6' name = '#text'
+                                  value = '&#10;&#9;&#9;&#9;&#9;&#9;'/>
+                              </XML.Element.children>
+                            </XML.Element>
+                            <XML.Text xmi.id = 'a383' startLine = '208' startColumn = '7' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;  '/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a384' startLine = '209' startColumn = '7' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;   '/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a385' startLine = '211' startColumn = '10' name = '#text'
+                      value = '&#10;&#10;&#9;&#9;       '/>
+                    <XML.Element xmi.id = 'a386' startLine = '211' startColumn = '64' endLine = '218'
+                      endColumn = '30' name = 'r2ml:AttributionAtom'>
+                      <XML.Element.children>
+                        <XML.Attribute xmi.id = 'a387' name = 'r2ml:attributeID' value = 'isAvaillable'/>
+                        <XML.Text xmi.id = 'a388' startLine = '212' startColumn = '6' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9; '/>
+                        <XML.Element xmi.id = 'a389' startLine = '212' startColumn = '20' endLine = '214'
+                          endColumn = '21' name = 'r2ml:subject'>
+                          <XML.Element.children>
+                            <XML.Text xmi.id = 'a390' startLine = '213' startColumn = '11' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;       '/>
+                            <XML.Element xmi.id = 'a391' startLine = '213' startColumn = '50' endLine = '213'
+                              endColumn = '50' name = 'r2ml:ObjectVariable'>
+                              <XML.Element.children>
+                                <XML.Attribute xmi.id = 'a392' name = 'r2ml:name' value = 'room'/>
+                              </XML.Element.children>
+                            </XML.Element>
+                            <XML.Text xmi.id = 'a393' startLine = '214' startColumn = '6' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9; '/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a394' startLine = '215' startColumn = '6' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9; '/>
+                        <XML.Element xmi.id = 'a395' startLine = '215' startColumn = '22' endLine = '217'
+                          endColumn = '22' name = 'r2ml:dataValue'>
+                          <XML.Element.children>
+                            <XML.Text xmi.id = 'a396' startLine = '216' startColumn = '6' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;&#9;'/>
+                            <XML.Element xmi.id = 'a397' startLine = '216' startColumn = '80' endLine = '216'
+                              endColumn = '80' name = 'r2ml:TypedLiteral'>
+                              <XML.Element.children>
+                                <XML.Attribute xmi.id = 'a398' name = 'r2ml:lexicalValue' value = 'true'/>
+                                <XML.Attribute xmi.id = 'a399' name = 'r2ml:datatypeID' value = 'xs:boolean'/>
+                              </XML.Element.children>
+                            </XML.Element>
+                            <XML.Text xmi.id = 'a400' startLine = '217' startColumn = '5' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;'/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a401' startLine = '218' startColumn = '7' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;   '/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a402' startLine = '220' startColumn = '13' name = '#text'
+                      value = '&#10;&#10;            '/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a403' startLine = '222' startColumn = '13' name = '#text'
+                  value = '&#10;&#10;            '/>
+                <XML.Element xmi.id = 'a404' startLine = '222' startColumn = '34' endLine = '230'
+                  endColumn = '35' name = 'r2ml:producedAction'>
+                  <XML.Element.children>
+                    <XML.Text xmi.id = 'a405' startLine = '223' startColumn = '17' name = '#text'
+                      value = '&#10;                '/>
+                    <XML.Element xmi.id = 'a406' startLine = '223' startColumn = '136' endLine = '229'
+                      endColumn = '47' name = 'r2ml:MessageEventExpression'>
+                      <XML.Element.children>
+                        <XML.Attribute xmi.id = 'a407' name = 'r2ml:eventType' value = 'ex:CheckAvailabilityResponse'/>
+                        <XML.Attribute xmi.id = 'a408' name = 'r2ml:sender' value = 'http://www.bookingservice.com'/>
+                        <XML.Text xmi.id = 'a409' startLine = '224' startColumn = '21' name = '#text'
+                          value = '&#10;                    '/>
+                        <XML.Element xmi.id = 'a410' startLine = '224' startColumn = '96' endLine = '228'
+                          endColumn = '22' name = 'r2ml:DataSlot'>
+                          <XML.Element.children>
+                            <XML.Attribute xmi.id = 'a411' name = 'r2ml:attributeID' value = 'ex:CheckAvailabilityResponse.yesNoAnswer'/>
+                            <XML.Text xmi.id = 'a412' startLine = '225' startColumn = '8' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;&#9;  '/>
+                            <XML.Element xmi.id = 'a413' startLine = '225' startColumn = '20' endLine = '227'
+                              endColumn = '24' name = 'r2ml:value'>
+                              <XML.Element.children>
+                                <XML.Text xmi.id = 'a414' startLine = '226' startColumn = '14' name = '#text'
+                                  value = '&#10;&#9;&#9;&#9;&#9;         '/>
+                                <XML.Element xmi.id = 'a415' startLine = '226' startColumn = '88' endLine = '226'
+                                  endColumn = '88' name = 'r2ml:TypedLiteral'>
+                                  <XML.Element.children>
+                                    <XML.Attribute xmi.id = 'a416' name = 'r2ml:lexicalValue' value = 'true'/>
+                                    <XML.Attribute xmi.id = 'a417' name = 'r2ml:datatypeID' value = 'xs:boolean'/>
+                                  </XML.Element.children>
+                                </XML.Element>
+                                <XML.Text xmi.id = 'a418' startLine = '227' startColumn = '11' name = '#text'
+                                  value = '&#10;&#9;&#9;&#9;&#9;      '/>
+                              </XML.Element.children>
+                            </XML.Element>
+                            <XML.Text xmi.id = 'a419' startLine = '228' startColumn = '6' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;&#9;'/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a420' startLine = '229' startColumn = '17' name = '#text'
+                          value = '&#10;                '/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a421' startLine = '230' startColumn = '13' name = '#text'
+                      value = '&#10;            '/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a422' startLine = '232' startColumn = '9' name = '#text'
+                  value = '&#10;&#10;        '/>
+              </XML.Element.children>
+            </XML.Element>
+            <XML.Text xmi.id = 'a423' startLine = '233' startColumn = '5' name = '#text'
+              value = '&#10;    '/>
+          </XML.Element.children>
+        </XML.Element>
+        <XML.Text xmi.id = 'a424' startLine = '234' startColumn = '1' name = '#text'
+          value = '&#10;'/>
+      </XML.Element.children>
+    </XML.Root>
+  </XMI.content>
+</XMI>

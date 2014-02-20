@@ -1,0 +1,210 @@
+	<!--
+ How to configure this ant script:
+	Run as->Ant Build...
+		Set:
+			- Base directory
+			- Run in same JRE
+			- Refresh
+
+			- ANTLR jar (?)
+			- ant contrib jar
+-->
+<!-- Transform EBNF grammar into KM3 metamodel -->
+		
+<project name="RSS2ATOM" default ="transfo6">
+	
+	
+	<property name="sample" value="Exemple"/>
+	<property name="sample1" value="Exemple1"/>
+	<property name="sourcePath1" value="/RSS2ATOM/XML/"/>
+	<property name="targetPath1" value="/RSS2ATOM/ATOM/"/>
+	<property name="targetPath2" value="/RSS2ATOM/RSS/"/>
+
+	<target name="transfo1" depends="loadModels1">
+		<basename property="name" file="${sample}" suffix=".xml"/>
+		<property name="sourceModel1" value="${sourcePath1}${name}-XML.ecore"/>
+		<property name="targetModel1" value="${targetPath1}${name}-ATOM.ecore"/>
+		<echo message="Transforming ${name}"/>
+		<!-- Load XML model-->
+		<am3.loadModel modelHandler="EMF" name="sourceModel1" metamodel="XML" path="${sourceModel1}"/>
+		<!-- Transform XML model into RSS model -->
+		<am3.atl path="/RSS2ATOM/ATLTransformations/XML2ATOM.atl">
+			<inModel name="IN" model="sourceModel1"/>
+			<inModel name="XML" model="XML"/>
+			<inModel name="ATOM" model="ATOM"/>
+			<outModel name="OUT" model="targetModel1" metamodel="ATOM"/>
+		</am3.atl>
+	
+		<!-- Extract and save ATOM model -->
+		<am3.saveModel model="targetModel1" path="${targetModel1}"/>
+	</target>
+	
+	<target name="loadModels1">
+		<!-- Load XML metamodel-->
+		<am3.loadModel modelHandler="EMF" name="XML" metamodel="MOF" path="${sourcePath1}XML.ecore"/>
+			<!-- Load ATOM metamodel-->
+		<am3.loadModel modelHandler="EMF" name="ATOM" metamodel="MOF" path="${targetPath1}ATOM.ecore"/>
+	</target>
+	
+		
+		<target name="transfo2" depends="transfo1,loadModels2">
+			<basename property="name" file="${sample}-ATOM" suffix=".ecore"/>
+			<property name="sourceModel2" value="${targetPath1}${name}-ATOM.ecore"/>
+			<property name="targetModel2" value="${targetPath2}${name}-RSS.ecore"/>
+			<echo message="Transforming ${name}"/>
+			<!-- Load XML model-->
+			<am3.loadModel modelHandler="EMF" name="sourceModel2" metamodel="ATOM" path="${sourceModel2}"/>
+			<!-- Transform XML model into RSS model -->
+			<am3.atl path="/RSS2ATOM/ATLTransformations/ATOM2RSS.atl">
+				<inModel name="IN" model="sourceModel2"/>
+				<inModel name="ATOM" model="ATOM"/>
+				<inModel name="RSS" model="RSS"/>
+				<outModel name="OUT" model="targetModel2" metamodel="RSS"/>
+			</am3.atl>
+
+			<!-- Extract and save KM3 model -->
+			<am3.saveModel model="targetModel2" path="${targetModel2}"/>
+		</target>
+
+		<target name="loadModels2">
+			<!-- Load ATOM metamodel-->
+			<am3.loadModel modelHandler="EMF" name="ATOM" metamodel="MOF" path="${targetPath1}ATOM.ecore"/>
+				<!-- Load RSS metamodel-->
+			<am3.loadModel modelHandler="EMF" name="RSS" metamodel="MOF" path="${targetPath2}RSS.ecore"/>
+		</target>
+	
+	
+		
+		<target name="transfo3" depends="transfo2,loadModels3">
+			
+			<basename property="name" file="${sample}-RSS" suffix=".ecore"/>
+			<property name="sourceModel3" value="${targetPath2}${name}-RSS.ecore"/>
+			<property name="targetModel3" value="${sourcePath1}${name}-RSSinv.ecore"/>
+			<echo message="Transforming ${name}"/>
+			<!-- Load XML model-->
+			<am3.loadModel modelHandler="EMF" name="sourceModel3" metamodel="RSS" path="${sourceModel3}"/>
+			<!-- Transform XML model into RSS model -->
+			<am3.atl path="/RSS2ATOM/ATLTransformations/RSS2XML.atl">
+				<inModel name="IN" model="sourceModel3"/>
+				<inModel name="RSS" model="RSS"/>
+				<inModel name="XML" model="XML"/>
+				<outModel name="OUT" model="targetModel3" metamodel="XML"/>
+			</am3.atl>
+
+			<!-- Extract and save XML model -->
+			<am3.saveModel model="targetModel3" path="${targetModel3}"/>
+		</target>
+
+		<target name="loadModels3">
+			<!-- Load RSS metamodel-->
+			<am3.loadModel modelHandler="EMF" name="RSS" metamodel="MOF" path="${targetPath2}RSS.ecore"/>
+				<!-- Load XML metamodel-->
+			<am3.loadModel modelHandler="EMF" name="XML" metamodel="MOF" path="${sourcePath1}XML.ecore"/>
+		</target>
+	
+	
+	
+	
+	
+			
+		
+		
+	
+	
+		<target name="transfo4" depends="transfo3,loadModels4">
+			<basename property="name" file="${sample1}" suffix=".xml"/>
+			<property name="sourceModel4" value="${sourcePath1}${name}1-XML.ecore"/>
+			<property name="targetModel4" value="${targetPath2}${name}1-RSS.ecore"/>
+			<echo message="Transforming ${name}"/>
+			<!-- Load XML model-->
+			<am3.loadModel modelHandler="EMF" name="sourceModel4" metamodel="XML" path="${sourceModel4}"/>
+			<!-- Transform XML model into RSS model -->
+			<am3.atl path="/RSS2ATOM/ATLTransformations/XML2RSS.atl">
+				<inModel name="IN" model="sourceModel4"/>
+				<inModel name="XML" model="XML"/>
+				<inModel name="RSS" model="RSS"/>
+				<outModel name="OUT" model="targetModel4" metamodel="RSS"/>
+			</am3.atl>
+		
+			<!-- Extract and save KM3 model -->
+			<am3.saveModel model="targetModel4" path="${targetModel4}"/>
+		</target>
+		
+		<target name="loadModels4">
+			<!-- Load XML metamodel-->
+			<am3.loadModel modelHandler="EMF" name="XML" metamodel="MOF" path="${sourcePath1}XML.ecore"/>
+				<!-- Load ATOM metamodel-->
+			<am3.loadModel modelHandler="EMF" name="RSS" metamodel="MOF" path="${targetPath2}RSS.ecore"/>
+		</target>
+		
+	
+			<target name="transfo5" depends="transfo4,loadModels5">
+				<basename property="name" file="${sample1}-RSS" suffix=".ecore"/>
+				<property name="sourceModel5" value="${targetPath2}${name}1-RSS.ecore"/>
+				<property name="targetModel5" value="${targetPath1}${name}1-ATOM.ecore"/>
+				<echo message="Transforming ${name}"/>
+				<!-- Load RSS model-->
+				<am3.loadModel modelHandler="EMF" name="sourceModel5" metamodel="RSS" path="${sourceModel5}"/>
+				<!-- Transform RSS model into ATOM model -->
+				<am3.atl path="/RSS2ATOM/ATLTransformations/RSS2ATOM.atl">
+					<inModel name="IN" model="sourceModel5"/>
+					<inModel name="ATOM" model="ATOM"/>
+					<inModel name="RSS" model="RSS"/>
+					<outModel name="OUT" model="targetModel5" metamodel="ATOM"/>
+				</am3.atl>
+
+				<!-- Extract and save KM3 model -->
+				<am3.saveModel model="targetModel5" path="${targetModel5}"/>
+			</target>
+
+			<target name="loadModels5">
+				<!-- Load ATOM metamodel-->
+				<am3.loadModel modelHandler="EMF" name="RSS" metamodel="MOF" path="${targetPath2}RSS.ecore"/>
+					<!-- Load RSS metamodel-->
+				<am3.loadModel modelHandler="EMF" name="ATOM" metamodel="MOF" path="${targetPath1}ATOM.ecore"/>
+			</target>
+	
+			
+			<target name="transfo6" depends="transfo5,loadModels6">
+				
+				<basename property="name" file="${sample1}-ATOM" suffix=".ecore"/>
+				<property name="sourceModel6" value="${targetPath1}${name}-ATOM.ecore"/>
+				<property name="targetModel6" value="${sourcePath1}${name}-ATOMinv.ecore"/>
+				<echo message="Transforming ${name}"/>
+				<!-- Load XML model-->
+				<am3.loadModel modelHandler="EMF" name="sourceModel6" metamodel="ATOM" path="${sourceModel6}"/>
+				<!-- Transform XML model into RSS model -->
+				<am3.atl path="/RSS2ATOM/ATLTransformations/ATOM2XML.atl">
+					<inModel name="IN" model="sourceModel6"/>
+					<inModel name="ATOM" model="ATOM"/>
+					<inModel name="XML" model="XML"/>
+					<outModel name="OUT" model="targetModel6" metamodel="XML"/>
+				</am3.atl>
+
+				<!-- Extract and save XML model -->
+				<am3.saveModel model="targetModel6" path="${targetModel6}"/>
+			</target>
+
+			<target name="loadModels6">
+				<!-- Load RSS metamodel-->
+				<am3.loadModel modelHandler="EMF" name="ATOM" metamodel="MOF" path="${targetPath1}ATOM.ecore"/>
+					<!-- Load XML metamodel-->
+				<am3.loadModel modelHandler="EMF" name="XML" metamodel="MOF" path="${sourcePath1}XML.ecore"/>
+			</target>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+	
+</project>

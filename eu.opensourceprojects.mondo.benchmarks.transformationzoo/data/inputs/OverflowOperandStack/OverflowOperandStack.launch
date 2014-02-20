@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.m2m.atl.adt.launching.atlTransformation">
 <stringAttribute key="ATL File Name" value="/org.eclipse.m2m.atl.tests/data/inputs/OverflowOperandStack/OverflowOperandStack.atl"/>
 <stringAttribute key="ATL VM" value="EMF-specific VM"/>
@@ -14,26 +14,32 @@
 <mapEntry key="UML" value="EMF"/>
 </mapAttribute>
 <mapAttribute key="ModelType">
+<mapEntry key="IN" value="MODELINPUT"/>
 <mapEntry key="OUT" value="MODELOUTPUT"/>
 <mapEntry key="UML" value="METAMODELOUTPUT"/>
-<mapEntry key="IN" value="MODELINPUT"/>
 </mapAttribute>
 <mapAttribute key="Options">
 <mapEntry key="OPTION_CLEAR" value="false"/>
-<mapEntry key="printExecutionTime" value="false"/>
+<mapEntry key="OPTION_CONTENT_TYPE" value="false"/>
 <mapEntry key="OPTION_DERIVED" value="true"/>
 <mapEntry key="allowInterModelReferences" value="false"/>
-<mapEntry key="OPTION_CONTENT_TYPE" value="false"/>
-<mapEntry key="supportUML2Stereotypes" value="false"/>
+<mapEntry key="printExecutionTime" value="false"/>
 <mapEntry key="step" value="false"/>
+<mapEntry key="supportUML2Stereotypes" value="false"/>
 </mapAttribute>
+<listAttribute key="OrderedInput">
+<listEntry value="IN"/>
+</listAttribute>
+<listAttribute key="OrderedOutput">
+<listEntry value="OUT"/>
+</listAttribute>
 <mapAttribute key="Output">
 <mapEntry key="OUT" value="UML"/>
 </mapAttribute>
 <mapAttribute key="Path">
+<mapEntry key="IN" value="/org.eclipse.m2m.atl.tests/data/inputs/OverflowOperandStack/TestEntry.uml"/>
 <mapEntry key="OUT" value="/org.eclipse.m2m.atl.tests/data/inputs/OverflowOperandStack/Results.uml"/>
 <mapEntry key="UML" value="uri:http://www.eclipse.org/uml2/2.1.0/UML"/>
-<mapEntry key="IN" value="/org.eclipse.m2m.atl.tests/data/inputs/OverflowOperandStack/TestEntry.uml"/>
 </mapAttribute>
 <stringAttribute key="Project Name" value="Collections"/>
 <listAttribute key="Superimpose"/>

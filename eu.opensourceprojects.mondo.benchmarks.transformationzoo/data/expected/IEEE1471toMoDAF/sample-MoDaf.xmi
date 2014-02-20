@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<MoDAFModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="MoDAF" name="sampleModel">
+  <enterprise name="RDB" content="Relational DataBase" inhabits="//@environment" fulfills="//@operationalMissions.0 //@operationalMissions.1 //@operationalMissions.2"/>
+  <environment name="SQL Server" content="Oracle server" influences="//@enterprise"/>
+  <operationalMissions name="update" content="update a selected data"/>
+  <operationalMissions name="select" content="select several data in function of parameters"/>
+  <operationalMissions name="create" content="create a data with all necessary parameters"/>
+  <architectures name="ClientServer" content="one server for several clients" enterprise="//@enterprise" describedBy="//@architecturalDescription.0"/>
+  <architecturalDescription name="RDB CS" content="description of a relational database with a clientserver architecture" purpose="DesignAndDeploy, defines the entity-relation diagram and after deploy database to a sever and define acces for client" viewpoints="//@architecturalFrameworks.0/@ownedMember.0 //@architecturalFrameworks.1/@ownedMember.0">
+    <products name="DB Structure" content="defines the structure of the database" description="DB Structure, defines the structure of the database" definingView="//@architecturalFrameworks.0/@ownedMember.0" addresses="//@architecturalFrameworks.0/@ownedMember.0/@usedToCover.0">
+      <architecturalElements name="EntityRelation diagram" content="description of a relational database with a CS architecture"/>
+    </products>
+    <products name="Deployment" content="defines how to deploy the systems on the hardware" description="Deployment, defines how to deploy the systems on the hardware" definingView="//@architecturalFrameworks.1/@ownedMember.0" addresses="//@architecturalFrameworks.1/@ownedMember.0/@usedToCover.0">
+      <architecturalElements name="DeploymentDiagram" content="defines the graph representation of a model of deployment"/>
+    </products>
+  </architecturalDescription>
+  <architecturalFrameworks name="StructuralViewpoints" content="defines the group of viewpoints that defines a structural view on systems">
+    <ownedMember name="RDB structure for one table" content="how to design a database model" framework="StructuralViewpoints" viewDescription="how to design a database model" viewName="RDB structure for one table">
+      <usedToCover name="RDB structure" content="interest about the enities and the relations in the database" adressedBy="//@architecturalDescription.0/@products.0"/>
+    </ownedMember>
+  </architecturalFrameworks>
+  <architecturalFrameworks name="Undefined Architectural Framework">
+    <ownedMember name="HardwareDistribution" content="distribution of hardware components" framework="Undefined" viewDescription="distribution of hardware components" viewName="HardwareDistribution">
+      <usedToCover name="Hardware architecture" content="interest about the physical distribution" adressedBy="//@architecturalDescription.0/@products.1"/>
+    </ownedMember>
+  </architecturalFrameworks>
+  <stakeholders name="DB architect" content="defines the class of persons who designe the DB"/>
+  <stakeholders name="Deployment Architect" content="defines the group of persons who deploy the system in a given environment with the appropriate architecture"/>
+  <stakeholderHasConcerns client="//@stakeholders.0" supplier="//@architecturalFrameworks.0/@ownedMember.0/@usedToCover.0"/>
+  <stakeholderHasConcerns client="//@stakeholders.1" supplier="//@architecturalFrameworks.1/@ownedMember.0/@usedToCover.0"/>
+</MoDAFModel>

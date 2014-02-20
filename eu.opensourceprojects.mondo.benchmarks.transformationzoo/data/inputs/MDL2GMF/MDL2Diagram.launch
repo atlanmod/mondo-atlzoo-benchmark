@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.m2m.atl.adt.launching.atlTransformation">
+<stringAttribute key="ATL File Name" value=""/>
+<stringAttribute key="ATL VM" value="Regular VM (with debugger)"/>
+<booleanAttribute key="AllowInterModelReferences" value="false"/>
+<mapAttribute key="Input">
+<mapEntry key="IN" value="MDL"/>
+</mapAttribute>
+<mapAttribute key="Libs"/>
+<booleanAttribute key="Mode Debug" value="false"/>
+<mapAttribute key="Model Handler">
+<mapEntry key="Ecore" value="EMF"/>
+<mapEntry key="GMF" value="EMF"/>
+<mapEntry key="UML" value="EMF"/>
+<mapEntry key="MDL" value="EMF"/>
+</mapAttribute>
+<mapAttribute key="ModelType">
+<mapEntry key="Ecore" value="METAMODELOUTPUT"/>
+<mapEntry key="Ecore_OUT" value="MODELOUTPUT"/>
+<mapEntry key="GMF_OUT" value="MODELOUTPUT"/>
+<mapEntry key="IN" value="MODELINPUT"/>
+<mapEntry key="GMF" value="METAMODELOUTPUT"/>
+<mapEntry key="UML" value="METAMODELOUTPUT"/>
+<mapEntry key="UML_OUT" value="MODELOUTPUT"/>
+<mapEntry key="MDL" value="METAMODELINPUT"/>
+</mapAttribute>
+<mapAttribute key="Output">
+<mapEntry key="Ecore_OUT" value="Ecore"/>
+<mapEntry key="GMF_OUT" value="GMF"/>
+<mapEntry key="UML_OUT" value="UML"/>
+</mapAttribute>
+<mapAttribute key="Path">
+<mapEntry key="Ecore" value="uri:http://www.eclipse.org/emf/2002/Ecore"/>
+<mapEntry key="Ecore_OUT" value="/org.eclipse.atl.mdl2uml/output/test.ecore"/>
+<mapEntry key="GMF_OUT" value="/org.eclipse.atl.mdl2uml/Model/diagram.umlclass_diagram"/>
+<mapEntry key="IN" value="/org.eclipse.atl.mdl2uml/Model/Sample.mdl"/>
+<mapEntry key="GMF" value="uri:http://www.eclipse.org/gmf/runtime/1.0.1/notation"/>
+<mapEntry key="UML" value="uri:http://www.eclipse.org/uml2/2.1.0/UML"/>
+<mapEntry key="UML_OUT" value="/org.eclipse.atl.mdl2uml/Model/diagram.uml"/>
+<mapEntry key="MDL" value="uri:http://org.eclipse.atl.mdl"/>
+</mapAttribute>
+<stringAttribute key="Project Name" value="org.eclipse.atl.mdl2uml"/>
+<listAttribute key="Superimpose"/>
+<booleanAttribute key="continueAfterError" value="false"/>
+<booleanAttribute key="disableAttributeHelperCache" value="false"/>
+<booleanAttribute key="printExecutionTime" value="false"/>
+<booleanAttribute key="profile" value="false"/>
+<booleanAttribute key="showSummary" value="false"/>
+<booleanAttribute key="step" value="false"/>
+</launchConfiguration>

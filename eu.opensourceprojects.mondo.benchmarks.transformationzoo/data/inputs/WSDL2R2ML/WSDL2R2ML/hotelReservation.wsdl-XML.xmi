@@ -1,0 +1,347 @@
+<?xml version = '1.0' encoding = 'ISO-8859-1' ?>
+<XMI xmi.version = '1.2' timestamp = 'Tue Jul 24 16:40:41 CEST 2007'>
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>Netbeans XMI Writer</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+  </XMI.header>
+  <XMI.content>
+    <XML.Root xmi.id = 'a1' startLine = '7' startColumn = '53' endLine = '92'
+      endColumn = '15' name = 'description'>
+      <XML.Element.children>
+        <XML.Attribute xmi.id = 'a2' name = 'xmlns' value = 'http://www.w3.org/2006/01/wsdl'/>
+        <XML.Attribute xmi.id = 'a3' name = 'targetNamespace' value = 'http://www.bookingservice.com/?wsdl'/>
+        <XML.Attribute xmi.id = 'a4' name = 'xmlns:tns' value = 'http://www.bookingservice.com/?wsdl'/>
+        <XML.Attribute xmi.id = 'a5' name = 'xmlns:wsoap' value = 'http://www.w3.org/2006/01/wsdl/soap'/>
+        <XML.Attribute xmi.id = 'a6' name = 'xmlns:soap' value = 'http://www.w3.org/2003/05/soap-envelope'/>
+        <XML.Attribute xmi.id = 'a7' name = 'xmlns:ex' value = 'http://www.bookingservice.com/schema'/>
+        <XML.Text xmi.id = 'a8' startLine = '9' startColumn = '2' name = '#text'
+          value = '&#10;&#10;&#9;'/>
+        <XML.Element xmi.id = 'a9' startLine = '9' startColumn = '17' endLine = '11'
+          endColumn = '18' name = 'documentation'>
+          <XML.Element.children>
+            <XML.Text xmi.id = 'a10' startLine = '10' startColumn = '23' name = '#text'
+              value = '&#10;&#9;&#9;My WSDL for bookings'/>
+            <XML.Text xmi.id = 'a11' startLine = '11' startColumn = '2' name = '#text'
+              value = '&#10;&#9;'/>
+          </XML.Element.children>
+        </XML.Element>
+        <XML.Text xmi.id = 'a12' startLine = '13' startColumn = '2' name = '#text'
+          value = '&#10;&#10;&#9;'/>
+        <XML.Element xmi.id = 'a13' startLine = '13' startColumn = '9' endLine = '56'
+          endColumn = '10' name = 'types'>
+          <XML.Element.children>
+            <XML.Text xmi.id = 'a14' startLine = '14' startColumn = '2' name = '#text'
+              value = '&#10;&#9;'/>
+            <XML.Text xmi.id = 'a15' startLine = '15' startColumn = '3' name = '#text'
+              value = '&#10;&#9;&#9;'/>
+            <XML.Element xmi.id = 'a16' startLine = '17' startColumn = '49' endLine = '55'
+              endColumn = '15' name = 'xs:schema'>
+              <XML.Element.children>
+                <XML.Attribute xmi.id = 'a17' name = 'xmlns:xs' value = 'http://www.w3.org/2001/XMLSchema'/>
+                <XML.Attribute xmi.id = 'a18' name = 'targetNamespace' value = 'http://www.bookingservice.com/schema'/>
+                <XML.Attribute xmi.id = 'a19' name = 'xmlns' value = 'http://www.bookingservice.com/schema'/>
+                <XML.Text xmi.id = 'a20' startLine = '19' startColumn = '4' name = '#text'
+                  value = '&#10;&#10;&#9;&#9;&#9;'/>
+                <XML.Element xmi.id = 'a21' startLine = '19' startColumn = '44' endLine = '29'
+                  endColumn = '17' name = 'xs:element'>
+                  <XML.Element.children>
+                    <XML.Attribute xmi.id = 'a22' name = 'name' value = 'ex:CheckAvailability'/>
+                    <XML.Text xmi.id = 'a23' startLine = '20' startColumn = '5' name = '#text'
+                      value = '&#10;&#9;&#9;&#9;&#9;'/>
+                    <XML.Element xmi.id = 'a24' startLine = '20' startColumn = '21' endLine = '28'
+                      endColumn = '22' name = 'xs:complexType'>
+                      <XML.Element.children>
+                        <XML.Text xmi.id = 'a25' startLine = '21' startColumn = '5' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;'/>
+                        <XML.Text xmi.id = 'a26' startLine = '22' startColumn = '6' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;&#9;'/>
+                        <XML.Element xmi.id = 'a27' startLine = '22' startColumn = '19' endLine = '27'
+                          endColumn = '20' name = 'xs:sequence'>
+                          <XML.Element.children>
+                            <XML.Text xmi.id = 'a28' startLine = '23' startColumn = '7' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;&#9;&#9;'/>
+                            <XML.Element xmi.id = 'a29' startLine = '23' startColumn = '80' endLine = '23'
+                              endColumn = '80' name = 'xs:element'>
+                              <XML.Element.children>
+                                <XML.Attribute xmi.id = 'a30' name = 'name' value = 'ex:CheckAvailability.checkInDate'/>
+                                <XML.Attribute xmi.id = 'a31' name = 'type' value = 'xs:dateTime'/>
+                              </XML.Element.children>
+                            </XML.Element>
+                            <XML.Text xmi.id = 'a32' startLine = '24' startColumn = '7' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;&#9;&#9;'/>
+                            <XML.Element xmi.id = 'a33' startLine = '24' startColumn = '81' endLine = '24'
+                              endColumn = '81' name = 'xs:element'>
+                              <XML.Element.children>
+                                <XML.Attribute xmi.id = 'a34' name = 'name' value = 'ex:CheckAvailability.checkOutDate'/>
+                                <XML.Attribute xmi.id = 'a35' name = 'type' value = 'xs:dateTime'/>
+                              </XML.Element.children>
+                            </XML.Element>
+                            <XML.Text xmi.id = 'a36' startLine = '25' startColumn = '7' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;&#9;&#9;'/>
+                            <XML.Element xmi.id = 'a37' startLine = '25' startColumn = '75' endLine = '25'
+                              endColumn = '75' name = 'xs:element'>
+                              <XML.Element.children>
+                                <XML.Attribute xmi.id = 'a38' name = 'name' value = 'ex:CheckAvailability.roomType'/>
+                                <XML.Attribute xmi.id = 'a39' name = 'type' value = 'xs:string'/>
+                              </XML.Element.children>
+                            </XML.Element>
+                            <XML.Text xmi.id = 'a40' startLine = '26' startColumn = '7' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;&#9;&#9;'/>
+                            <XML.Element xmi.id = 'a41' startLine = '26' startColumn = '38' endLine = '26'
+                              endColumn = '38' name = 'xs:element'>
+                              <XML.Element.children>
+                                <XML.Attribute xmi.id = 'a42' name = 'ref' value = 'ex:Customer'/>
+                              </XML.Element.children>
+                            </XML.Element>
+                            <XML.Text xmi.id = 'a43' startLine = '27' startColumn = '6' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;&#9;'/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a44' startLine = '28' startColumn = '5' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;'/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a45' startLine = '29' startColumn = '4' name = '#text'
+                      value = '&#10;&#9;&#9;&#9;'/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a46' startLine = '31' startColumn = '4' name = '#text'
+                  value = '&#10;&#10;&#9;&#9;&#9;'/>
+                <XML.Element xmi.id = 'a47' startLine = '31' startColumn = '35' endLine = '37'
+                  endColumn = '17' name = 'xs:element'>
+                  <XML.Element.children>
+                    <XML.Attribute xmi.id = 'a48' name = 'name' value = 'ex:Customer'/>
+                    <XML.Text xmi.id = 'a49' startLine = '32' startColumn = '5' name = '#text'
+                      value = '&#10;&#9;&#9;&#9;&#9;'/>
+                    <XML.Element xmi.id = 'a50' startLine = '32' startColumn = '21' endLine = '36'
+                      endColumn = '22' name = 'xs:complexType'>
+                      <XML.Element.children>
+                        <XML.Text xmi.id = 'a51' startLine = '33' startColumn = '6' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;&#9;'/>
+                        <XML.Element xmi.id = 'a52' startLine = '33' startColumn = '19' endLine = '35'
+                          endColumn = '20' name = 'xs:sequence'>
+                          <XML.Element.children>
+                            <XML.Text xmi.id = 'a53' startLine = '34' startColumn = '7' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;&#9;&#9;'/>
+                            <XML.Element xmi.id = 'a54' startLine = '34' startColumn = '65' endLine = '34'
+                              endColumn = '65' name = 'xs:element'>
+                              <XML.Element.children>
+                                <XML.Attribute xmi.id = 'a55' name = 'name' value = 'ex:Customer.custNo'/>
+                                <XML.Attribute xmi.id = 'a56' name = 'type' value = 'xs:decimal'/>
+                              </XML.Element.children>
+                            </XML.Element>
+                            <XML.Text xmi.id = 'a57' startLine = '35' startColumn = '6' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;&#9;'/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a58' startLine = '36' startColumn = '5' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;'/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a59' startLine = '37' startColumn = '4' name = '#text'
+                      value = '&#10;&#9;&#9;&#9;'/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a60' startLine = '39' startColumn = '4' name = '#text'
+                  value = '&#10;&#10;&#9;&#9;&#9;'/>
+                <XML.Element xmi.id = 'a61' startLine = '39' startColumn = '52' endLine = '45'
+                  endColumn = '17' name = 'xs:element'>
+                  <XML.Element.children>
+                    <XML.Attribute xmi.id = 'a62' name = 'name' value = 'ex:CheckAvailabilityResponse'/>
+                    <XML.Text xmi.id = 'a63' startLine = '40' startColumn = '5' name = '#text'
+                      value = '&#10;&#9;&#9;&#9;&#9;'/>
+                    <XML.Element xmi.id = 'a64' startLine = '40' startColumn = '21' endLine = '44'
+                      endColumn = '22' name = 'xs:complexType'>
+                      <XML.Element.children>
+                        <XML.Text xmi.id = 'a65' startLine = '41' startColumn = '6' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;&#9;'/>
+                        <XML.Element xmi.id = 'a66' startLine = '41' startColumn = '19' endLine = '43'
+                          endColumn = '20' name = 'xs:sequence'>
+                          <XML.Element.children>
+                            <XML.Text xmi.id = 'a67' startLine = '42' startColumn = '7' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;&#9;&#9;'/>
+                            <XML.Element xmi.id = 'a68' startLine = '42' startColumn = '86' endLine = '42'
+                              endColumn = '86' name = 'xs:element'>
+                              <XML.Element.children>
+                                <XML.Attribute xmi.id = 'a69' name = 'name' value = 'ex:CheckAvailabilityResponse.yesNoAnswer'/>
+                                <XML.Attribute xmi.id = 'a70' name = 'type' value = 'xs:string'/>
+                              </XML.Element.children>
+                            </XML.Element>
+                            <XML.Text xmi.id = 'a71' startLine = '43' startColumn = '6' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;&#9;'/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a72' startLine = '44' startColumn = '5' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;'/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a73' startLine = '44' startColumn = '23' name = '#text'
+                      value = '&#9;'/>
+                    <XML.Text xmi.id = 'a74' startLine = '45' startColumn = '4' name = '#text'
+                      value = '&#10;&#9;&#9;&#9;'/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a75' startLine = '47' startColumn = '4' name = '#text'
+                  value = '&#10;&#10;&#9;&#9;&#9;'/>
+                <XML.Element xmi.id = 'a76' startLine = '47' startColumn = '43' endLine = '53'
+                  endColumn = '17' name = 'xs:element'>
+                  <XML.Element.children>
+                    <XML.Attribute xmi.id = 'a77' name = 'name' value = 'ex:InvalidDataError'/>
+                    <XML.Text xmi.id = 'a78' startLine = '48' startColumn = '5' name = '#text'
+                      value = '&#10;&#9;&#9;&#9;&#9;'/>
+                    <XML.Element xmi.id = 'a79' startLine = '48' startColumn = '21' endLine = '52'
+                      endColumn = '22' name = 'xs:complexType'>
+                      <XML.Element.children>
+                        <XML.Text xmi.id = 'a80' startLine = '49' startColumn = '6' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;&#9;'/>
+                        <XML.Element xmi.id = 'a81' startLine = '49' startColumn = '19' endLine = '51'
+                          endColumn = '20' name = 'xs:sequence'>
+                          <XML.Element.children>
+                            <XML.Text xmi.id = 'a82' startLine = '50' startColumn = '7' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;&#9;&#9;'/>
+                            <XML.Element xmi.id = 'a83' startLine = '50' startColumn = '73' endLine = '50'
+                              endColumn = '73' name = 'xs:element'>
+                              <XML.Element.children>
+                                <XML.Attribute xmi.id = 'a84' name = 'name' value = 'ex:InvalidDataError.message'/>
+                                <XML.Attribute xmi.id = 'a85' name = 'type' value = 'xs:string'/>
+                              </XML.Element.children>
+                            </XML.Element>
+                            <XML.Text xmi.id = 'a86' startLine = '51' startColumn = '6' name = '#text'
+                              value = '&#10;&#9;&#9;&#9;&#9;&#9;'/>
+                          </XML.Element.children>
+                        </XML.Element>
+                        <XML.Text xmi.id = 'a87' startLine = '52' startColumn = '5' name = '#text'
+                          value = '&#10;&#9;&#9;&#9;&#9;'/>
+                      </XML.Element.children>
+                    </XML.Element>
+                    <XML.Text xmi.id = 'a88' startLine = '52' startColumn = '23' name = '#text'
+                      value = '&#9;'/>
+                    <XML.Text xmi.id = 'a89' startLine = '53' startColumn = '4' name = '#text'
+                      value = '&#10;&#9;&#9;&#9;'/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a90' startLine = '55' startColumn = '3' name = '#text'
+                  value = '&#10;&#10;&#9;&#9;'/>
+              </XML.Element.children>
+            </XML.Element>
+            <XML.Text xmi.id = 'a91' startLine = '56' startColumn = '2' name = '#text'
+              value = '&#10;&#9;'/>
+          </XML.Element.children>
+        </XML.Element>
+        <XML.Text xmi.id = 'a92' startLine = '58' startColumn = '2' name = '#text'
+          value = '&#10;&#10;&#9;'/>
+        <XML.Element xmi.id = 'a93' startLine = '58' startColumn = '45' endLine = '69'
+          endColumn = '14' name = 'interface'>
+          <XML.Element.children>
+            <XML.Attribute xmi.id = 'a94' name = 'name' value = 'tns:reservationInterface'/>
+            <XML.Text xmi.id = 'a95' startLine = '60' startColumn = '3' name = '#text'
+              value = '&#10;&#10;&#9;&#9;'/>
+            <XML.Element xmi.id = 'a96' startLine = '60' startColumn = '70' endLine = '60'
+              endColumn = '70' name = 'fault'>
+              <XML.Element.children>
+                <XML.Attribute xmi.id = 'a97' name = 'name' value = 'tns:InvalidDataFault'/>
+                <XML.Attribute xmi.id = 'a98' name = 'element' value = 'ex:InvalidDataError'/>
+              </XML.Element.children>
+            </XML.Element>
+            <XML.Text xmi.id = 'a99' startLine = '62' startColumn = '3' name = '#text'
+              value = '&#10;&#10;&#9;&#9;'/>
+            <XML.Element xmi.id = 'a100' startLine = '63' startColumn = '52' endLine = '68'
+              endColumn = '15' name = 'operation'>
+              <XML.Element.children>
+                <XML.Attribute xmi.id = 'a101' name = 'name' value = 'tns:checkAvailability'/>
+                <XML.Attribute xmi.id = 'a102' name = 'pattern' value = 'http://www.w3.org/2006/01/wsdl/in-out'/>
+                <XML.Text xmi.id = 'a103' startLine = '64' startColumn = '4' name = '#text'
+                  value = '&#10;&#9;&#9;&#9;'/>
+                <XML.Element xmi.id = 'a104' startLine = '64' startColumn = '62' endLine = '64'
+                  endColumn = '62' name = 'input'>
+                  <XML.Element.children>
+                    <XML.Attribute xmi.id = 'a105' name = 'messageLabel' value = 'In'/>
+                    <XML.Attribute xmi.id = 'a106' name = 'element' value = 'ex:CheckAvailability'/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a107' startLine = '65' startColumn = '4' name = '#text'
+                  value = '&#10;&#9;&#9;&#9;'/>
+                <XML.Element xmi.id = 'a108' startLine = '66' startColumn = '46' endLine = '66'
+                  endColumn = '46' name = 'output'>
+                  <XML.Element.children>
+                    <XML.Attribute xmi.id = 'a109' name = 'messageLabel' value = 'Out'/>
+                    <XML.Attribute xmi.id = 'a110' name = 'element' value = 'ex:CheckAvailabilityResponse'/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a111' startLine = '67' startColumn = '4' name = '#text'
+                  value = '&#10;&#9;&#9;&#9;'/>
+                <XML.Element xmi.id = 'a112' startLine = '67' startColumn = '62' endLine = '67'
+                  endColumn = '62' name = 'outfault'>
+                  <XML.Element.children>
+                    <XML.Attribute xmi.id = 'a113' name = 'ref' value = 'tns:InvalidDataFault'/>
+                    <XML.Attribute xmi.id = 'a114' name = 'messageLabel' value = 'Out'/>
+                  </XML.Element.children>
+                </XML.Element>
+                <XML.Text xmi.id = 'a115' startLine = '68' startColumn = '3' name = '#text'
+                  value = '&#10;&#9;&#9;'/>
+              </XML.Element.children>
+            </XML.Element>
+            <XML.Text xmi.id = 'a116' startLine = '69' startColumn = '2' name = '#text'
+              value = '&#10;&#9;'/>
+          </XML.Element.children>
+        </XML.Element>
+        <XML.Text xmi.id = 'a117' startLine = '71' startColumn = '2' name = '#text'
+          value = '&#10;&#10;&#9;'/>
+        <XML.Element xmi.id = 'a118' startLine = '74' startColumn = '65' endLine = '81'
+          endColumn = '12' name = 'binding'>
+          <XML.Element.children>
+            <XML.Attribute xmi.id = 'a119' name = 'name' value = 'tns:reservationSOAPBinding'/>
+            <XML.Attribute xmi.id = 'a120' name = 'interface' value = 'tns:reservationInterface'/>
+            <XML.Attribute xmi.id = 'a121' name = 'type' value = 'http://www.w3.org/2006/01/wsdl/soap'/>
+            <XML.Attribute xmi.id = 'a122' name = 'wsoap:protocol' value = 'http://www.w3.org/2003/05/soap/bindings/HTTP'/>
+            <XML.Text xmi.id = 'a123' startLine = '76' startColumn = '3' name = '#text'
+              value = '&#10;&#10;&#9;&#9;'/>
+            <XML.Element xmi.id = 'a124' startLine = '77' startColumn = '70' endLine = '77'
+              endColumn = '70' name = 'operation'>
+              <XML.Element.children>
+                <XML.Attribute xmi.id = 'a125' name = 'ref' value = 'tns:checkAvailability'/>
+                <XML.Attribute xmi.id = 'a126' name = 'wsoap:mep' value = 'http://www.w3.org/2003/05/soap/mep/request-response'/>
+              </XML.Element.children>
+            </XML.Element>
+            <XML.Text xmi.id = 'a127' startLine = '79' startColumn = '3' name = '#text'
+              value = '&#10;&#10;&#9;&#9;'/>
+            <XML.Element xmi.id = 'a128' startLine = '79' startColumn = '64' endLine = '79'
+              endColumn = '64' name = 'fault'>
+              <XML.Element.children>
+                <XML.Attribute xmi.id = 'a129' name = 'ref' value = 'tns:InvalidDataFault'/>
+                <XML.Attribute xmi.id = 'a130' name = 'wsoap:code' value = 'soap:Sender'/>
+              </XML.Element.children>
+            </XML.Element>
+            <XML.Text xmi.id = 'a131' startLine = '81' startColumn = '2' name = '#text'
+              value = '&#10;&#10;&#9;'/>
+          </XML.Element.children>
+        </XML.Element>
+        <XML.Text xmi.id = 'a132' startLine = '83' startColumn = '2' name = '#text'
+          value = '&#10;&#10;&#9;'/>
+        <XML.Element xmi.id = 'a133' startLine = '84' startColumn = '40' endLine = '90'
+          endColumn = '12' name = 'service'>
+          <XML.Element.children>
+            <XML.Attribute xmi.id = 'a134' name = 'name' value = 'tns:reservationService'/>
+            <XML.Attribute xmi.id = 'a135' name = 'interface' value = 'tns:reservationInterface'/>
+            <XML.Text xmi.id = 'a136' startLine = '86' startColumn = '3' name = '#text'
+              value = '&#10;&#10;&#9;&#9;'/>
+            <XML.Element xmi.id = 'a137' startLine = '88' startColumn = '46' endLine = '88'
+              endColumn = '46' name = 'endpoint'>
+              <XML.Element.children>
+                <XML.Attribute xmi.id = 'a138' name = 'name' value = 'tns:reservationEndpoint'/>
+                <XML.Attribute xmi.id = 'a139' name = 'binding' value = 'tns:reservationSOAPBinding'/>
+                <XML.Attribute xmi.id = 'a140' name = 'address' value = 'http://www.bookingservice.com'/>
+              </XML.Element.children>
+            </XML.Element>
+            <XML.Text xmi.id = 'a141' startLine = '90' startColumn = '2' name = '#text'
+              value = '&#10;&#10;&#9;'/>
+          </XML.Element.children>
+        </XML.Element>
+        <XML.Text xmi.id = 'a142' startLine = '92' startColumn = '1' name = '#text'
+          value = '&#10;&#10;'/>
+      </XML.Element.children>
+    </XML.Root>
+  </XMI.content>
+</XMI>

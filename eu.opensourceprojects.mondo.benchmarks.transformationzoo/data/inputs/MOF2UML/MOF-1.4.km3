@@ -1,0 +1,240 @@
+package CorbaIdlTypes {
+
+	datatype CorbaOctet;
+
+	datatype CorbaShort;
+
+	datatype CorbaUnsignedShort;
+
+	datatype CorbaUnsignedLong;
+
+	datatype CorbaUnsignedLongLong;
+
+	datatype CorbaLongDouble;
+
+	datatype CorbaString;
+
+	datatype CorbaChar;
+
+	datatype CorbaWChar;
+
+}
+
+package Model {
+	abstract class ModelElement {
+		reference "container"[0-1] : Namespace oppositeOf contents;
+		reference constraints[*] : Constraint oppositeOf constrainedElements;
+		reference requiredElements[*] : ModelElement;
+		attribute name : String;
+		attribute qualifiedName[1-*] ordered : String;
+		attribute annotation : String;
+		operation findRequiredElements(kinds : String, recursive : Boolean) : ModelElement;
+		operation isRequiredBecause(otherElement : ModelElement, reason : String) : Boolean;
+		operation isFrozen() : Boolean;
+		operation isVisible(otherElement : ModelElement) : Boolean;
+	}
+
+	enumeration VisibilityKind {
+		literal public_vis;
+		literal protected_vis;
+		literal private_vis;
+	}
+
+	abstract class Namespace extends ModelElement {
+		reference contents[*] ordered container : ModelElement oppositeOf "container";
+		operation lookupElement(name : String) : ModelElement;
+		operation resolveQualifiedName(qualifiedName : String) : ModelElement;
+		operation findElementsByType(ofType : Class, includeSubtypes : Boolean) : ModelElement;
+		operation nameIsValid(proposedName : String) : Boolean;
+	}
+
+	abstract class GeneralizableElement extends Namespace {
+		reference supertypes[*] ordered : GeneralizableElement;
+		attribute isRoot : Boolean;
+		attribute isLeaf : Boolean;
+		attribute isAbstract : Boolean;
+		attribute visibility : VisibilityKind;
+		operation allSupertypes() : GeneralizableElement;
+		operation lookupElementExtended(name : String) : ModelElement;
+		operation findElementsByTypeExtended(ofType : Class, includeSubtypes : Boolean) : ModelElement;
+	}
+
+	abstract class TypedElement extends ModelElement {
+		reference type : Classifier;
+		
+	}
+
+	abstract class Classifier extends GeneralizableElement {
+		
+	}
+
+	class Class extends Classifier {
+		attribute isSingleton : Boolean;
+		
+	}
+
+	class MultiplicityType {
+		attribute lower : Integer;
+		attribute upper : Integer;
+		attribute isOrdered : Boolean;
+		attribute isUnique : Boolean;
+		
+	}
+
+	abstract class DataType extends Classifier {
+		
+	}
+
+	class PrimitiveType extends DataType {
+		
+	}
+
+	class EnumerationType extends DataType {
+		attribute labels[1-*] ordered : String;
+		
+	}
+
+	class CollectionType extends DataType, TypedElement {
+		attribute multiplicity : MultiplicityType;
+		
+	}
+
+	class StructureType extends DataType {
+		
+	}
+
+	class StructureField extends TypedElement {
+		
+	}
+
+	class AliasType extends DataType, TypedElement {
+		
+	}
+
+	enumeration ScopeKind {
+		literal instance_level;
+		literal classifier_level;
+	}
+
+	abstract class Feature extends ModelElement {
+		attribute scope : ScopeKind;
+		attribute visibility : VisibilityKind;
+		
+	}
+
+	abstract class StructuralFeature extends Feature, TypedElement {
+		attribute multiplicity : MultiplicityType;
+		attribute isChangeable : Boolean;
+		
+	}
+
+	class Attribute extends StructuralFeature {
+		attribute isDerived : Boolean;
+		
+	}
+
+	class Reference extends StructuralFeature {
+		reference exposedEnd : AssociationEnd;
+		reference referencedEnd : AssociationEnd;
+		
+	}
+
+	abstract class BehavioralFeature extends Feature, Namespace {
+		
+	}
+
+	class Operation extends BehavioralFeature {
+		reference exceptions[*] ordered : Exception;
+		attribute isQuery : Boolean;
+		
+	}
+
+	class Exception extends BehavioralFeature {
+		
+	}
+
+	class Association extends Classifier {
+		attribute isDerived : Boolean;
+		
+	}
+
+	enumeration AggregationKind {
+		literal none;
+		literal shared;
+		literal composite;
+	}
+
+	class AssociationEnd extends TypedElement {
+		attribute isNavigable : Boolean;
+		attribute aggregation : AggregationKind;
+		attribute multiplicity : MultiplicityType;
+		attribute isChangeable : Boolean;
+		operation otherEnd() : AssociationEnd;
+	}
+
+	class Package extends GeneralizableElement {
+		
+	}
+
+	class Import extends ModelElement {
+		reference importedNamespace : Namespace;
+		attribute visibility : VisibilityKind;
+		attribute isClustered : Boolean;
+		
+	}
+
+	enumeration DirectionKind {
+		literal in_dir;
+		literal out_dir;
+		literal inout_dir;
+		literal return_dir;
+	}
+
+	class Parameter extends TypedElement {
+		attribute direction : DirectionKind;
+		attribute multiplicity : MultiplicityType;
+		
+	}
+
+	class Constraint extends ModelElement {
+		reference constrainedElements[1-*] : ModelElement oppositeOf constraints;
+		attribute expression : String;
+		attribute language : String;
+		attribute evaluationPolicy : EvaluationKind;
+		
+	}
+
+	enumeration EvaluationKind {
+		literal immediate;
+		literal deferred;
+	}
+
+	class Constant extends TypedElement {
+		attribute value : String;
+		
+	}
+
+	class Tag extends ModelElement {
+		reference elements[1-*] : ModelElement;
+		attribute tagId : String;
+		attribute values[*] ordered : String;
+		
+	}
+
+}
+
+package PrimitiveTypes {
+
+	datatype Boolean;
+
+	datatype Integer;
+
+	datatype Long;
+
+	datatype Float;
+
+	datatype Double;
+
+	datatype String;
+
+}
