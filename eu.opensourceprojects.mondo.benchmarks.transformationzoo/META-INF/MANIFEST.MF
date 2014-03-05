@@ -27,6 +27,7 @@ Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Import-Package: com.google.common.base,
  com.google.common.collect,
+ org.apache.commons.io,
  org.eclipse.emf.compare.diff.metamodel,
  org.eclipse.emf.compare.diff.service,
  org.eclipse.emf.compare.match.metamodel,

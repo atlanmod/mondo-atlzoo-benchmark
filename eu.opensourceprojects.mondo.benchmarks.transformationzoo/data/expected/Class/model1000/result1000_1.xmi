@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:class="Class">
+  <class:Class name="onnaladiand">
+    <attr name="shellancutterdettesan" type="/14"/>
+  </class:Class>
+  <class:Class name="tarrelisionflisolverain" isAbstract="true">
+    <attr name="sioventerryeablee" type="/16"/>
+    <attr name="slexantip" multiValued="true" type="/8"/>
+    <attr name="steri" multiValued="true" type="/1"/>
+    <attr name="ionalvervolkanglascehra" type="/13"/>
+  </class:Class>
+  <class:Class name="waledemot">
+    <attr name="psyromadeglast" type="/6"/>
+    <attr name="eroustracurtit" multiValued="true" type="/10"/>
+    <attr name="tutictusheabbid" type="/17"/>
+    <attr name="warcemisikovesce" type="/12"/>
+  </class:Class>
+  <class:Class name="fooncargleyestallater">
+    <attr name="trackskincandletter" multiValued="true" type="/13"/>
+    <attr name="imin" type="/17"/>
+  </class:Class>
+  <class:Class name="anesanankest" isAbstract="true">
+    <attr name="ynasewynt" type="/5"/>
+    <attr name="outyst" type="/16"/>
+    <attr name="dompticklasc" multiValued="true" type="/17"/>
+    <attr name="teataresiflagelenic" multiValued="true" type="/12"/>
+    <attr name="llmdeafflous" multiValued="true" type="/0"/>
+    <attr name="pre" multiValued="true" type="/7"/>
+  </class:Class>
+  <class:Class name="scheercem">
+    <attr name="rog" multiValued="true" type="/6"/>
+    <attr name="inati" type="/3"/>
+    <attr name="eockmandiontableavi" type="/3"/>
+    <attr name="ablaskedightopollev" type="/12"/>
+    <attr name="ent" multiValued="true" type="/10"/>
+    <attr name="legarmorespilagerateetti" type="/12"/>
+    <attr name="pho" type="/10"/>
+  </class:Class>
+  <class:Class name="sio" isAbstract="true">
+    <attr name="spheareadwayalyseuserev" multiValued="true" type="/15"/>
+    <attr name="ndionextialint" multiValued="true" type="/1"/>
+  </class:Class>
+  <class:Class name="quilarliantiondstetr">
+    <attr name="pateracreetardbur" multiValued="true" type="/3"/>
+    <attr name="ress" type="/10"/>
+    <attr name="orestehokessiv" multiValued="true" type="/14"/>
+    <attr name="eflas" multiValued="true" type="/15"/>
+    <attr name="grudiablend" type="/9"/>
+    <attr name="awnsc" type="/2"/>
+    <attr name="anga" multiValued="true" type="/16"/>
+  </class:Class>
+  <class:Class name="und"/>
+  <class:DataType name="sagmentino"/>
+  <class:DataType name="iabla"/>
+  <class:DataType name="kdatelh"/>
+  <class:DataType name="ockiniscong"/>
+  <class:DataType name="mackowbonanderboarberi"/>
+  <class:DataType name="rheedystersemightersk"/>
+  <class:DataType name="glinyatoerremari"/>
+  <class:DataType name="mplermhe"/>
+  <class:DataType name="buchushergyr"/>
+</xmi:XMI>

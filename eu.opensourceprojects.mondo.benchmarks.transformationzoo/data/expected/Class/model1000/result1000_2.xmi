@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:class="Class">
+  <class:Class name="onnaladiandrendiattsephe" isAbstract="true">
+    <attr name="undravantmangstiling" type="/4"/>
+    <attr name="slinduckbertzelle" multiValued="true" type="/7"/>
+    <attr name="notouncardestantipsomea" type="/10"/>
+    <attr name="heluorwoo" type="/0"/>
+    <attr name="licanglascehrawald" multiValued="true" type="/0"/>
+  </class:Class>
+  <class:Class name="hemotouseache" isAbstract="true">
+    <attr name="oalasteroviacurti" multiValued="true" type="/14"/>
+    <attr name="tedumbutt" type="/15"/>
+    <attr name="iounabbidwaillon" multiValued="true" type="/9"/>
+    <attr name="hantretalf" type="/5"/>
+    <attr name="perablesoyclochn" type="/15"/>
+    <attr name="adis" multiValued="true" type="/7"/>
+  </class:Class>
+  <class:Class name="fertuanthemablermiterina" isAbstract="true">
+    <attr name="ngranankestypetyrro" multiValued="true" type="/6"/>
+    <attr name="wsousestegoodoctuaresi" multiValued="true" type="/7"/>
+    <attr name="examain" type="/3"/>
+    <attr name="cheenici" type="/6"/>
+    <attr name="horkaketortmondrac" type="/1"/>
+    <attr name="eteripperperginewaco" type="/4"/>
+  </class:Class>
+  <class:Class name="fleaviab" isAbstract="true">
+    <attr name="oureeconetrineso" multiValued="true" type="/16"/>
+    <attr name="theinarmorespilagera" multiValued="true" type="/4"/>
+    <attr name="theldworruseareadwa" type="/14"/>
+    <attr name="uanal" multiValued="true" type="/7"/>
+    <attr name="yaquatomolypolext" multiValued="true" type="/15"/>
+    <attr name="ionalintonarliantion" multiValued="true" type="/13"/>
+    <attr name="ebuttetroll" type="/8"/>
+  </class:Class>
+  <class:Class name="asebreetardburrinit" isAbstract="true">
+    <attr name="erterc" multiValued="true" type="/3"/>
+    <attr name="gatineyear" multiValued="true" type="/15"/>
+    <attr name="grudiablend" type="/6"/>
+    <attr name="awnscabstornsonsisalobd" multiValued="true" type="/5"/>
+  </class:Class>
+  <class:Class name="hin" isAbstract="true">
+    <attr name="ockiniscongl" multiValued="true" type="/1"/>
+    <attr name="minj" multiValued="true" type="/8"/>
+    <attr name="ticasnander" multiValued="true" type="/11"/>
+    <attr name="cceperahonseez" multiValued="true" type="/11"/>
+    <attr name="runsersemi" multiValued="true" type="/11"/>
+  </class:Class>
+  <class:Class name="eptinevionizartapperanin">
+    <attr name="opor" multiValued="true" type="/6"/>
+    <attr name="mablecityphomptongodu" multiValued="true" type="/2"/>
+    <attr name="olamaus" multiValued="true" type="/4"/>
+  </class:Class>
+  <class:Class name="ownymet">
+    <attr name="weat" type="/12"/>
+    <attr name="pertgavalurpri" multiValued="true" type="/4"/>
+    <attr name="aireuthourdarventranalcr" multiValued="true" type="/0"/>
+    <attr name="isminker" type="/10"/>
+    <attr name="aticelm" multiValued="true" type="/1"/>
+    <attr name="rasaleyetroffiagnaoradv" type="/7"/>
+    <attr name="ystranuctick" type="/4"/>
+    <attr name="nstonellipotax" multiValued="true" type="/16"/>
+    <attr name="ionlakenneinetoligr" multiValued="true" type="/11"/>
+  </class:Class>
+  <class:Class name="nablobiredown" isAbstract="true">
+    <attr name="terlyweetnanc" type="/6"/>
+    <attr name="ytedlationooftchontia" multiValued="true" type="/4"/>
+    <attr name="smentestercu" type="/1"/>
+    <attr name="naerelastor" multiValued="true" type="/2"/>
+    <attr name="stingerumhessappri" type="/16"/>
+    <attr name="ertuaterfunt" multiValued="true" type="/3"/>
+  </class:Class>
+  <class:DataType name="and"/>
+  <class:DataType name="niquelannalbrage"/>
+  <class:DataType name="fevethantunan"/>
+  <class:DataType name="rotapy"/>
+  <class:DataType name="crevallishatb"/>
+  <class:DataType name="onimondleto"/>
+  <class:DataType name="parbleguenalangimbitta"/>
+  <class:DataType name="dho"/>
+</xmi:XMI>
