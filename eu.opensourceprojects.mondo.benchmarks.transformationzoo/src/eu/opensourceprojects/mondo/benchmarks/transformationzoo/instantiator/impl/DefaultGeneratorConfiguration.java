@@ -209,18 +209,26 @@ public  class DefaultGeneratorConfiguration implements ISpecimenConfiguration {
 	
 	@Override
 	public IntegerDistribution getRootDistributionFor(EClass rootEClass) {
-		// In case the metamodel has one possible root Metaclass, it is rather better to return a distributon
-		// that 
+		// In case the metamodel has one possible root Metaclass, it is rather better to return a distributon 
 		 IntegerDistribution x = new UniformIntegerDistribution(numberOfProperties-1, numberOfProperties);	 
 			 x.reseedRandomGenerator(random.nextLong());		 
 		 return x;
 	}
-
+	/*
+	 * @see eu.opensourceprojects.mondo.benchmarks.transformationzoo.instantiator.ISpecimenConfiguration#getResourceSizeDistribution(org.eclipse.emf.ecore.EClass)
+	 */
 	@Override
 	public IntegerDistribution getResourceSizeDistribution(EClass eClass) {
-		// return new UniformIntegerDistribution(MAX_CLASSES, MAX_CLASSES);
-		 IntegerDistribution x = new UniformIntegerDistribution(numberOfElements-1, numberOfElements);		 
-			 x.reseedRandomGenerator(random.nextLong());
+		 String className = eClass.getName();
+		 IntegerDistribution x = null;
+         if (className.equals("String") || className.equals("Integer") || className.equals("Boolean") ){
+        	 x= new UniformIntegerDistribution(numberOfElements, numberOfElements);
+         }
+         else  { 
+        	 x = new UniformIntegerDistribution(numberOfElements-1, numberOfElements);		 
+         }
+	     
+		 x.reseedRandomGenerator(random.nextLong());
 		 
 		 return x;
 	}

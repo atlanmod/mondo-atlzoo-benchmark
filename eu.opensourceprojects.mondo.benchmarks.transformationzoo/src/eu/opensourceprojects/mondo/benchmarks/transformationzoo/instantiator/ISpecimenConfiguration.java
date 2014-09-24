@@ -61,6 +61,9 @@ public interface ISpecimenConfiguration {
 	 * Note that the real distribution may be shifted up in some
 	 * SpecimenGenerator.
 	 * 
+	 * you might also treat some particular cases where you want to limit
+	 * number of classes to a specific amount
+	 * 
 	 * @param eClass
 	 *            an EClass from the {@link #possibleRootEClasses()}
 	 * @return the distribution

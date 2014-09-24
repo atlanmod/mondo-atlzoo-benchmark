@@ -25,6 +25,11 @@ import eu.opensourceprojects.mondo.benchmarks.transformationzoo.instantiator.tes
 public class testModelGenerationDeterminism extends testModelGeneration {
 
 	
+public testModelGenerationDeterminism(URI uri, int seed) {
+		super(uri, seed);
+		// TODO Auto-generated constructor stub
+	}
+
 private static DefaultModelGenerator modelGen;
 	
 	private static URI modelURI = URI.createFileURI("./data/inputs/models/Class.ecore");
@@ -34,7 +39,7 @@ private static DefaultModelGenerator modelGen;
 	private static Path samplesPath;
 	
 	@BeforeClass
-	public static void setupEnvironment() {
+	public  void setupEnvironment() {
 		try {
 			samplesPath = Files.createTempDirectory("samples");
 		

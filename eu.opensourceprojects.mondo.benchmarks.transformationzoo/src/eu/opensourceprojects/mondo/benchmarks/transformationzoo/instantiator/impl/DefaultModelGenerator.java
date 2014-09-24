@@ -27,17 +27,19 @@ public class DefaultModelGenerator {
 	
 	static String modelExtension;
 	
-	protected int[] modelsSize = {1000, 10000, 100000}; // this size includes model objects and properties
+//	protected int[] modelsSize = {1000, 10000, 100000}; // this size includes model objects and properties
+//	
+//	protected int[] setSize = {3,3,3}; // the number of generated models per model' size
+protected int[] modelsSize = {1000}; // this size includes model objects and properties
 	
-	protected int[] setSize = {3,3,3}; // the number of generated models per model' size
-	
+	protected int[] setSize = {3}; // the number of generated models per model' size
 	protected URI MMURI;
 	
 	protected Path samplesPath;
 	
 	protected long seed = 0L;
 	
-	protected String rootElement ;//= "NamedElt"
+	protected String rootElement ;// 
 	
 	
 	public int[] getModelsSize() {
@@ -103,7 +105,7 @@ public class DefaultModelGenerator {
 		if (rootElement != null) {
 			  result = rootElement;
 		 } else if (MMURI == null) {
-			 throw new GenerationException("Cannot find Root Element, Metamodel URI is null, please set it up before proceeding to compute the root elements");
+			 throw new GenerationException("Cannot find Root Element: Metamodel URI is null, please set it up before proceeding to compute the root elements");
 		 } else {
 			 result = computeRootElement();
 		 }
@@ -165,7 +167,6 @@ public class DefaultModelGenerator {
 		}
 		return result;
 	}
-
 	
 	public URI getMMURI() {
 		return MMURI;
