@@ -5,7 +5,7 @@
     <eClassifiers xsi:type="ecore:EDataType" name="String" instanceClassName="java.lang.String"/>
     <eClassifiers xsi:type="ecore:EDataType" name="Integer" instanceClassName="java.lang.Integer"/>
   </ecore:EPackage>
-  <ecore:EPackage name="BibTeX">
+  <ecore:EPackage name="BibTeX" nsURI="http://bibtex/1.0" nsPrefix="bibtex">
     <eClassifiers xsi:type="ecore:EClass" name="BibTeXFile">
       <eStructuralFeatures xsi:type="ecore:EReference" name="entries" ordered="false"
           upperBound="-1" eType="#/1/BibTeXEntry" containment="true"/>

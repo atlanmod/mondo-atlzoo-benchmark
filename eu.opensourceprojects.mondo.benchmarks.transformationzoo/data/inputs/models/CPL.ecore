@@ -6,7 +6,7 @@
     <eClassifiers xsi:type="ecore:EDataType" name="Integer" instanceClassName="java.lang.Integer"/>
     <eClassifiers xsi:type="ecore:EDataType" name="String" instanceClassName="java.lang.String"/>
   </ecore:EPackage>
-  <ecore:EPackage name="CPL">
+  <ecore:EPackage name="CPL" nsURI="http://cpl/1.0" nsPrefix="cpl">
     <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true"/>
     <eClassifiers xsi:type="ecore:EClass" name="CPL" eSuperTypes="#/1/Element">
       <eStructuralFeatures xsi:type="ecore:EReference" name="subActions" upperBound="-1"

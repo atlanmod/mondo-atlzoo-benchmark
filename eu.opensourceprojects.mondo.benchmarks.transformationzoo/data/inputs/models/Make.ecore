@@ -6,7 +6,7 @@
     <eClassifiers xsi:type="ecore:EDataType" name="Date" instanceClassName="java.lang.Date"/>
     <eClassifiers xsi:type="ecore:EDataType" name="Boolean" instanceClassName="boolean"/>
   </ecore:EPackage>
-  <ecore:EPackage name="Make">
+  <ecore:EPackage name="Make" nsURI="http://make/1.0" nsPrefix="make">
     <eClassifiers xsi:type="ecore:EClass" name="Makefile">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
           lowerBound="1" eType="#/0/String"/>

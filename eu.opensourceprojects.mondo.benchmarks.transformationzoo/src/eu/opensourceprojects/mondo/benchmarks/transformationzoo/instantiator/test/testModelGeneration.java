@@ -18,8 +18,8 @@ public class testModelGeneration  {
 	@Parameterized.Parameters 
 	public static Collection<Object[]> data() {
  		return Arrays.asList(new Object[][] { 
- 												{ URI.createFileURI("./data/inputs/models/Class.ecore"), 1000 }, 
- 												{ URI.createFileURI("./data/inputs/models/Ant.ecore"), 1250 }, 
+ 												{ URI.createFileURI("./data/inputs/models/Class.ecore"), 1250 }, 
+ 												{ URI.createFileURI("./data/inputs/models/Ant.ecore"), 1000 }, 
  												{ URI.createFileURI("./data/inputs/models/BibTex.ecore"), 1100}, 
  												{ URI.createFileURI("./data/inputs/models/CPL.ecore"), 1200}, 
  												{ URI.createFileURI("./data/inputs/models/DSLModel.ecore"), 1300} 
