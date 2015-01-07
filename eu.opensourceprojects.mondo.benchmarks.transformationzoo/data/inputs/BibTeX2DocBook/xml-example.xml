@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<bibtex:file>
+
+<bibtex:entry id="a">
+	<bibtex:phdthesis>
+		<bibtex:author>Touzet, D.</bibtex:author>
+		<bibtex:title>Interrogation continue des Systèmes d'Information de Proximité</bibtex:title>
+		<bibtex:year>2004</bibtex:year>
+		<bibtex:school>IFSIC</bibtex:school>
+	</bibtex:phdthesis>
+</bibtex:entry>
+
+<bibtex:entry id="b">
+	<bibtex:masterthesis>
+		<bibtex:author>Belangour, A.</bibtex:author>
+		<bibtex:title>Etude des Design Patterns et de leur impact sur la réutilisabilité</bibtex:title>
+		<bibtex:year>2000</bibtex:year>
+		<bibtex:school>ENSIAS</bibtex:school>
+	</bibtex:masterthesis>
+</bibtex:entry>
+
+<bibtex:entry id="c">
+	<bibtex:article>
+		<bibtex:author>Bézivin, J.</bibtex:author>
+		<bibtex:author>Fondement, F.</bibtex:author>
+		<bibtex:author>Muller, P.</bibtex:author>
+		<bibtex:author>Studer, P.</bibtex:author>
+		<bibtex:title>Platform independent Web Application Modeling and Development with Netsilon</bibtex:title>
+		<bibtex:year>2005</bibtex:year>
+		<bibtex:journal>Journal on Software and Systems Modeling</bibtex:journal>
+	</bibtex:article>
+</bibtex:entry>
+
+<bibtex:entry id="d">
+	<bibtex:techreport>
+		<bibtex:author>Bézivin, J.</bibtex:author>
+		<bibtex:author>Jouault, F.</bibtex:author>
+		<bibtex:author>Valduriez, P.</bibtex:author>
+		<bibtex:title>An Eclipse-based IDE for the ATL model transformation language</bibtex:title>
+		<bibtex:year>2004</bibtex:year>
+	</bibtex:techreport>
+</bibtex:entry>
+
+<bibtex:entry id="e">
+	<bibtex:unpublished>
+		<bibtex:author>Bézivin, J.</bibtex:author>
+		<bibtex:author>Jouault, F.</bibtex:author>
+		<bibtex:author>Touzet, D.</bibtex:author>
+		<bibtex:title>Model Engineering: Principles and Definitions</bibtex:title>
+		<bibtex:note>Draft</bibtex:note>
+	</bibtex:unpublished>
+</bibtex:entry>
+
+<bibtex:entry id="f">
+	<bibtex:manual>
+		<bibtex:title>ATL User Manual</bibtex:title>
+	</bibtex:manual>
+</bibtex:entry>
+
+<bibtex:entry id="g">
+	<bibtex:inproceedings>
+		<bibtex:author>Bézivin, J.</bibtex:author>
+		<bibtex:author>Jouault, F.</bibtex:author>
+		<bibtex:author>Valduriez, P.</bibtex:author>
+		<bibtex:title>On the Need for Megamodels</bibtex:title>
+		<bibtex:year>2004</bibtex:year>
+		<bibtex:booktitle>Proceedings of OOPSLA and GPCE Workshop</bibtex:booktitle>
+	</bibtex:inproceedings>
+</bibtex:entry>
+
+<bibtex:entry id="h">
+	<bibtex:incollection>
+		<bibtex:author>Meek, C.</bibtex:author>
+		<bibtex:author>Thiesson, B.</bibtex:author>
+		<bibtex:title>Discriminative Model Selection for Density Models</bibtex:title>
+		<bibtex:year>2003</bibtex:year>
+		<bibtex:booktitle>Proceedings of Ninth International Workshop on Artificial Intelligence and Statistics</bibtex:booktitle>
+		<bibtex:publisher>The Society for Artificial Intelligence and Statistics</bibtex:publisher>
+	</bibtex:incollection>
+</bibtex:entry>
+
+<bibtex:entry id="i">
+	<bibtex:proceedings>
+		<bibtex:title>Proceedings of OOPSLA and GPCE Workshop</bibtex:title>
+		<bibtex:year>2004</bibtex:year>
+	</bibtex:proceedings>
+</bibtex:entry>
+
+<bibtex:entry id="j">
+	<bibtex:booklet>
+		<bibtex:title>Lectures on the Curry-Howard Isomorphism</bibtex:title>
+		<bibtex:year>1998</bibtex:year>
+	</bibtex:booklet>
+</bibtex:entry>
+
+<bibtex:entry id="k">
+	<bibtex:book>
+		<bibtex:author>Budinsky, F.</bibtex:author>
+		<bibtex:author>Steinberg, D.</bibtex:author>
+		<bibtex:author>Merks, E.</bibtex:author>
+		<bibtex:author>Ellersick, R.</bibtex:author>
+		<bibtex:author>Grose, T. J.</bibtex:author>
+		<bibtex:title>eclipse Modeling Framework</bibtex:title>
+		<bibtex:year>2004</bibtex:year>
+		<bibtex:publisher>Addison-Wesley</bibtex:publisher>
+	</bibtex:book>
+</bibtex:entry>
+
+<bibtex:entry id="l">
+	<bibtex:inbook>
+		<bibtex:author>Greenfield, J.</bibtex:author>
+		<bibtex:author>Short, K.</bibtex:author>
+		<bibtex:title>Software Factories</bibtex:title>
+		<bibtex:year>2004</bibtex:year>
+		<bibtex:chapter>1</bibtex:chapter>
+		<bibtex:publisher>Wiley</bibtex:publisher>
+	</bibtex:inbook>
+</bibtex:entry>
+
+<bibtex:entry id="m">
+	<bibtex:misc>
+	</bibtex:misc>
+</bibtex:entry>
+
+<bibtex:entry id="n">
+	<bibtex:article>
+		<bibtex:author>Agrawal, A.</bibtex:author>
+		<bibtex:author>Karsai, G.</bibtex:author>
+		<bibtex:author>Shi, F.</bibtex:author>
+		<bibtex:title>Graph Transformations on Domain-Specific Models</bibtex:title>
+		<bibtex:year>2003</bibtex:year>
+		<bibtex:journal>Journal on Software and Systems Modeling</bibtex:journal>
+	</bibtex:article>
+</bibtex:entry>
+
+<bibtex:entry id="o">
+	<bibtex:article>
+		<bibtex:author>Bézivin, J.</bibtex:author>
+		<bibtex:title>Sur les principes de base de l'ingénierie des modèles</bibtex:title>
+		<bibtex:year>2004</bibtex:year>
+		<bibtex:journal>RSTI-L'Objet</bibtex:journal>
+	</bibtex:article>
+</bibtex:entry>
+
+<bibtex:entry id="p">
+	<bibtex:techreport>
+		<bibtex:author>Bézivin, J.</bibtex:author>
+		<bibtex:author>Jouault, F.</bibtex:author>
+		<bibtex:author>Touzet, D.</bibtex:author>
+		<bibtex:title>An Introduction to the ATLAS Model Management Architecture</bibtex:title>
+		<bibtex:year>2005</bibtex:year>
+	</bibtex:techreport>
+</bibtex:entry>
+
+</bibtex:file>

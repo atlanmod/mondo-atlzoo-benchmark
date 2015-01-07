@@ -1,0 +1,30 @@
+package DocBook {
+
+    class DocBook {
+	reference books [1-*] ordered container: Book;
+    }
+
+    class Book {
+	reference articles [1-*] ordered container: Article;
+    }
+    
+    abstract class TitledElement {
+	attribute title : String;
+    }
+
+    class Article extends TitledElement {
+	reference sections_1 [1-*] ordered container : Sect1; 
+    }
+
+    class Sect1 extends TitledElement {
+	reference paras [1-*] ordered container: Para;
+    }
+    
+    class Para {
+	attribute content : String;
+    }
+}
+
+package PrimitiveTypes {
+	datatype String;
+}

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<docbook>
+  <book>
+    <article>
+      <title>
+BibTeXML to DocBook      </title>
+      <sect1>
+        <title>
+References List        </title>
+        <para>
+[a] PhDThesis Interrogation continue des Syst?mes d'Information de Proximit? Touzet, D. 2004 IFSIC        </para>
+        <para>
+[b] MasterThesis Etude des Design Patterns et de leur impact sur la r?utilisabilit? Belangour, A. 2000 ENSIAS        </para>
+        <para>
+[c] Article Platform independent Web Application Modeling and Development with Netsilon B?zivin, J. Fondement, F. Muller, P. Studer, P. 2005 Journal on Software and Systems Modeling        </para>
+        <para>
+[d] TechReport An Eclipse-based IDE for the ATL model transformation language B?zivin, J. Jouault, F. Valduriez, P. 2004        </para>
+        <para>
+[e] Unpublished Model Engineering: Principles and Definitions B?zivin, J. Jouault, F. Touzet, D. Draft        </para>
+        <para>
+[f] Manual ATL User Manual        </para>
+        <para>
+[g] InProceedings On the Need for Megamodels B?zivin, J. Jouault, F. Valduriez, P. 2004 Proceedings of OOPSLA and GPCE Workshop        </para>
+        <para>
+[h] InCollection Discriminative Model Selection for Density Models Meek, C. Thiesson, B. 2003 Proceedings of Ninth International Workshop on Artificial Intelligence and Statistics The Society for Artificial Intelligence and Statistics        </para>
+        <para>
+[i] Proceedings Proceedings of OOPSLA and GPCE Workshop 2004        </para>
+        <para>
+[j] Booklet 1998        </para>
+        <para>
+[k] Book eclipse Modeling Framework Budinsky, F. Steinberg, D. Merks, E. Ellersick, R. Grose, T. J. 2004 Addison-Wesley        </para>
+        <para>
+[l] InBook Software Factories Greenfield, J. Short, K. 2004 Wiley 1        </para>
+        <para>
+[m] Misc        </para>
+        <para>
+[n] Article Graph Transformations on Domain-Specific Models Agrawal, A. Karsai, G. Shi, F. 2003 Journal on Software and Systems Modeling        </para>
+        <para>
+[o] Article Sur les principes de base de l'ing?nierie des mod?les B?zivin, J. 2004 RSTI-L'Objet        </para>
+        <para>
+[p] TechReport An Introduction to the ATLAS Model Management Architecture B?zivin, J. Jouault, F. Touzet, D. 2005        </para>
+      </sect1>
+      <sect1>
+        <title>
+Authors list        </title>
+        <para>
+Agrawal, A.        </para>
+        <para>
+Belangour, A.        </para>
+        <para>
+Budinsky, F.        </para>
+        <para>
+B?zivin, J.        </para>
+        <para>
+Ellersick, R.        </para>
+        <para>
+Fondement, F.        </para>
+        <para>
+Greenfield, J.        </para>
+        <para>
+Grose, T. J.        </para>
+        <para>
+Jouault, F.        </para>
+        <para>
+Karsai, G.        </para>
+        <para>
+Meek, C.        </para>
+        <para>
+Merks, E.        </para>
+        <para>
+Muller, P.        </para>
+        <para>
+Shi, F.        </para>
+        <para>
+Short, K.        </para>
+        <para>
+Steinberg, D.        </para>
+        <para>
+Studer, P.        </para>
+        <para>
+Thiesson, B.        </para>
+        <para>
+Touzet, D.        </para>
+        <para>
+Valduriez, P.        </para>
+      </sect1>
+      <sect1>
+        <title>
+Titles List        </title>
+        <para>
+ATL User Manual        </para>
+        <para>
+An Eclipse-based IDE for the ATL model transformation language        </para>
+        <para>
+An Introduction to the ATLAS Model Management Architecture        </para>
+        <para>
+Discriminative Model Selection for Density Models        </para>
+        <para>
+Etude des Design Patterns et de leur impact sur la r?utilisabilit?        </para>
+        <para>
+Graph Transformations on Domain-Specific Models        </para>
+        <para>
+Interrogation continue des Syst?mes d'Information de Proximit?        </para>
+        <para>
+Model Engineering: Principles and Definitions        </para>
+        <para>
+On the Need for Megamodels        </para>
+        <para>
+Platform independent Web Application Modeling and Development with Netsilon        </para>
+        <para>
+Proceedings of OOPSLA and GPCE Workshop        </para>
+        <para>
+Software Factories        </para>
+        <para>
+Sur les principes de base de l'ing?nierie des mod?les        </para>
+        <para>
+eclipse Modeling Framework        </para>
+      </sect1>
+      <sect1>
+        <title>
+Journals List        </title>
+        <para>
+Journal on Software and Systems Modeling        </para>
+        <para>
+RSTI-L'Objet        </para>
+      </sect1>
+    </article>
+  </book>
+</docbook>
