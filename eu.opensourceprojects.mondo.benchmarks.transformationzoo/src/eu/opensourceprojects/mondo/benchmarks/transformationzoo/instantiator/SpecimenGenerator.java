@@ -374,6 +374,10 @@ public class SpecimenGenerator {
 	private Object nextObject(Class<?> instanceClass) {
 		if (instanceClass == String.class) {
 			return Gpw.generate(generator.nextInt(24) + 1);
+		} else if (instanceClass == java.util.Date.class) {
+			long dummyTime = generator.nextLong();
+			long generatedTime = dummyTime +2 * 60 * 1000 + generator.nextInt(60*1000) +1 ;
+			return new Date(generatedTime);
 		} else {
 			log("Do not know how to randomly generate " + instanceClass.getName() + " object");
 		}
@@ -413,11 +417,7 @@ public class SpecimenGenerator {
 		} else if (instanceClass == short.class) {
 			short nextShort = (short) generator.nextInt();
 			return nextShort;
-		} else if (instanceClass == Date.class) {
-			long dummyTime = generator.nextLong();
-			long generatedTime = dummyTime +2 * 60 * 1000 + generator.nextInt(60*1000) +1 ;
-			return new Date(generatedTime);
-		}else {
+		} else {
 			throw new IllegalArgumentException();
 		}
 	}
