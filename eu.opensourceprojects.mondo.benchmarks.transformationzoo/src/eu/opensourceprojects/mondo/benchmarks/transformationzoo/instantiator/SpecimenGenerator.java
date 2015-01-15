@@ -10,6 +10,7 @@
  *******************************************************************************/
 package eu.opensourceprojects.mondo.benchmarks.transformationzoo.instantiator;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -39,11 +40,8 @@ import eu.opensourceprojects.mondo.benchmarks.transformationzoo.instantiator.int
 
 
 import static com.google.common.collect.Lists.newArrayList;
-
 import static com.google.common.collect.Maps.newHashMap;
-
 import static com.google.common.collect.Iterables.get;
-
 import static com.google.common.primitives.Primitives.isWrapperType;
 import static com.google.common.primitives.Primitives.unwrap;
 
@@ -138,6 +136,7 @@ public class SpecimenGenerator {
 		return ret;
 	}
 
+	@SuppressWarnings("unused")
 	private void createResource(ResourceSet resourceSet, Map<EClass, Integer> resourcesSize,
 			TreeIterator<EObject> eAllContents, EObject eObject, List<EObject> ret) {
 		TreeIterator<EObject> properContents = EcoreUtil.getAllProperContents(eObject, true);
@@ -176,6 +175,7 @@ public class SpecimenGenerator {
 			EClass eReferenceType = eReference.getEReferenceType();
 			IntegerDistribution distribution = c.getDistributionFor(eReference);
 			if (eReference.isMany()) {
+				@SuppressWarnings("unchecked")
 				List<Object> values = (List<Object>) eObject.eGet(eReference);
 				int sample;
 				do {
@@ -285,6 +285,7 @@ public class SpecimenGenerator {
 			ListMultimap<EClass, EObject> indexByKind, ImmutableMultiset<EClass> eAllConcreteSubTypesOrSelf) {
 		// DONE look if the lowerbound is 1
 		IntegerDistribution distribution = c.getDistributionFor(eReference);
+		@SuppressWarnings("unchecked")
 		List<EObject> values = (List<EObject>) eObject.eGet(eReference);
 		int sample;
 		do {
@@ -344,6 +345,7 @@ public class SpecimenGenerator {
 	private void generateManyAttribute(EObject eObject, EAttribute eAttribute, IntegerDistribution distribution,
 			Class<?> instanceClass) {
 		// DONE look if the lowerbound is 1
+		@SuppressWarnings("unchecked")
 		List<Object> values = (List<Object>) eObject.eGet(eAttribute);
 		int lowerbound;
 		do {
@@ -411,7 +413,11 @@ public class SpecimenGenerator {
 		} else if (instanceClass == short.class) {
 			short nextShort = (short) generator.nextInt();
 			return nextShort;
-		} else {
+		} else if (instanceClass == Date.class) {
+			long dummyTime = generator.nextLong();
+			long generatedTime = dummyTime +2 * 60 * 1000 + generator.nextInt(60*1000) +1 ;
+			return new Date(generatedTime);
+		}else {
 			throw new IllegalArgumentException();
 		}
 	}

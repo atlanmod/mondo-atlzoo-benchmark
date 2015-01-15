@@ -1,6 +1,5 @@
 package eu.opensourceprojects.mondo.benchmarks.transformationzoo.instantiator.internal;
 
-import java.util.Random;
 
 public class GpwSeeded  {
 

@@ -7,7 +7,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
 
-import junit.framework.Assert;
 import junit.framework.AssertionFailedError;
 
 import org.apache.commons.io.FileUtils;
@@ -15,6 +14,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.compare.diff.metamodel.DiffGroup;
 import org.eclipse.emf.compare.diff.metamodel.DiffModel;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -22,17 +22,18 @@ import eu.opensourceprojects.mondo.benchmarks.transformationzoo.instantiator.exc
 import eu.opensourceprojects.mondo.benchmarks.transformationzoo.instantiator.impl.DefaultModelGenerator;
 import eu.opensourceprojects.mondo.benchmarks.transformationzoo.instantiator.test.util.ModelUtils;
 
-public class testModelGenerationDeterminism extends testModelGeneration {
+
+public class TestModelGenerationDeterminism extends TestModelGeneration {
 
 	
-public testModelGenerationDeterminism(URI uri, int seed) {
+public TestModelGenerationDeterminism(URI uri, int seed) {
 		super(uri, seed);
 		// TODO Auto-generated constructor stub
 	}
 
 private static DefaultModelGenerator modelGen;
 	
-	private static URI modelURI = URI.createFileURI("./data/inputs/models/Class.ecore");
+	private static URI modelURI = URI.createFileURI(".\\data\\inputs\\models\\Class.ecore");
 	
 	private static long seed = 1250;
 	

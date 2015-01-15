@@ -11,6 +11,7 @@
 package eu.opensourceprojects.mondo.benchmarks.transformationzoo.unit;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -24,6 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.xml.parsers.ParserConfigurationException;
+
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.compare.diff.metamodel.DiffGroup;
@@ -114,7 +116,8 @@ public abstract class TestNonRegressionTransfo extends TestNonRegression {
 
 				is = atlUrl.openStream();
 				try {
-					AtlCompiler.compile(is, outName);
+					File asmFile = new File(outName);
+					AtlCompiler.compile(is, new FileOutputStream(asmFile));
 				} catch (CompilerNotFoundException e) {
 					fail("Compiler not found", e); //$NON-NLS-1$
 				}

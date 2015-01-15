@@ -28,11 +28,12 @@ public class DefaultModelGenerator {
 	static String modelExtension;
 	
 //	protected int[] modelsSize = {1000, 10000, 100000}; // this size includes model objects and properties
-//	
+
 //	protected int[] setSize = {3,3,3}; // the number of generated models per model' size
 protected int[] modelsSize = {1000}; // this size includes model objects and properties
 	
 	protected int[] setSize = {3}; // the number of generated models per model' size
+	
 	protected URI MMURI;
 	
 	protected Path samplesPath;
@@ -184,6 +185,7 @@ protected int[] modelsSize = {1000}; // this size includes model objects and pro
 		return modelExtension == null ? DEFAULT_MODEL_EXTENSION : modelExtension;
 	}
 	
+	@SuppressWarnings("static-access")
 	public void setModelExtension(String modelExtension) {
 		this.modelExtension = modelExtension;
 	}	
@@ -204,7 +206,7 @@ protected int[] modelsSize = {1000}; // this size includes model objects and pro
 	}
 
 	public void runGeneration() throws GenerationException {
-		int tour = 0;
+		//int tour = 0;
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
 		m.put(META_MODEL_EXTENSION, new EcoreResourceFactoryImpl());

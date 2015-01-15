@@ -40,6 +40,7 @@ public final class FileUtils {
 	 */
 	public static String readFileAsString(File file) throws java.io.IOException {
 		byte[] buffer = new byte[(int) file.length()];
+		@SuppressWarnings("resource")
 		BufferedInputStream f = new BufferedInputStream(new FileInputStream(
 				file));
 		f.read(buffer);

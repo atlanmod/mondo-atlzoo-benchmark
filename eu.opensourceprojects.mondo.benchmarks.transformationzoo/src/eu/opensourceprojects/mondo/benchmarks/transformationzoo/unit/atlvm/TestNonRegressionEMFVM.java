@@ -31,6 +31,7 @@ import eu.opensourceprojects.mondo.benchmarks.transformationzoo.unit.TestNonRegr
  * 
  * @author <a href="mailto:william.piers@obeo.fr">William Piers</a>
  */
+@SuppressWarnings("restriction")
 public class TestNonRegressionEMFVM extends TestNonRegressionTransfo {
 
 	/**

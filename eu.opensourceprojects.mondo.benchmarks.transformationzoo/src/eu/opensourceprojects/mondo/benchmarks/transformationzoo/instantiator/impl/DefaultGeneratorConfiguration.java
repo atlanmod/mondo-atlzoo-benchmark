@@ -1,31 +1,22 @@
 package eu.opensourceprojects.mondo.benchmarks.transformationzoo.instantiator.impl;
 
-import java.io.IOException;
-import java.nio.file.Path;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Map;
 import java.util.Random;
 
 import org.apache.commons.math3.distribution.IntegerDistribution;
 import org.apache.commons.math3.distribution.UniformIntegerDistribution;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-
 import com.google.common.collect.ImmutableSet;
 
 import eu.opensourceprojects.mondo.benchmarks.transformationzoo.instantiator.ISpecimenConfiguration;
-import eu.opensourceprojects.mondo.benchmarks.transformationzoo.instantiator.exceptions.GenerationException;
 
 
 public  class DefaultGeneratorConfiguration implements ISpecimenConfiguration {
