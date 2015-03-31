@@ -26,15 +26,14 @@ import com.google.common.base.Predicate;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
 import static com.google.common.collect.Lists.newArrayList;
-
 import static com.google.common.collect.Iterables.concat;
 import static com.google.common.collect.Iterables.filter;
 import static com.google.common.collect.Iterables.transform;
-
 import static com.google.common.collect.Iterators.concat;
 import static com.google.common.collect.Iterators.filter;
 
@@ -62,7 +61,7 @@ public class EPackagesData {
 			});
 
 	public ImmutableList<EAttribute> eAllAttributes(EClass eClass) {
-		return eAllAttributesCache.getUnchecked(eClass);
+		return ((LoadingCache<EClass, ImmutableList<EAttribute>>) eAllAttributesCache).getUnchecked(eClass);
 	}
 
 	private Cache<EClass, ImmutableList<EReference>> eAllNonContainmentCache = CacheBuilder.newBuilder().build(
@@ -75,7 +74,7 @@ public class EPackagesData {
 			});
 
 	public ImmutableList<EReference> eAllNonContainment(EClass eClass) {
-		return eAllNonContainmentCache.getUnchecked(eClass);
+		return ((LoadingCache<EClass, ImmutableList<EReference>>) eAllNonContainmentCache).getUnchecked(eClass);
 	}
 
 	private Cache<EClass, ImmutableList<EReference>> eAllContainmentCache = CacheBuilder.newBuilder().build(
@@ -88,7 +87,7 @@ public class EPackagesData {
 			});
 
 	public Iterable<EReference> eAllContainment(EClass eClass) {
-		return eAllContainmentCache.getUnchecked(eClass);
+		return ((LoadingCache<EClass, ImmutableList<EReference>>) eAllContainmentCache).getUnchecked(eClass);
 	}
 
 	private Cache<EReference, ImmutableList<EClass>> eAllConcreteSubTypeOrSelfCache = CacheBuilder.newBuilder().build(
@@ -106,7 +105,7 @@ public class EPackagesData {
 			});
 
 	public ImmutableList<EClass> eAllConcreteSubTypeOrSelf(EReference eReference) {
-		return eAllConcreteSubTypeOrSelfCache.getUnchecked(eReference);
+		return ((LoadingCache<EReference, ImmutableList<EClass>>) eAllConcreteSubTypeOrSelfCache).getUnchecked(eReference);
 	}
 
 	private ImmutableList<EClass> eAllSubTypesOrSelf(final EClass eClass) {
