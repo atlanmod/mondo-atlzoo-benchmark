@@ -10,146 +10,111 @@
  *******************************************************************************/
 package fr.obeo.emf.specimen;
 
+import static com.google.common.collect.Iterables.get;
+import static com.google.common.collect.Lists.newArrayList;
+import static com.google.common.primitives.Primitives.isWrapperType;
+import static com.google.common.primitives.Primitives.unwrap;
+
+import java.text.MessageFormat;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.logging.Logger;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.math3.distribution.IntegerDistribution;
 import org.eclipse.emf.common.util.TreeIterator;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import com.google.common.base.Optional;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMultiset;
 import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Iterators;
 import com.google.common.collect.ListMultimap;
 
 import fr.obeo.emf.specimen.internal.EPackagesData;
-import fr.obeo.emf.specimen.internal.Gpw;
-
-import static com.google.common.collect.Lists.newArrayList;
-
-import static com.google.common.collect.Maps.newHashMap;
-
-import static com.google.common.collect.Iterables.get;
-
-import static com.google.common.primitives.Primitives.isWrapperType;
-import static com.google.common.primitives.Primitives.unwrap;
 
 /**
  * @author <a href="mailto:mikael.barbero@obeo.fr">Mikael Barbero</a>
- * 
+ * @author agomez
  */
 public class SpecimenGenerator {
 
+	public final static Logger LOGGER = Logger.getLogger(SpecimenGenerator.class.getName());
+
 	private final Random generator;
-	private final ISpecimenConfiguration c;
+	private final ISpecimenConfiguration configuration;
 	private final EPackagesData ePackagesData;
 
 	/* inner Variable state */
 	private int currentDepth;
 	private int currentMaxDepth;
+	private int currentObjects;
+	private int goalObjects;
 
-	public SpecimenGenerator(ISpecimenConfiguration configuration) {
-		c = configuration;
-		ePackagesData = new EPackagesData(c.ePackages(), c.ignoredEClasses());
-		generator = new Random();
+	public SpecimenGenerator(ISpecimenConfiguration configuration, long seed) {
+		this.configuration = configuration;
+		ePackagesData = new EPackagesData(configuration.ePackages(), configuration.ignoredEClasses());
+		generator = new Random(seed);
 	}
 
-	public List<EObject> generate(ResourceSet resourceSet) {
-		List<EObject> ret = newArrayList();
+	public List<EObject> generate(Resource resource) {
+		List<EObject> generatedEObjects = newArrayList();
 		ListMultimap<EClass, EObject> indexByKind = ArrayListMultimap.create();
+
+		ImmutableSet<EClass> possibleRootEClasses = configuration.possibleRootEClasses();
 
 		currentDepth = 0;
 		currentMaxDepth = 0;
+		currentObjects = 0;
+		goalObjects = configuration.getResourceSizeDistribution().sample();
 
-		for (EClass eClass : c.possibleRootEClasses()) {
-			currentMaxDepth = c.getDepthDistributionFor(eClass).sample();
-			int nbInstance = c.getRootDistributionFor(eClass).sample();
-			for (int i = 0; i < nbInstance; i++) {
-				System.out.println("Generating root " + eClass.getName() + " " + i + "/" + nbInstance);
-				Optional<EObject> generateEObject = generateEObject(eClass, indexByKind);
-				if (generateEObject.isPresent()) {
-					ret.add(generateEObject.get());
-				}
+		while (currentObjects < goalObjects) {
+			EClass eClass = configuration.getNextRootEClass(possibleRootEClasses);
+			currentMaxDepth = configuration.getDepthDistributionFor(eClass).sample();
+			Optional<EObject> generateEObject = generateEObject(eClass, indexByKind);
+			if (generateEObject.isPresent()) {
+				generatedEObjects.add(generateEObject.get());
 			}
 		}
 
-		System.out.println("Generating XRef");
+		LOGGER.info("Generating cross-references");
 
-		for (EObject eObjectRoot : ret) {
+		int totalEObjects = currentObjects;
+		int currentEObject = 0;
+		for (EObject eObjectRoot : generatedEObjects) {
+			currentEObject++;
 			TreeIterator<EObject> eAllContents = eObjectRoot.eAllContents();
 			while (eAllContents.hasNext()) {
+				currentEObject++;
+				LOGGER.fine(MessageFormat.format("Generating cross references {0} / {1}", currentEObject, totalEObjects));
 				EObject eObject = eAllContents.next();
 				generateCrossReferences(eObject, indexByKind);
 			}
 		}
 
-		Map<EClass, Integer> resourcesSize = newHashMap();
-		for (EClass eClass : c.possibleRootEClasses()) {
-			setNextResourceSizeForType(resourcesSize, eClass);
-		}
-
-		System.out.println("Generating resources");
-
-		for (EObject eObjectRoot : ret) {
-			TreeIterator<EObject> eAllContents = eObjectRoot.eAllContents();
-			createResource(resourceSet, resourcesSize, eAllContents, eObjectRoot, ret);
-			while (eAllContents.hasNext()) {
-				EObject eObject = eAllContents.next();
-				createResource(resourceSet, resourcesSize, eAllContents, eObject, ret);
-			}
-		}
-
-		System.out.println("#EObject=" + ImmutableSet.copyOf(indexByKind.values()).size());
-		System.out.println("#Resource=" + resourceSet.getResources().size());
+		LOGGER.info(MessageFormat.format("#EObject={0}", ImmutableSet.copyOf(indexByKind.values()).size()));
 
 		for (Map.Entry<EClass, Collection<EObject>> entry : indexByKind.asMap().entrySet()) {
 			EClass eClass = entry.getKey();
-			System.out.println("#" + eClass.getEPackage().getNsURI() + "::" + entry.getKey().getName() + "="
-					+ entry.getValue().size());
+			LOGGER.info(MessageFormat.format("#{0}::{1}={2}", 
+					eClass.getEPackage().getNsURI(),
+					entry.getKey().getName(),
+					entry.getValue().size()));
 		}
 
-		return ret;
-	}
-
-	private void createResource(ResourceSet resourceSet, Map<EClass, Integer> resourcesSize,
-			TreeIterator<EObject> eAllContents, EObject eObject, List<EObject> ret) {
-		TreeIterator<EObject> properContents = EcoreUtil.getAllProperContents(eObject, true);
-		int allProperContentsSize = Iterators.size(properContents);
-		EClass eClass = eObject.eClass();
-		Integer integer = resourcesSize.get(eClass);
-		if (integer != null && allProperContentsSize <= integer.intValue()) {
-			createResource(resourceSet, eObject);
-			setNextResourceSizeForType(resourcesSize, eClass);
-			eAllContents.prune();
-		} else if (eObject.eContainer() == null) {
-			List<EObject> precedingSibling = ret.subList(0, ret.indexOf(eObject));
-			TreeIterator<Object> allPrecedingSiblingContents = EcoreUtil.getAllProperContents(precedingSibling, true);
-			int allPrecedingSiblingContentsSize = Iterators.size(allPrecedingSiblingContents);
-			if (integer != null && allPrecedingSiblingContentsSize >= integer.intValue()) {
-				createResource(resourceSet, eObject);
-				setNextResourceSizeForType(resourcesSize, eClass);
-				eAllContents.prune();
-			}
-		}
-	}
-
-	private void setNextResourceSizeForType(Map<EClass, Integer> resourcesSize, EClass eClass) {
-		IntegerDistribution sizeDistribution = c.getResourceSizeDistribution(eClass);
-		int desiredSize = sizeDistribution.sample();
-		resourcesSize.put(eClass, desiredSize);
+		LOGGER.info(MessageFormat.format("Attaching EObjects to resource ''{0}''", resource.getURI()));
+		resource.getContents().addAll(generatedEObjects);
+		LOGGER.info(MessageFormat.format("Generation finished for resource ''{0}''", resource.getURI()));
+		
+		return generatedEObjects;
 	}
 
 	/**
@@ -160,11 +125,13 @@ public class SpecimenGenerator {
 		Iterable<EReference> eAllNonContainment = ePackagesData.eAllNonContainment(eObject.eClass());
 		for (EReference eReference : eAllNonContainment) {
 			EClass eReferenceType = eReference.getEReferenceType();
-			IntegerDistribution distribution = c.getDistributionFor(eReference);
+			IntegerDistribution distribution = configuration.getDistributionFor(eReference);
 
 			if (eReference.isMany()) {
+				@SuppressWarnings("unchecked")
 				List<Object> values = (List<Object>) eObject.eGet(eReference);
 				int sample = distribution.sample();
+				LOGGER.fine(MessageFormat.format("Generating {0} values for EReference ''{1}'' in EObject {2}", sample, eReference.getName(), eObject.toString()));
 				for (int i = 0; i < sample; i++) {
 					List<EObject> possibleValues = indexByKind.get(eReferenceType);
 					if (!possibleValues.isEmpty()) {
@@ -173,7 +140,8 @@ public class SpecimenGenerator {
 					}
 				}
 			} else {
-				if (booleanInDistribution(distribution)) {
+				if (eReference.isRequired() || booleanInDistribution(distribution)) {
+					LOGGER.fine(MessageFormat.format("Generating EReference ''{0}'' in EObject {1}", eReference.getName(), eObject.toString()));
 					List<EObject> possibleValues = indexByKind.get(eReferenceType);
 					if (!possibleValues.isEmpty()) {
 						final EObject nextEObject = possibleValues.get(generator.nextInt(possibleValues.size()));
@@ -186,7 +154,10 @@ public class SpecimenGenerator {
 
 	private Optional<EObject> generateEObject(EClass eClass, ListMultimap<EClass, EObject> indexByKind) {
 		final EObject eObject;
-		if (currentDepth <= currentMaxDepth) {
+		if (currentObjects < goalObjects && currentDepth <= currentMaxDepth) {
+			currentObjects++;
+			LOGGER.fine(MessageFormat.format("Generating EObject {0} / ~{1} (EClass={2})", 
+					currentObjects, goalObjects, eClass.getName()));
 			eObject = createEObject(eClass, indexByKind);
 			generateEAttributes(eObject, eClass);
 			generateEContainmentReferences(eObject, eClass, indexByKind);
@@ -205,16 +176,6 @@ public class SpecimenGenerator {
 		}
 
 		return eObject;
-	}
-
-	/**
-	 * @param eObject
-	 * @return
-	 */
-	private Resource createResource(ResourceSet resourceSet, EObject root) {
-		Resource resource = resourceSet.createResource(URI.createURI(Gpw.generate(16) + ".xmi"));
-		resource.getContents().add(root);
-		return resource;
 	}
 
 	/**
@@ -256,8 +217,9 @@ public class SpecimenGenerator {
 
 	private void generateSingleContainmentReference(EObject eObject, EReference eReference,
 			ListMultimap<EClass, EObject> indexByKind, ImmutableMultiset<EClass> eAllConcreteSubTypesOrSelf) {
-		IntegerDistribution distribution = c.getDistributionFor(eReference);
-		if (booleanInDistribution(distribution)) {
+		IntegerDistribution distribution = configuration.getDistributionFor(eReference);
+		if (eReference.isRequired() || booleanInDistribution(distribution)) {
+			LOGGER.fine(MessageFormat.format("Generating EReference ''{0}'' in EObject {1}", eReference.getName(), eObject.toString()));
 			int idx = generator.nextInt(eAllConcreteSubTypesOrSelf.size());
 			final Optional<EObject> nextEObject = generateEObject(get(eAllConcreteSubTypesOrSelf, idx), indexByKind);
 			if (nextEObject.isPresent()) {
@@ -268,9 +230,11 @@ public class SpecimenGenerator {
 
 	private void generateManyContainmentReference(EObject eObject, EReference eReference,
 			ListMultimap<EClass, EObject> indexByKind, ImmutableMultiset<EClass> eAllConcreteSubTypesOrSelf) {
-		IntegerDistribution distribution = c.getDistributionFor(eReference);
+		IntegerDistribution distribution = configuration.getDistributionFor(eReference);
+		@SuppressWarnings("unchecked")
 		List<EObject> values = (List<EObject>) eObject.eGet(eReference);
 		int sample = distribution.sample();
+		LOGGER.fine(MessageFormat.format("Generating {0} values for EReference ''{1}'' in EObject {2}", sample, eReference.getName(), eObject.toString()));
 		for (int i = 0; i < sample; i++) {
 			int idx = generator.nextInt(eAllConcreteSubTypesOrSelf.size());
 			final Optional<EObject> nextEObject = generateEObject(get(eAllConcreteSubTypesOrSelf, idx), indexByKind);
@@ -284,7 +248,7 @@ public class SpecimenGenerator {
 			ImmutableList<EClass> eAllSubTypesOrSelf) {
 		ImmutableMultiset.Builder<EClass> eAllSubTypesOrSelfWithWeights = ImmutableMultiset.builder();
 		for (EClass eClass : eAllSubTypesOrSelf) {
-			eAllSubTypesOrSelfWithWeights.addCopies(eClass, c.getWeightFor(eReference, eClass));
+			eAllSubTypesOrSelfWithWeights.addCopies(eClass, configuration.getWeightFor(eReference, eClass));
 		}
 		return eAllSubTypesOrSelfWithWeights.build();
 	}
@@ -300,7 +264,7 @@ public class SpecimenGenerator {
 	}
 
 	private void generateAttributes(EObject eObject, EAttribute eAttribute) {
-		IntegerDistribution distribution = c.getDistributionFor(eAttribute);
+		IntegerDistribution distribution = configuration.getDistributionFor(eAttribute);
 		EDataType eAttributeType = eAttribute.getEAttributeType();
 		Class<?> instanceClass = eAttributeType.getInstanceClass();
 		if (eAttribute.isMany()) {
@@ -312,7 +276,7 @@ public class SpecimenGenerator {
 
 	private void generateSingleAttribute(EObject eObject, EAttribute eAttribute, IntegerDistribution distribution,
 			Class<?> instanceClass) {
-		if (booleanInDistribution(distribution)) {
+		if (eAttribute.isRequired() || booleanInDistribution(distribution)) {
 			final Object value = nextValue(instanceClass);
 			eObject.eSet(eAttribute, value);
 		}
@@ -320,6 +284,7 @@ public class SpecimenGenerator {
 
 	private void generateManyAttribute(EObject eObject, EAttribute eAttribute, IntegerDistribution distribution,
 			Class<?> instanceClass) {
+		@SuppressWarnings("unchecked")
 		List<Object> values = (List<Object>) eObject.eGet(eAttribute);
 		for (int i = distribution.getSupportLowerBound(); i < distribution.sample(); i++) {
 			final Object value = nextValue(instanceClass);
@@ -342,18 +307,15 @@ public class SpecimenGenerator {
 	 */
 	private Object nextObject(Class<?> instanceClass) {
 		if (instanceClass == String.class) {
-			return Gpw.generate(generator.nextInt(24) + 1);
+			return RandomStringUtils.random(
+					configuration.getValueDistributionFor(instanceClass).sample(), 
+					0, 0, true, true, null, generator);
 		} else {
-			log("Do not know how to randomly generate " + instanceClass.getName() + " object");
+			LOGGER.warning(
+					MessageFormat.format("Do not know how to randomly generate ''{0}'' object",
+					instanceClass.getName()));
 		}
 		return null;
-	}
-
-	/**
-	 * @param string
-	 */
-	private void log(String string) {
-		System.out.println(string);
 	}
 
 	/**

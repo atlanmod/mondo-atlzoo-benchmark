@@ -11,7 +11,6 @@
 
 package fr.inria.instantiator;
 
-import java.io.IOException;
 
 /**
  * Generation Exception
@@ -30,7 +29,7 @@ public class GenerationException extends Exception {
 		super();
 	}
 
-	public GenerationException(IOException e) {
+	public GenerationException(Exception e) {
 		super(e.getMessage(), e.getCause());
 	}
 

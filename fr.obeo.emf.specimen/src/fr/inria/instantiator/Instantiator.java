@@ -13,6 +13,7 @@ package fr.inria.instantiator;
 
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.text.MessageFormat;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -26,10 +27,15 @@ import org.apache.commons.cli.Option;
 import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
+import org.apache.commons.lang3.Range;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 
 /**
@@ -38,6 +44,9 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
  */
 public class Instantiator {
 
+	private static final int DEFAULT_AVERAGE_MODEL_SIZE = 1000;
+	private static final float DEFAULT_MODEL_SIZE_DEVIATION = 0.1f;
+	
 	private static final String METAMODEL 					= "m";
 	private static final String METAMODEL_LONG 				= "metamodel";
 	private static final String ADDITIONAL_METAMODEL 		= "a";
@@ -48,12 +57,19 @@ public class Instantiator {
 	private static final String N_MODELS_LONG				= "number-models";
 	private static final String SIZE 						= "s";
 	private static final String SIZE_LONG					= "size";
+	private static final String VARIATION 					= "p";
+	private static final String VARIATION_LONG				= "variation";
+	private static final String DEGREE 						= "d";
+	private static final String DEGREE_LONG 				= "references-degree";
+	private static final String VALUES_SIZE 				= "z";
+	private static final String VALUES_SIZE_LONG			= "values-size";
 	private static final String SEED 						= "e";
 	private static final String SEED_LONG 					= "seed";
 
 
+
 	private static class OptionComarator<T extends Option> implements Comparator<T> {
-	    private static final String OPTS_ORDER = "maonse";
+	    private static final String OPTS_ORDER = "maonspdze";
 
 	    @Override
 		public int compare(T o1, T o2) {
@@ -63,17 +79,57 @@ public class Instantiator {
 
 	public static void main(String[] args) throws GenerationException, IOException {
 
+		{
+			// Initialize the global registry
+			Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(
+					EcorePackage.eNS_PREFIX, new EcoreResourceFactoryImpl());
+			Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(
+					Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
+		}
+		
 		Options options = new Options();
 
 		configureOptions(options);
 
 		CommandLineParser parser = new GnuParser();
 
+		ResourceSetImpl resourceSet = new ResourceSetImpl();
+
 		try {
 			CommandLine commandLine = parser.parse(options, args);
 
 			String metamodel = commandLine.getOptionValue(METAMODEL);
-			DefaultModelGenerator modelGen = new DefaultModelGenerator(URI.createFileURI(metamodel));
+			
+			Resource metamodelResource = resourceSet.createResource(URI.createFileURI(metamodel));
+			metamodelResource.load(Collections.emptyMap());
+			registerPackages(metamodelResource);
+
+			int size = Instantiator.DEFAULT_AVERAGE_MODEL_SIZE;
+			if (commandLine.hasOption(SIZE)) {
+				Number number = (Number) commandLine.getParsedOptionValue(SIZE);
+				 size = (int) Math.min(Integer.MAX_VALUE, number.longValue());
+			}
+			
+			float variation = Instantiator.DEFAULT_MODEL_SIZE_DEVIATION;
+			if (commandLine.hasOption(VARIATION)) {
+				Number number = (Number) commandLine.getParsedOptionValue(VARIATION);
+				if (number.floatValue() < 0.0f || number.floatValue() > 1.0f) {
+					throw new ParseException(MessageFormat.format("Invalid value for option -{0}: {1}", VARIATION, number.floatValue()));
+				}
+				variation = number.floatValue();
+			}
+			
+			long seed = System.currentTimeMillis();
+			if (commandLine.hasOption(SEED)) {
+				seed = ((Number) commandLine.getParsedOptionValue(SEED)).longValue();
+			}
+
+			Range<Integer> range = Range.between(
+					Math.round(size * (1 - variation)), 
+					Math.round(size * (1 + variation)));
+			
+			GenericMetamodelConfig config = new GenericMetamodelConfig(metamodelResource, range, seed);
+			GenericMetamodelGenerator modelGen = new GenericMetamodelGenerator(config);
 
 			if (commandLine.hasOption(ADDITIONAL_METAMODEL)) {
 				for (String additionalMetamodel : commandLine.getOptionValues(ADDITIONAL_METAMODEL)) {
@@ -90,26 +146,39 @@ public class Instantiator {
 			} else {
 				modelGen.setSamplesPath(Paths.get("."));
 			}
+
+			int numberOfModels = 1;
 			if (commandLine.hasOption(N_MODELS)) {
-				int models = ((Number) commandLine.getParsedOptionValue(N_MODELS)).intValue();
-				modelGen.setSetSize(new int[] { models });
-			} else {
-				modelGen.setSetSize(new int[] { 1 });
+				numberOfModels = ((Number) commandLine.getParsedOptionValue(N_MODELS)).intValue();
 			}
-			if (commandLine.hasOption(SIZE)) {
-				Number number = (Number) commandLine.getParsedOptionValue(SIZE);
-				int size = (int) Math.min(Integer.MAX_VALUE, number.longValue());
-				modelGen.setModelsSize(new int[] { size });
-			} else {
-				modelGen.setModelsSize(new int[] { 1000 });
+
+			int valuesSize = GenericMetamodelConfig.DEFAULT_AVERAGE_VALUES_LENGTH;
+			if (commandLine.hasOption(VALUES_SIZE)) {
+				Number number = (Number) commandLine.getParsedOptionValue(VALUES_SIZE);
+				valuesSize = (int) Math.min(Integer.MAX_VALUE, number.longValue());
 			}
-			if (commandLine.hasOption(SEED)) {
-				int seed = ((Number) commandLine.getParsedOptionValue(SEED)).intValue();
-				modelGen.setSeed(seed);
-			} else {
-				modelGen.setSeed(System.currentTimeMillis());
+
+			int referencesSize = GenericMetamodelConfig.DEFAULT_AVERAGE_REFERENCES_SIZE;
+			if (commandLine.hasOption(VALUES_SIZE)) {
+				Number number = (Number) commandLine.getParsedOptionValue(DEGREE);
+				referencesSize = (int) Math.min(Integer.MAX_VALUE, number.longValue());
 			}
-			modelGen.runGeneration();
+			
+
+			config.setValuesRange(
+					Math.round(valuesSize * (1 - GenericMetamodelConfig.DEFAULT_VALUES_DEVIATION)), 
+					Math.round(valuesSize * (1 + GenericMetamodelConfig.DEFAULT_VALUES_DEVIATION)));
+			
+			config.setReferencesRange(
+					Math.round(referencesSize * (1 - GenericMetamodelConfig.DEFAULT_REFERENCES_DEVIATION)), 
+					Math.round(referencesSize * (1 + GenericMetamodelConfig.DEFAULT_REFERENCES_DEVIATION)));
+			
+			config.setPropertiesRange(
+					Math.round(referencesSize * (1 - GenericMetamodelConfig.DEFAULT_REFERENCES_DEVIATION)), 
+					Math.round(referencesSize * (1 + GenericMetamodelConfig.DEFAULT_REFERENCES_DEVIATION)));
+			
+			modelGen.runGeneration(numberOfModels, size, variation);
+			
 		} catch (ParseException e) {
 			System.err.println(e.getLocalizedMessage());
 			HelpFormatter formatter = new HelpFormatter();
@@ -123,6 +192,23 @@ public class Instantiator {
 		}
 	}
 
+
+//	private static int inferNumberOfProperties(int numberOfElements) {
+//		int result = (int) Math.pow(numberOfElements, (float) 1 / 3);
+//		while (propertiesEquation(result) < numberOfElements) {
+//			result++;
+//		}
+//		return result - 1;
+//	}
+//
+//	private static int propertiesEquation(int result) {
+//		int res = result + 1;
+//		res += Math.pow(result, 3);
+//		res += Math.pow(result, 2);
+//		return res;
+//	}
+
+	
 	/**
 	 * Configures the program options
 	 *
@@ -158,9 +244,18 @@ public class Instantiator {
 		Option sizeOption = OptionBuilder.create(SIZE);
 		sizeOption.setLongOpt(SIZE_LONG);
 		sizeOption.setArgName("size");
-		sizeOption.setDescription("Models' size (defaults to 1000)");
+		sizeOption.setDescription(MessageFormat.format("Average models'' size (defaults to {0})", Instantiator.DEFAULT_AVERAGE_MODEL_SIZE));
 		sizeOption.setType(Number.class);
 		sizeOption.setArgs(1);
+
+		Option variationOption = OptionBuilder.create(VARIATION);
+		variationOption.setLongOpt(VARIATION_LONG);
+		variationOption.setArgName("proportion");
+		variationOption.setDescription(
+				MessageFormat.format("Variation ([0..1]) in the models'' size (defaults to {0})",
+				Instantiator.DEFAULT_MODEL_SIZE_DEVIATION));
+		variationOption.setType(Number.class);
+		variationOption.setArgs(1);
 
 		Option seedOption = OptionBuilder.create(SEED);
 		seedOption.setLongOpt(SEED_LONG);
@@ -169,11 +264,33 @@ public class Instantiator {
 		seedOption.setType(Number.class);
 		seedOption.setArgs(1);
 
+		Option valuesSizeOption = OptionBuilder.create(VALUES_SIZE);
+		valuesSizeOption.setLongOpt(VALUES_SIZE_LONG);
+		valuesSizeOption.setArgName("size");
+		valuesSizeOption.setDescription(
+				MessageFormat.format("Average size for attributes with variable length (defaults to {0}). Actual sizes may vary +/- {1}%.", 
+				GenericMetamodelConfig.DEFAULT_AVERAGE_VALUES_LENGTH, GenericMetamodelConfig.DEFAULT_VALUES_DEVIATION * 100));
+		valuesSizeOption.setType(Number.class);
+		valuesSizeOption.setArgs(1);
+
+		Option degreeOption = OptionBuilder.create(DEGREE);
+		degreeOption.setLongOpt(DEGREE_LONG);
+		degreeOption.setArgName("degree");
+		degreeOption.setDescription(
+				MessageFormat.format("Average number of references per EObject (defaults to {0}). Actual sizes may vary +/- {1}%.",
+						GenericMetamodelConfig.DEFAULT_AVERAGE_REFERENCES_SIZE, GenericMetamodelConfig.DEFAULT_REFERENCES_DEVIATION * 100));
+		degreeOption.setType(Number.class);
+		degreeOption.setArgs(1);
+		
+		
 		options.addOption(metamodelOpt);
 		options.addOption(additionalMetamodelOpt);
 		options.addOption(outDirOpt);
 		options.addOption(nModelsOpt);
 		options.addOption(sizeOption);
+		options.addOption(variationOption);
+		options.addOption(valuesSizeOption);
+		options.addOption(degreeOption);
 		options.addOption(seedOption);
 	}
 

@@ -9,4 +9,17 @@ Bundle-Vendor: Obeo
 Require-Bundle: org.eclipse.core.resources,
  org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
- org.eclipse.emf.ecore.xmi
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.emf.cdo.common,
+ org.eclipse.emf.cdo.net4j,
+ org.eclipse.emf.cdo.server.db,
+ org.eclipse.emf.cdo.server.net4j,
+ org.eclipse.emf.cdo.server,
+ org.eclipse.emf.cdo,
+ org.eclipse.net4j.db.h2,
+ org.eclipse.net4j.db,
+ org.eclipse.net4j.db.jdbc;resolution:=optional,
+ org.eclipse.net4j.jvm,
+ org.eclipse.net4j.util,
+ org.eclipse.net4j,
+ org.h2
