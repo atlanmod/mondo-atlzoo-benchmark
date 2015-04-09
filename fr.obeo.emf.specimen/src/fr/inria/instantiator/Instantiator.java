@@ -16,6 +16,7 @@ import java.nio.file.Paths;
 import java.text.MessageFormat;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.logging.Logger;
 
 import jline.TerminalFactory;
 
@@ -28,12 +29,15 @@ import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.lang3.Range;
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
@@ -43,6 +47,8 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
  *
  */
 public class Instantiator {
+	
+	private final static Logger LOGGER = Logger.getLogger(Instantiator.class.getName());
 
 	private static final int DEFAULT_AVERAGE_MODEL_SIZE = 1000;
 	private static final float DEFAULT_MODEL_SIZE_DEVIATION = 0.1f;
@@ -65,11 +71,13 @@ public class Instantiator {
 	private static final String VALUES_SIZE_LONG			= "values-size";
 	private static final String SEED 						= "e";
 	private static final String SEED_LONG 					= "seed";
+	private static final String DIAGNOSE	 				= "g";
+	private static final String DIAGNOSE_LONG				= "diagnose";
 
 
 
 	private static class OptionComarator<T extends Option> implements Comparator<T> {
-	    private static final String OPTS_ORDER = "maonspdze";
+	    private static final String OPTS_ORDER = "maonspdzeg";
 
 	    @Override
 		public int compare(T o1, T o2) {
@@ -93,14 +101,12 @@ public class Instantiator {
 
 		CommandLineParser parser = new GnuParser();
 
-		ResourceSetImpl resourceSet = new ResourceSetImpl();
-
 		try {
 			CommandLine commandLine = parser.parse(options, args);
 
 			String metamodel = commandLine.getOptionValue(METAMODEL);
 			
-			Resource metamodelResource = resourceSet.createResource(URI.createFileURI(metamodel));
+			Resource metamodelResource = new XMIResourceImpl(URI.createFileURI(metamodel));
 			metamodelResource.load(Collections.emptyMap());
 			registerPackages(metamodelResource);
 
@@ -177,7 +183,28 @@ public class Instantiator {
 					Math.round(referencesSize * (1 - GenericMetamodelConfig.DEFAULT_REFERENCES_DEVIATION)), 
 					Math.round(referencesSize * (1 + GenericMetamodelConfig.DEFAULT_REFERENCES_DEVIATION)));
 			
-			modelGen.runGeneration(numberOfModels, size, variation);
+			ResourceSetImpl resourceSet = new ResourceSetImpl();
+			modelGen.runGeneration(resourceSet, numberOfModels, size, variation);
+			
+			if (commandLine.hasOption(DIAGNOSE)) {
+				for (Resource resource : resourceSet.getResources()) {
+					BasicDiagnostic diagnosticChain = new BasicDiagnostic();
+					for (EObject eObject : resource.getContents()) {
+						Diagnostician.INSTANCE.validate(eObject, diagnosticChain);
+					}
+					boolean error = (diagnosticChain.getSeverity() & Diagnostic.ERROR) == Diagnostic.ERROR;
+					if (!error) {
+						LOGGER.info(MessageFormat.format("Result of the diagnosis of resurce ''{0}'' is ''OK''",
+												resource.getURI()));
+					} else {
+						LOGGER.severe(MessageFormat.format("Result of the diagnosis of resurce ''{0}'' is ''ERROR''",
+								resource.getURI()));
+						for (Diagnostic diagnostic : diagnosticChain.getChildren()) {
+							LOGGER.fine(diagnostic.getMessage());
+						}
+					}
+				}
+			}
 			
 		} catch (ParseException e) {
 			System.err.println(e.getLocalizedMessage());
@@ -282,6 +309,10 @@ public class Instantiator {
 		degreeOption.setType(Number.class);
 		degreeOption.setArgs(1);
 		
+		Option diagnoseOption = OptionBuilder.create(DIAGNOSE);
+		diagnoseOption.setLongOpt(DIAGNOSE_LONG);
+		diagnoseOption.setDescription("Run diagnosis on the result model");
+		
 		
 		options.addOption(metamodelOpt);
 		options.addOption(additionalMetamodelOpt);
@@ -292,6 +323,7 @@ public class Instantiator {
 		options.addOption(valuesSizeOption);
 		options.addOption(degreeOption);
 		options.addOption(seedOption);
+		options.addOption(diagnoseOption);
 	}
 
 	/**
