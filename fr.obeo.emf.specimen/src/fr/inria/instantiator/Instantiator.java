@@ -188,6 +188,7 @@ public class Instantiator {
 			
 			if (commandLine.hasOption(DIAGNOSE)) {
 				for (Resource resource : resourceSet.getResources()) {
+					LOGGER.info(MessageFormat.format("Requested validation for resource ''{0}''", resource.getURI()));
 					BasicDiagnostic diagnosticChain = new BasicDiagnostic();
 					for (EObject eObject : resource.getContents()) {
 						Diagnostician.INSTANCE.validate(eObject, diagnosticChain);
@@ -204,6 +205,7 @@ public class Instantiator {
 						}
 					}
 				}
+				LOGGER.info("Validation finished");
 			}
 			
 		} catch (ParseException e) {

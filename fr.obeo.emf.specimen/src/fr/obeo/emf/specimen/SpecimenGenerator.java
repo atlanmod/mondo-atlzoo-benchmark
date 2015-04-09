@@ -11,7 +11,6 @@
 package fr.obeo.emf.specimen;
 
 import static com.google.common.collect.Iterables.get;
-import static com.google.common.collect.Lists.newArrayList;
 import static com.google.common.primitives.Primitives.isWrapperType;
 import static com.google.common.primitives.Primitives.unwrap;
 
@@ -66,8 +65,7 @@ public class SpecimenGenerator {
 		generator = new Random(seed);
 	}
 
-	public List<EObject> generate(Resource resource) {
-		List<EObject> generatedEObjects = newArrayList();
+	public void generate(Resource resource) {
 		ListMultimap<EClass, EObject> indexByKind = ArrayListMultimap.create();
 
 		ImmutableSet<EClass> possibleRootEClasses = configuration.possibleRootEClasses();
@@ -82,7 +80,7 @@ public class SpecimenGenerator {
 			currentMaxDepth = configuration.getDepthDistributionFor(eClass).sample();
 			Optional<EObject> generateEObject = generateEObject(eClass, indexByKind);
 			if (generateEObject.isPresent()) {
-				generatedEObjects.add(generateEObject.get());
+				resource.getContents().add(generateEObject.get());
 			}
 		}
 
@@ -90,18 +88,17 @@ public class SpecimenGenerator {
 
 		int totalEObjects = currentObjects;
 		int currentEObject = 0;
-		for (EObject eObjectRoot : generatedEObjects) {
+		TreeIterator<EObject> eAllContents = resource.getAllContents();
+		while (eAllContents.hasNext()) {
 			currentEObject++;
-			TreeIterator<EObject> eAllContents = eObjectRoot.eAllContents();
-			while (eAllContents.hasNext()) {
-				currentEObject++;
-				LOGGER.fine(MessageFormat.format("Generating cross references {0} / {1}", currentEObject, totalEObjects));
-				EObject eObject = eAllContents.next();
-				generateCrossReferences(eObject, indexByKind);
-			}
+			LOGGER.fine(MessageFormat.format("Generating cross references {0} / {1}", currentEObject, totalEObjects));
+			EObject eObject = eAllContents.next();
+			generateCrossReferences(eObject, indexByKind);
 		}
 
-		LOGGER.info(MessageFormat.format("#EObject={0}", ImmutableSet.copyOf(indexByKind.values()).size()));
+		LOGGER.info(MessageFormat.format("Requested #EObject={0}", goalObjects));
+		
+		LOGGER.info(MessageFormat.format("Actual #EObject={0}", ImmutableSet.copyOf(indexByKind.values()).size()));
 
 		for (Map.Entry<EClass, Collection<EObject>> entry : indexByKind.asMap().entrySet()) {
 			EClass eClass = entry.getKey();
@@ -111,11 +108,7 @@ public class SpecimenGenerator {
 					entry.getValue().size()));
 		}
 
-		LOGGER.info(MessageFormat.format("Attaching EObjects to resource ''{0}''", resource.getURI()));
-		resource.getContents().addAll(generatedEObjects);
 		LOGGER.info(MessageFormat.format("Generation finished for resource ''{0}''", resource.getURI()));
-		
-		return generatedEObjects;
 	}
 
 	/**
@@ -155,16 +148,12 @@ public class SpecimenGenerator {
 
 	private Optional<EObject> generateEObject(EClass eClass, ListMultimap<EClass, EObject> indexByKind) {
 		final EObject eObject;
-//		if (currentDepth <= currentMaxDepth) {
-			currentObjects++;
-			LOGGER.fine(MessageFormat.format("Generating EObject {0} / ~{1} (EClass={2})", 
-					currentObjects, goalObjects, eClass.getName()));
-			eObject = createEObject(eClass, indexByKind);
-			generateEAttributes(eObject, eClass);
-			generateEContainmentReferences(eObject, eClass, indexByKind);
-//		} else {
-//			eObject = null;
-//		}
+		currentObjects++;
+		LOGGER.fine(MessageFormat.format("Generating EObject {0} / ~{1} (EClass={2})", 
+				currentObjects, goalObjects, eClass.getName()));
+		eObject = createEObject(eClass, indexByKind);
+		generateEAttributes(eObject, eClass);
+		generateEContainmentReferences(eObject, eClass, indexByKind);
 		return Optional.fromNullable(eObject);
 	}
 
