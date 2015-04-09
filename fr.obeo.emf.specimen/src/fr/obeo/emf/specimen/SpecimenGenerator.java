@@ -28,6 +28,7 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -277,7 +278,18 @@ public class SpecimenGenerator {
 	private void generateSingleAttribute(EObject eObject, EAttribute eAttribute, IntegerDistribution distribution,
 			Class<?> instanceClass) {
 		if (eAttribute.isRequired() || booleanInDistribution(distribution)) {
-			final Object value = nextValue(instanceClass);
+			final Object value;
+			EDataType eAttributeType = eAttribute.getEAttributeType();
+			if (eAttributeType instanceof EEnum) {
+				assert instanceClass == null;
+				EEnum eEnum = (EEnum) eAttributeType;
+				instanceClass = int.class;
+				int randomValue = Math.abs((Integer) nextValue(instanceClass));
+				int size = eEnum.getELiterals().size();
+				value = eEnum.getELiterals().get(randomValue % size); 
+			} else {
+				value = nextValue(instanceClass);
+			}
 			eObject.eSet(eAttribute, value);
 		}
 	}
@@ -287,7 +299,18 @@ public class SpecimenGenerator {
 		@SuppressWarnings("unchecked")
 		List<Object> values = (List<Object>) eObject.eGet(eAttribute);
 		for (int i = distribution.getSupportLowerBound(); i < distribution.sample(); i++) {
-			final Object value = nextValue(instanceClass);
+			final Object value;
+			EDataType eAttributeType = eAttribute.getEAttributeType();
+			if (eAttributeType instanceof EEnum) {
+				assert instanceClass == null;
+				EEnum eEnum = (EEnum) eAttributeType;
+				instanceClass = int.class;
+				int randomValue = Math.abs((Integer) nextValue(instanceClass));
+				int size = eEnum.getELiterals().size();
+				value = eEnum.getELiterals().get(randomValue % size); 
+			} else {
+				value = nextValue(instanceClass);
+			}
 			values.add(value);
 		}
 	}

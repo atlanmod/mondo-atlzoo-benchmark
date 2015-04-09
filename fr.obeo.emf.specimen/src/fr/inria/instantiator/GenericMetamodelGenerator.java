@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.xmi.XMIResource;
 
 import fr.obeo.emf.specimen.SpecimenGenerator;
@@ -36,10 +36,8 @@ public class GenericMetamodelGenerator {
 		this.samplesPath = samplesPath;
 	}
 
-	public void runGeneration(int numberOfModels, int averageSize, float variation) throws GenerationException {
+	public void runGeneration(ResourceSet resourceSet, int numberOfModels, int averageSize, float variation) throws GenerationException {
 		
-		ResourceSetImpl resourceSet = new ResourceSetImpl();
-
 		try {
 
 			SpecimenGenerator generator = new SpecimenGenerator(config, config.getSeed());
