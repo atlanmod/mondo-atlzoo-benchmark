@@ -197,8 +197,8 @@ public class Instantiator {
 						LOGGER.info(MessageFormat.format("Result of the diagnosis of resurce ''{0}'' is ''OK''",
 												resource.getURI()));
 					} else {
-						LOGGER.severe(MessageFormat.format("Result of the diagnosis of resurce ''{0}'' is ''ERROR''",
-								resource.getURI()));
+						LOGGER.severe(MessageFormat.format("Found ''{0}'' error in the resurce ''{1}''",
+								diagnosticChain.getChildren().size(), resource.getURI()));
 						for (Diagnostic diagnostic : diagnosticChain.getChildren()) {
 							LOGGER.fine(diagnostic.getMessage());
 						}

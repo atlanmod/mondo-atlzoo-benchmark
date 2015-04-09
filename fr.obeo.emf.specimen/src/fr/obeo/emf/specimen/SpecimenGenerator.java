@@ -155,16 +155,16 @@ public class SpecimenGenerator {
 
 	private Optional<EObject> generateEObject(EClass eClass, ListMultimap<EClass, EObject> indexByKind) {
 		final EObject eObject;
-		if (currentObjects < goalObjects && currentDepth <= currentMaxDepth) {
+//		if (currentDepth <= currentMaxDepth) {
 			currentObjects++;
 			LOGGER.fine(MessageFormat.format("Generating EObject {0} / ~{1} (EClass={2})", 
 					currentObjects, goalObjects, eClass.getName()));
 			eObject = createEObject(eClass, indexByKind);
 			generateEAttributes(eObject, eClass);
 			generateEContainmentReferences(eObject, eClass, indexByKind);
-		} else {
-			eObject = null;
-		}
+//		} else {
+//			eObject = null;
+//		}
 		return Optional.fromNullable(eObject);
 	}
 
@@ -187,7 +187,9 @@ public class SpecimenGenerator {
 	private void generateEContainmentReferences(EObject eObject, EClass eClass,
 			ListMultimap<EClass, EObject> indexByKind) {
 		for (EReference eReference : ePackagesData.eAllContainment(eClass)) {
-			generateEContainmentReference(eObject, eReference, indexByKind);
+			if (eReference.isRequired() || (currentObjects < goalObjects && currentDepth <= currentMaxDepth)) {
+				generateEContainmentReference(eObject, eReference, indexByKind);
+			}
 		}
 
 	}
