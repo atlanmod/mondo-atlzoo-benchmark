@@ -21,10 +21,7 @@ Require-Bundle: org.junit;visibility:=reexport,
  org.eclipse.m2m.atl.adt.editor,
  org.eclipse.m2m.atl.engine.emfvm.launch,
  org.eclipse.m2m.atl.core.ui.vm,
- org.eclipse.uml2.uml,
- org.eclipse.emf.compare.diff;bundle-version="1.3.2",
- org.eclipse.emf.compare;bundle-version="1.3.2",
- org.eclipse.emf.compare.match;bundle-version="1.3.2"
+ org.eclipse.uml2.uml
 Bundle-Activator: eu.opensourceprojects.mondo.benchmarks.transformationzoo.ZooBenchmarksPlugin
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
