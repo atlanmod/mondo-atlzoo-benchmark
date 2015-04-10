@@ -44,6 +44,7 @@ public class GenericMetamodelGenerator {
 
 			LOGGER.info(MessageFormat.format("Creating {0} models", numberOfModels));
 			
+			LOGGER.info(MessageFormat.format("Generator seed is ''{0}''", config.getSeed()));
 			LOGGER.info(MessageFormat.format("Config parameters: range for models size is [{0}, {1}]", 
 					config.getElementsRange().getMinimum(), config.getElementsRange().getMaximum()));
 			LOGGER.info(MessageFormat.format("Config parameters: range for properties number is [{0}, {1}]", 
