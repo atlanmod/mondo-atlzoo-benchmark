@@ -32,7 +32,7 @@ public class DefaultModelGenerator {
 //	protected int[] setSize = {3,3,3}; // the number of generated models per model' size
 protected int[] modelsSize = {1000}; // this size includes model objects and properties
 	
-	protected int[] setSize = {3}; // the number of generated models per model' size
+	protected int[] setSize = {1}; // the number of generated models per model' size
 	
 	protected URI MMURI;
 	
@@ -271,7 +271,7 @@ protected int[] modelsSize = {1000}; // this size includes model objects and pro
 			return URI.createFileURI(samplesPath.toString()+"\\"+metaModelName+"\\model"+maxElement+"\\result" + maxElement
 					+ "_" + index +"."+ getModelExtension());
 		
-		return URI.createURI("data/samples/"+metaModelName+"/model"+maxElement+"/result" + maxElement
+		return URI.createURI("data\\samples\\"+metaModelName+"\\model"+maxElement+"\\result" + maxElement
 				+ "_" + index +"."+ getModelExtension());
 	}
 
