@@ -80,7 +80,7 @@ public abstract class TestNonRegression extends TestCase {
 		}
 		if (FileUtils.listDirectories(directory).length != 0) {
 			for (int i = 0; i < FileUtils.listDirectories(directory).length; i++) {
-				//compareSnapshots(FileUtils.listDirectories(directory)[i], useEmfCompare);
+				compareSnapshots(FileUtils.listDirectories(directory)[i], useEmfCompare);
 			}
 		} else {
 			singleTest(directory);
