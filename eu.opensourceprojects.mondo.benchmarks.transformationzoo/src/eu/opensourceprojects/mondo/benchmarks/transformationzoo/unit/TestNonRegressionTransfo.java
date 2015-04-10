@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -198,7 +199,8 @@ public abstract class TestNonRegressionTransfo extends TestNonRegression {
 	 */
 	@Override
 	protected void tearDown() throws Exception {
-		info("total time : " + totalTime + "s (pure execution: " + executionTotalTime + "s)"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		DecimalFormat df = new DecimalFormat("#.0000");
+		info("total time : " + df.format(totalTime) + "s (pure execution: " + df.format(executionTotalTime) + "s)"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		super.tearDown();
 	}
 
