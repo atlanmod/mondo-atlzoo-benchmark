@@ -22,10 +22,6 @@ import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.compare.diff.metamodel.DiffModel;
-import org.eclipse.emf.compare.diff.service.DiffService;
-import org.eclipse.emf.compare.match.metamodel.MatchModel;
-import org.eclipse.emf.compare.match.service.MatchService;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -204,16 +200,16 @@ public final class ModelUtils {
 	 * @throws IOException
 	 * @throws InterruptedException
 	 */
-	public static DiffModel compareModels(File leftUri, File rightUri, boolean ignoreIds, boolean delete)
-			throws IOException, InterruptedException {
-		Resource leftModel = load(leftUri);
-		Resource rightModel = load(rightUri);
-		final DiffModel res = compareModels(leftModel, rightModel, ignoreIds);
-		if (delete) {
-			leftUri.delete();
-		}
-		return res;
-	}
+//	public static DiffModel compareModels(File leftUri, File rightUri, boolean ignoreIds, boolean delete)
+//			throws IOException, InterruptedException {
+//		Resource leftModel = load(leftUri);
+//		Resource rightModel = load(rightUri);
+//		final DiffModel res = compareModels(leftModel, rightModel, ignoreIds);
+//		if (delete) {
+//			leftUri.delete();
+//		}
+//		return res;
+//	}
 
 	/**
 	 * Compare two ecore files as models.
@@ -229,15 +225,15 @@ public final class ModelUtils {
 	 * @throws IOException
 	 * @throws InterruptedException
 	 */
-	public static DiffModel compareModels(Resource leftModel, Resource rightModel, boolean ignoreIds)
-			throws IOException, InterruptedException {
-
-		Map<String, Object> options = new HashMap<String, Object>();
-		if (ignoreIds) {
-			options.put("match.ignore.xmi.id", Boolean.TRUE); //$NON-NLS-1$
-		}
-		final MatchModel inputMatch = MatchService.doResourceMatch(leftModel, rightModel, options);
-		return DiffService.doDiff(inputMatch);
-	}
+//	public static DiffModel compareModels(Resource leftModel, Resource rightModel, boolean ignoreIds)
+//			throws IOException, InterruptedException {
+//
+//		Map<String, Object> options = new HashMap<String, Object>();
+//		if (ignoreIds) {
+//			options.put("match.ignore.xmi.id", Boolean.TRUE); //$NON-NLS-1$
+//		}
+//		final MatchModel inputMatch = MatchService.doResourceMatch(leftModel, rightModel, options);
+//		return DiffService.doDiff(inputMatch);
+//	}
 
 }
