@@ -26,6 +26,7 @@ public class TestModelGeneration  {
  												{ URI.createFileURI(".\\data\\instantiator\\models\\Grafcet.ecore"), 1500 }, 
  												{ URI.createFileURI(".\\data\\instantiator\\models\\Make.ecore"), 1600}, 
  												{ URI.createFileURI(".\\data\\instantiator\\models\\OCL.ecore"), 1700}, 
+ 												{ URI.createFileURI(".\\data\\instantiator\\models\\UML.ecore"), 1700}, 
  												{ URI.createFileURI(".\\data\\instantiator\\models\\IEEE1471ConceptualModel.ecore"), 1800} 
  								});
      }
@@ -50,7 +51,9 @@ public class TestModelGeneration  {
 	@Test
 	public void generateModels() throws GenerationException {
 		modelGen.runGeneration();
-		System.out.println("finished testing");
+		String [] splits = modelURI.toString().split("/");
+		String modelName = splits[splits.length - 1];
+		System.out.println("finished generating"+modelName);
 		}
 										
 	}
