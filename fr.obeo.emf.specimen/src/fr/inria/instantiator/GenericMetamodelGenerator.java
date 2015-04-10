@@ -67,7 +67,7 @@ public class GenericMetamodelGenerator {
 				LOGGER.info(MessageFormat.format("Saving resource {0}", resource.getURI()));
 				resource.save(Collections.emptyMap());
 			}
-			LOGGER.info("Generation done");
+			LOGGER.info("All resources have been saved");
 		} catch (IOException e) {
 			LOGGER.severe(e.getLocalizedMessage());
 			throw new GenerationException(e);
