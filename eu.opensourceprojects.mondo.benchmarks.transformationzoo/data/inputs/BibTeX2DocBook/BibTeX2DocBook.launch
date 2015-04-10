@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.m2m.atl.adt.launching.atlTransformation">
+<stringAttribute key="ATL File Name" value="/eu.opensourceprojects.mondo.benchmarks.transformationzoo/data/inputs/BibTeX2DocBook/BibTeX2DocBook.atl"/>
+<stringAttribute key="ATL VM" value="EMF-specific VM"/>
+<stringAttribute key="ATL_COMPILER" value="atl2006"/>
+<booleanAttribute key="IS_REFINING" value="false"/>
+<mapAttribute key="Input">
+<mapEntry key="IN" value="BibTeX"/>
+</mapAttribute>
+<mapAttribute key="Libs"/>
+<mapAttribute key="Model Handler">
+<mapEntry key="BibTeX" value="EMF"/>
+<mapEntry key="DocBook" value="EMF"/>
+</mapAttribute>
+<mapAttribute key="ModelType">
+<mapEntry key="BibTeX" value="METAMODELINPUT"/>
+<mapEntry key="DocBook" value="METAMODELOUTPUT"/>
+<mapEntry key="IN" value="MODELINPUT"/>
+<mapEntry key="OUT" value="MODELOUTPUT"/>
+</mapAttribute>
+<mapAttribute key="Options">
+<mapEntry key="OPTION_CLEAR" value="false"/>
+<mapEntry key="OPTION_CONTENT_TYPE" value="false"/>
+<mapEntry key="OPTION_DERIVED" value="true"/>
+<mapEntry key="allowInterModelReferences" value="false"/>
+<mapEntry key="printExecutionTime" value="false"/>
+<mapEntry key="step" value="false"/>
+<mapEntry key="supportUML2Stereotypes" value="false"/>
+</mapAttribute>
+<listAttribute key="OrderedInput">
+<listEntry value="IN"/>
+</listAttribute>
+<listAttribute key="OrderedOutput">
+<listEntry value="OUT"/>
+</listAttribute>
+<mapAttribute key="Output">
+<mapEntry key="OUT" value="DocBook"/>
+</mapAttribute>
+<mapAttribute key="Path">
+<mapEntry key="BibTeX" value="/eu.opensourceprojects.mondo.benchmarks.transformationzoo/data/inputs/BibTeX2DocBook/BibTeX.ecore"/>
+<mapEntry key="DocBook" value="/eu.opensourceprojects.mondo.benchmarks.transformationzoo/data/inputs/BibTeX2DocBook/DocBook.ecore"/>
+<mapEntry key="IN" value="/eu.opensourceprojects.mondo.benchmarks.transformationzoo/data/inputs/BibTeX2DocBook/bibtex.xmi"/>
+<mapEntry key="OUT" value="/eu.opensourceprojects.mondo.benchmarks.transformationzoo/data/inputs/BibTeX2DocBook/sample-DocBook.xmi"/>
+</mapAttribute>
+<listAttribute key="Superimpose"/>
+</launchConfiguration>

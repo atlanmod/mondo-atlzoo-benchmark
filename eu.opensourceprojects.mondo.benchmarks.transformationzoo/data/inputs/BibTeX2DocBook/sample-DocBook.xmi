@@ -1,68 +1,316 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<DocBook xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns="DocBook">
-  <books>
-    <articles title="BibTeXML to DocBook">
-      <sections_1 title="References List">
-        <paras content="[a] PhDThesis Interrogation continue des Systèmes d'Information de Proximité Touzet, D. 2004 IFSIC"/>
-        <paras content="[b] MasterThesis Etude des Design Patterns et de leur impact sur la réutilisabilité Belangour, A. 2000 ENSIAS"/>
-        <paras content="[c] Article Platform independent Web Application Modeling and Development with Netsilon Bézivin, J. Fondement, F. Muller, P. Studer, P. 2005 Journal on Software and Systems Modeling"/>
-        <paras content="[d] TechReport An Eclipse-based IDE for the ATL model transformation language Bézivin, J. Jouault, F. Valduriez, P. 2004"/>
-        <paras content="[e] Unpublished Model Engineering: Principles and Definitions Bézivin, J. Jouault, F. Touzet, D. Draft"/>
-        <paras content="[f] Manual ATL User Manual"/>
-        <paras content="[g] InProceedings On the Need for Megamodels Bézivin, J. Jouault, F. Valduriez, P. 2004 Proceedings of OOPSLA and GPCE Workshop"/>
-        <paras content="[h] InCollection Discriminative Model Selection for Density Models Meek, C. Thiesson, B. 2003 Proceedings of Ninth International Workshop on Artificial Intelligence and Statistics The Society for Artificial Intelligence and Statistics"/>
-        <paras content="[i] Proceedings Proceedings of OOPSLA and GPCE Workshop 2004"/>
-        <paras content="[j] Booklet 1998"/>
-        <paras content="[k] Book eclipse Modeling Framework Budinsky, F. Steinberg, D. Merks, E. Ellersick, R. Grose, T. J. 2004 Addison-Wesley"/>
-        <paras content="[l] InBook Software Factories Greenfield, J. Short, K. 2004 Wiley 1"/>
-        <paras content="[m] Misc"/>
-        <paras content="[n] Article Graph Transformations on Domain-Specific Models Agrawal, A. Karsai, G. Shi, F. 2003 Journal on Software and Systems Modeling"/>
-        <paras content="[o] Article Sur les principes de base de l'ingénierie des modèles Bézivin, J. 2004 RSTI-L'Objet"/>
-        <paras content="[p] TechReport An Introduction to the ATLAS Model Management Architecture Bézivin, J. Jouault, F. Touzet, D. 2005"/>
-      </sections_1>
-      <sections_1 title="Authors list">
-        <paras content="Agrawal, A."/>
-        <paras content="Belangour, A."/>
-        <paras content="Budinsky, F."/>
-        <paras content="Bézivin, J."/>
-        <paras content="Ellersick, R."/>
-        <paras content="Fondement, F."/>
-        <paras content="Greenfield, J."/>
-        <paras content="Grose, T. J."/>
-        <paras content="Jouault, F."/>
-        <paras content="Karsai, G."/>
-        <paras content="Meek, C."/>
-        <paras content="Merks, E."/>
-        <paras content="Muller, P."/>
-        <paras content="Shi, F."/>
-        <paras content="Short, K."/>
-        <paras content="Steinberg, D."/>
-        <paras content="Studer, P."/>
-        <paras content="Thiesson, B."/>
-        <paras content="Touzet, D."/>
-        <paras content="Valduriez, P."/>
-      </sections_1>
-      <sections_1 title="Titles List">
-        <paras content="ATL User Manual"/>
-        <paras content="An Eclipse-based IDE for the ATL model transformation language"/>
-        <paras content="An Introduction to the ATLAS Model Management Architecture"/>
-        <paras content="Discriminative Model Selection for Density Models"/>
-        <paras content="Etude des Design Patterns et de leur impact sur la réutilisabilité"/>
-        <paras content="Graph Transformations on Domain-Specific Models"/>
-        <paras content="Interrogation continue des Systèmes d'Information de Proximité"/>
-        <paras content="Model Engineering: Principles and Definitions"/>
-        <paras content="On the Need for Megamodels"/>
-        <paras content="Platform independent Web Application Modeling and Development with Netsilon"/>
-        <paras content="Proceedings of OOPSLA and GPCE Workshop"/>
-        <paras content="Software Factories"/>
-        <paras content="Sur les principes de base de l'ingénierie des modèles"/>
-        <paras content="eclipse Modeling Framework"/>
-      </sections_1>
-      <sections_1 title="Journals List">
-        <paras content="Journal on Software and Systems Modeling"/>
-        <paras content="RSTI-L'Objet"/>
-      </sections_1>
-    </articles>
-  </books>
-</DocBook>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="DocBook">
+  <DocBook>
+    <books>
+      <articles title="BibTeXML to DocBook">
+        <sections_1 title="References List"/>
+        <sections_1 title="Authors list"/>
+        <sections_1 title="Titles List"/>
+        <sections_1 title="Journals List"/>
+      </articles>
+    </books>
+  </DocBook>
+  <DocBook>
+    <books>
+      <articles title="BibTeXML to DocBook">
+        <sections_1 title="References List"/>
+        <sections_1 title="Authors list"/>
+        <sections_1 title="Titles List"/>
+        <sections_1 title="Journals List"/>
+      </articles>
+    </books>
+  </DocBook>
+  <DocBook>
+    <books>
+      <articles title="BibTeXML to DocBook">
+        <sections_1 title="References List"/>
+        <sections_1 title="Authors list"/>
+        <sections_1 title="Titles List"/>
+        <sections_1 title="Journals List"/>
+      </articles>
+    </books>
+  </DocBook>
+  <DocBook>
+    <books>
+      <articles title="BibTeXML to DocBook">
+        <sections_1 title="References List"/>
+        <sections_1 title="Authors list"/>
+        <sections_1 title="Titles List"/>
+        <sections_1 title="Journals List"/>
+      </articles>
+    </books>
+  </DocBook>
+  <DocBook>
+    <books>
+      <articles title="BibTeXML to DocBook">
+        <sections_1 title="References List"/>
+        <sections_1 title="Authors list"/>
+        <sections_1 title="Titles List"/>
+        <sections_1 title="Journals List"/>
+      </articles>
+    </books>
+  </DocBook>
+  <DocBook>
+    <books>
+      <articles title="BibTeXML to DocBook">
+        <sections_1 title="References List"/>
+        <sections_1 title="Authors list"/>
+        <sections_1 title="Titles List"/>
+        <sections_1 title="Journals List"/>
+      </articles>
+    </books>
+  </DocBook>
+  <DocBook>
+    <books>
+      <articles title="BibTeXML to DocBook">
+        <sections_1 title="References List"/>
+        <sections_1 title="Authors list"/>
+        <sections_1 title="Titles List"/>
+        <sections_1 title="Journals List"/>
+      </articles>
+    </books>
+  </DocBook>
+  <DocBook>
+    <books>
+      <articles title="BibTeXML to DocBook">
+        <sections_1 title="References List"/>
+        <sections_1 title="Authors list"/>
+        <sections_1 title="Titles List"/>
+        <sections_1 title="Journals List"/>
+      </articles>
+    </books>
+  </DocBook>
+  <DocBook>
+    <books>
+      <articles title="BibTeXML to DocBook">
+        <sections_1 title="References List">
+          <paras content="[arlicepetherf] Misc"/>
+          <paras content="[ate] PhDThesis ownicatersuincythal eesompletati somemistyrondixeminu ckst watchis lculkst urrickalnuccuttlettexi tion oph triyanadalmonesiveocyto unidillobbyh rdialitchayoverify"/>
+          <paras content="[athu] MasterThesis ralemoteederysiery sloposerrectoorthrar ticightaneermalchibo mblechipeadejuthnesnutne"/>
+          <paras content="[ccorpheackjacaths] Proceedings errymennymeshietch everiennelantateranicepo"/>
+          <paras content="[clinsumicompipsidimagetr] TechReport oct cidespentharre quenzarketis hayuhaultanelitz epistbremaryo ncortingyphimbeawns bitmardsionb noxtrignb"/>
+          <paras content="[congtorymprownholourba] Booklet weaniongesso"/>
+          <paras content="[eptivende] InProceedings idalemsympliorticuormso iansis eatzilastocuffisepri ren ogacktomengermitembib chibox eydrentrousto ledisenialmarogetonel roweeleallysculaspelvit cei oclo"/>
+          <paras content="[erclotonscenhal] MasterThesis exp alenzanumbuneneiscryeas hury onnetarimerainkywomplyst cullaisiorressompurooshi"/>
+          <paras content="[ereumputreckirateez] PhDThesis uol whi tigh dso uatibstansitialinta"/>
+          <paras content="[estionebr] PhDThesis remanockwe obeetaguaduckle tiplaurnectontrappylver iontandsmusemi idistave nsondectumaireymeng obseget aftsme"/>
+          <paras content="[homassio] PhDThesis delmilgar yss raterserbalkonethele mentricontennyledestry riumdebe reckwinanda poketict lps dgenglateammetinvic"/>
+          <paras content="[hughtinta] Proceedings ametiontan ckchomeniciro"/>
+          <paras content="[hunde] Booklet ermedibb"/>
+          <paras content="[ionsulkast] Manual prielitypyroenc"/>
+          <paras content="[lby] InProceedings ien nceansit maesivioldu breeryongathlarail oniandeetickwor useritivoloublemsogynch ignomyerr"/>
+          <paras content="[lenneworshigh] Booklet dac"/>
+          <paras content="[listyposertas] Proceedings oic guibroas"/>
+          <paras content="[mbenapparvolyth] TechReport culethroi sandylsogypeetrov ssivertheraftyranc hmaxiendollejous cnatipightsyllowyne dim ratettralormblema"/>
+          <paras content="[ndioncest] Manual radicorgaratiouskappla"/>
+          <paras content="[neancenostanypeac] Unpublished tiftstent endeceialighariog ean isyntugingial umperpher"/>
+          <paras content="[nsemutersalialismalbee] PhDThesis ono torkatersu tan duck nnu elv eheadsincirrenetantro nsmaxworg oleverblemputterti coottentionedgetheoutem ricentarysterthkelisa tinliatexplamsoidgers"/>
+          <paras content="[oatekiptageat] Book medyncele ohitheaterotiang iatme ancio"/>
+          <paras content="[ogypericketierind] Article nty ootichympbagemalab onwarchuspicalucoate chameltubledle verflutarbradixy trineletican retoinymicies vicindefuncearkeen merimbruffoantateget sienci"/>
+          <paras content="[oiremphaaashfunnikest] InCollection higuac tratref orto gbe olgeydernest usille richwallatenspl rgenghnapintec ucart hownsivenstaluticil sinuganalvati uckup ema"/>
+          <paras content="[omeryb] Manual snympligniderobhorp"/>
+          <paras content="[pdacookersedri] Book uirym olloodoustrienspoligh tessansidichinegav boniticarch taccuissebur eed ifulstarmos moodestiorp wadeneterminseento ishobsconatic"/>
+          <paras content="[rew] MasterThesis ellexpedstend latitema mbriblectreardyn anutesur ordorypsyceicentarainolo geryndoneberlashyst umbolvattyw iorgau des teratentramikupt tionywelimplockw"/>
+          <paras content="[rghten] PhDThesis fariermussic ept sonti sell eriela rospaterntriumiamers"/>
+          <paras content="[rtibledogyripplasey] TechReport cri adj sonadd fonizzlynace hativennuratertoul cealtalmenceme lcousopporturethwat win eediv"/>
+          <paras content="[rvusimettrishance] TechReport liollynarectiosthys lsimeableelgallageter distogym masco ccergue tra"/>
+          <paras content="[seertermanthfortor] MasterThesis lvends ribluxurtba ntenterowhamentrandetarg dsmahelocchwegisholstr twinue iallowbouggerhityrico ainglaudansiumearth"/>
+          <paras content="[sengationdb] Proceedings annardi qual"/>
+          <paras content="[smakret] TechReport edrenwasco sputiothomerylichl hobstratinsawntrylopono"/>
+          <paras content="[stu] Misc"/>
+          <paras content="[teamentelicireep] InCollection rhoweablescruren tichesera creveri oidarginteebrazi ardindiancetompathes urglemandyntailcurfierr nidygorawkyogymefatter limbesypentorriallasl"/>
+          <paras content="[tic] Article ome sondeseanno hydisfort nuredoesc eniteigplemicelet tioungraforipe ati essamsf"/>
+          <paras content="[tionnatonfly] InProceedings siontcheateradropmu hawfichu santrayande tes bitionetbititifirettla tionfilterdo blestr rawn"/>
+          <paras content="[watuil] PhDThesis ampainintrickentiarsi ollince rgaveris eeingentator berudephoson hobylickeruteiste waylayd wal rgolierferackeedockma ronseiginfaurthagum"/>
+          <paras content="[weaujightrittyrippyrdai] Misc"/>
+          <paras content="[ylliveydrestradjailicas] Manual nicentorthy"/>
+          <paras content="[yphybranson] MasterThesis eitamedroushraftyrityri rickleasta fewepr turvillingralvelfalared olvarrysions atim matencti ctillicomoreotiornat dieckerphiso veraboitergle"/>
+          <paras content="[ypt] Proceedings ulshin luc"/>
+        </sections_1>
+        <sections_1 title="Authors list">
+          <paras content="adj"/>
+          <paras content="alenzanumbuneneiscryeas"/>
+          <paras content="anutesur"/>
+          <paras content="ardindiancetompathes"/>
+          <paras content="atim"/>
+          <paras content="berudephoson"/>
+          <paras content="bitionetbititifirettla"/>
+          <paras content="bitmardsionb"/>
+          <paras content="boniticarch"/>
+          <paras content="breeryongathlarail"/>
+          <paras content="ccergue"/>
+          <paras content="cealtalmenceme"/>
+          <paras content="chameltubledle"/>
+          <paras content="chibox"/>
+          <paras content="cidespentharre"/>
+          <paras content="ckst"/>
+          <paras content="cnatipightsyllowyne"/>
+          <paras content="coottentionedgetheoutem"/>
+          <paras content="creveri"/>
+          <paras content="ctillicomoreotiornat"/>
+          <paras content="des"/>
+          <paras content="dim"/>
+          <paras content="distogym"/>
+          <paras content="dsmahelocchwegisholstr"/>
+          <paras content="duck"/>
+          <paras content="ean"/>
+          <paras content="eatzilastocuffisepri"/>
+          <paras content="eed"/>
+          <paras content="eeingentator"/>
+          <paras content="eesompletati"/>
+          <paras content="eheadsincirrenetantro"/>
+          <paras content="elv"/>
+          <paras content="endeceialighariog"/>
+          <paras content="eniteigplemicelet"/>
+          <paras content="epistbremaryo"/>
+          <paras content="ept"/>
+          <paras content="eydrentrousto"/>
+          <paras content="fewepr"/>
+          <paras content="fonizzlynace"/>
+          <paras content="gbe"/>
+          <paras content="geryndoneberlashyst"/>
+          <paras content="hativennuratertoul"/>
+          <paras content="hawfichu"/>
+          <paras content="hayuhaultanelitz"/>
+          <paras content="hmaxiendollejous"/>
+          <paras content="hobylickeruteiste"/>
+          <paras content="hownsivenstaluticil"/>
+          <paras content="hury"/>
+          <paras content="hydisfort"/>
+          <paras content="iansis"/>
+          <paras content="idistave"/>
+          <paras content="ifulstarmos"/>
+          <paras content="iontandsmusemi"/>
+          <paras content="iorgau"/>
+          <paras content="isyntugingial"/>
+          <paras content="latitema"/>
+          <paras content="lcousopporturethwat"/>
+          <paras content="lculkst"/>
+          <paras content="ledisenialmarogetonel"/>
+          <paras content="lsimeableelgallageter"/>
+          <paras content="maesivioldu"/>
+          <paras content="masco"/>
+          <paras content="matencti"/>
+          <paras content="mbriblectreardyn"/>
+          <paras content="mentricontennyledestry"/>
+          <paras content="moodestiorp"/>
+          <paras content="nceansit"/>
+          <paras content="ncortingyphimbeawns"/>
+          <paras content="nnu"/>
+          <paras content="nsmaxworg"/>
+          <paras content="nsondectumaireymeng"/>
+          <paras content="ntenterowhamentrandetarg"/>
+          <paras content="nuredoesc"/>
+          <paras content="obeetaguaduckle"/>
+          <paras content="ogacktomengermitembib"/>
+          <paras content="ohitheaterotiang"/>
+          <paras content="oidarginteebrazi"/>
+          <paras content="oleverblemputterti"/>
+          <paras content="olgeydernest"/>
+          <paras content="ollince"/>
+          <paras content="olloodoustrienspoligh"/>
+          <paras content="olvarrysions"/>
+          <paras content="oniandeetickwor"/>
+          <paras content="onwarchuspicalucoate"/>
+          <paras content="ootichympbagemalab"/>
+          <paras content="oph"/>
+          <paras content="ordorypsyceicentarainolo"/>
+          <paras content="orto"/>
+          <paras content="poketict"/>
+          <paras content="quenzarketis"/>
+          <paras content="raterserbalkonethele"/>
+          <paras content="reckwinanda"/>
+          <paras content="ren"/>
+          <paras content="retoinymicies"/>
+          <paras content="rgaveris"/>
+          <paras content="rgenghnapintec"/>
+          <paras content="ribluxurtba"/>
+          <paras content="richwallatenspl"/>
+          <paras content="rickleasta"/>
+          <paras content="riumdebe"/>
+          <paras content="roweeleallysculaspelvit"/>
+          <paras content="sandylsogypeetrov"/>
+          <paras content="santrayande"/>
+          <paras content="sell"/>
+          <paras content="sloposerrectoorthrar"/>
+          <paras content="somemistyrondixeminu"/>
+          <paras content="sonadd"/>
+          <paras content="sondeseanno"/>
+          <paras content="sonti"/>
+          <paras content="sputiothomerylichl"/>
+          <paras content="ssivertheraftyranc"/>
+          <paras content="taccuissebur"/>
+          <paras content="tan"/>
+          <paras content="tes"/>
+          <paras content="tessansidichinegav"/>
+          <paras content="tichesera"/>
+          <paras content="tigh"/>
+          <paras content="tion"/>
+          <paras content="tionfilterdo"/>
+          <paras content="tioungraforipe"/>
+          <paras content="tiplaurnectontrappylver"/>
+          <paras content="torkatersu"/>
+          <paras content="tratref"/>
+          <paras content="trineletican"/>
+          <paras content="triyanadalmonesiveocyto"/>
+          <paras content="turvillingralvelfalared"/>
+          <paras content="twinue"/>
+          <paras content="ucart"/>
+          <paras content="umbolvattyw"/>
+          <paras content="urrickalnuccuttlettexi"/>
+          <paras content="usille"/>
+          <paras content="verflutarbradixy"/>
+          <paras content="vicindefuncearkeen"/>
+          <paras content="wal"/>
+          <paras content="watchis"/>
+          <paras content="waylayd"/>
+          <paras content="whi"/>
+          <paras content="win"/>
+          <paras content="yss"/>
+        </sections_1>
+        <sections_1 title="Titles List">
+          <paras content="ametiontan"/>
+          <paras content="ampainintrickentiarsi"/>
+          <paras content="annardi"/>
+          <paras content="cri"/>
+          <paras content="culethroi"/>
+          <paras content="delmilgar"/>
+          <paras content="edrenwasco"/>
+          <paras content="eitamedroushraftyrityri"/>
+          <paras content="ellexpedstend"/>
+          <paras content="errymennymeshietch"/>
+          <paras content="exp"/>
+          <paras content="fariermussic"/>
+          <paras content="higuac"/>
+          <paras content="idalemsympliorticuormso"/>
+          <paras content="ien"/>
+          <paras content="liollynarectiosthys"/>
+          <paras content="lvends"/>
+          <paras content="medyncele"/>
+          <paras content="nicentorthy"/>
+          <paras content="nty"/>
+          <paras content="oct"/>
+          <paras content="oic"/>
+          <paras content="ome"/>
+          <paras content="ono"/>
+          <paras content="ownicatersuincythal"/>
+          <paras content="prielitypyroenc"/>
+          <paras content="radicorgaratiouskappla"/>
+          <paras content="ralemoteederysiery"/>
+          <paras content="remanockwe"/>
+          <paras content="rhoweablescruren"/>
+          <paras content="siontcheateradropmu"/>
+          <paras content="snympligniderobhorp"/>
+          <paras content="tiftstent"/>
+          <paras content="uirym"/>
+          <paras content="ulshin"/>
+          <paras content="uol"/>
+        </sections_1>
+        <sections_1 title="Journals List">
+          <paras content="essamsf"/>
+          <paras content="sienci"/>
+        </sections_1>
+      </articles>
+    </books>
+  </DocBook>
+</xmi:XMI>
