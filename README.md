@@ -18,7 +18,6 @@ The transformations can be launched separately using ATLs default launch configu
 ## Prerequisites
 
 * EMF
-* EMF Compare 1.3.2
 * JUnit
 
 
