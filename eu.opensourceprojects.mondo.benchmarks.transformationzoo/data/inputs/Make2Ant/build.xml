@@ -1,0 +1,25 @@
+<project name="makefile"  default="hello">
+  <description>Test d'un fichier makefile</description>
+  <property name="CC" value="gcc"/>
+  <property name="CFLAGS" value="-wall -ansi"/>
+  <property name="LDFLAGS" value="-wall -ansi"/>
+  <target name="hello" depends="hello.o,main.o">
+    <exec executable="$(CC) -o hello hello.o main.o $(LDFLAGS)"/>
+    <echo message="skip"/>
+    <exec executable="skip"/>
+  </target>
+  <target name="hello.o" >
+    <exec executable="$(CC) -o hello.o -c hello.c $(CFLAGS)"/>
+  </target>
+  <target name="main.o" >
+    <echo message="$(CC) -o main.o -c main.c $(CFLAGS)"/>
+    <exec executable="$(CC) -o main.o -c main.c $(CFLAGS)"/>
+  </target>
+  <target name="clean" >
+    <echo message="rm -rf *.o"/>
+    <exec executable="rm -rf *.o"/>
+  </target>
+  <target name="mrproper" depends="clean">
+    <exec executable="rm -rf $(EXEC)"/>
+  </target>
+</project>

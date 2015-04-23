@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <cpl xmlns="urn:ietf:params:xml:ns:cpl"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="urn:ietf:params:xml:ns:cpl cpl.xsd ">
+     <subaction id="voicemail">
+       <location url="sip:jones@voicemail.example.com">
+         <redirect />
+       </location>
+     </subaction>
+     <incoming>
+       <location url="sip:jones@phone.example.com">
+         <proxy timeout="8">
+           <busy>
+             <sub ref="voicemail" />
+           </busy>
+           <noanswer>
+             <address-switch field="origin">
+               <address is="sip:boss@example.com">
+                 <location url="tel:+19175551212">
+                   <proxy />
+                 </location>
+               </address>
+               <otherwise>
+                 <sub ref="voicemail" />
+               </otherwise>
+             </address-switch>
+           </noanswer>
+         </proxy>
+       </location>
+     </incoming>
+   </cpl>

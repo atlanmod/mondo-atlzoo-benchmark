@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ASCII"?>
+<Makefile xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="Make" name="makefile">
+  <comment text="Test d'un fichier makefile"/>
+  <elements xsi:type="Macro" name="CC" value="gcc"/>
+  <elements xsi:type="Macro" name="CFLAGS" value="-wall -ansi"/>
+  <elements xsi:type="Macro" name="LDFLAGS" value="-wall -ansi"/>
+  <elements xsi:type="Rule" name="hello">
+    <dependencies xsi:type="RuleDep" ruledep="//@elements.5"/>
+    <dependencies xsi:type="RuleDep" ruledep="//@elements.4"/>
+    <shellLines command="$(CC) -o hello hello.o main.o $(LDFLAGS)" display="false"/>
+    <shellLines command="skip" display="true"/>
+  </elements>
+  <elements xsi:type="Rule" name="hello.o">
+    <dependencies xsi:type="FileDep" name="hello.c"/>
+    <shellLines command="$(CC) -o hello.o -c hello.c $(CFLAGS)" display="false"/>
+  </elements>
+  <elements xsi:type="Rule" name="main.o">
+    <dependencies xsi:type="FileDep" name="main.c"/>
+    <dependencies xsi:type="FileDep" name="hello.h"/>
+    <shellLines command="$(CC) -o main.o -c main.c $(CFLAGS)" display="true"/>
+  </elements>
+  <elements xsi:type="Rule" name="clean">
+    <shellLines command="rm -rf *.o" display="true"/>
+  </elements>
+  <elements xsi:type="Rule" name="mrproper">
+    <dependencies xsi:type="RuleDep" ruledep="//@elements.6"/>
+    <shellLines command="rm -rf $(EXEC)" display="false"/>
+  </elements>
+</Makefile>

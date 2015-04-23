@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IEEE1471Model xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns="IEEE1471" name="sampleModel">
+  <system name="RDB" content="Relational DataBase" fulfills="#//@missions.0 #//@missions.1 #//@missions.2"
+      inhabits="#//@environment" hasAn="#//@architecture" has="#//@stakeholders.0 #//@stakeholders.1"/>
+  <environment name="SQL Server" content="Oracle server" influences="#//@system"/>
+  <missions name="update" content="update a selected data"/>
+  <missions name="select" content="select several data in function of parameters"/>
+  <missions name="create" content="create a data with all necessary parameters"/>
+  <architecture name="ClientServer" content="one server for several clients" describedBy="#//@architecturalDescription"/>
+  <stakeholders name="DB architect" content="defines the class of persons who designe the DB"
+      has="#//@concerns.0"/>
+  <stakeholders name="Deployment Architect" content="defines the group of persons who deploy the system in a given environment with the appropriate architecture"
+      has="#//@concerns.1"/>
+  <concerns name="RDB structure" content="interest about the enities and the relations in the database"
+      isImportantTo="#//@stakeholders.0"/>
+  <concerns name="Hardware architecture" content="interest about the physical distribution"
+      isImportantTo="#//@stakeholders.1"/>
+  <viewpoints name="RDB structure for one table" content="how to design a database model"
+      hasSource="#//@libraryViewpoints.0" usedToCover="#//@concerns.0"/>
+  <viewpoints name="HardwareDistribution" content="distribution of hardware components"
+      usedToCover="#//@concerns.1"/>
+  <libraryViewpoints name="StructuralViewpoints" content="defines the group of viewpoints that defines a structural view on systems"/>
+  <architecturalDescription name="RDB CS" content="description of a relational database with a clientserver architecture"
+      identifiesS="#//@stakeholders.0 #//@stakeholders.1" identifiesC="#//@concerns.0 #//@concerns.1"
+      selects="#//@viewpoints.0 #//@viewpoints.1">
+    <organizedBy name="DB Structure" content="defines the structure of the database"
+        conformsTo="#//@viewpoints.0" consitsOf="#//@architecturalDescription/@aggregates.0"/>
+    <organizedBy name="Deployment" content="defines how to deploy the systems on the hardware"
+        conformsTo="#//@viewpoints.1" consitsOf="#//@architecturalDescription/@aggregates.1"/>
+    <aggregates name="EntityRelation diagram" content="description of a relational database with a CS architecture"
+        participatesInV="#//@architecturalDescription/@organizedBy.0"/>
+    <aggregates name="DeploymentDiagram" content="defines the graph representation of a model of deployment"
+        participatesInV="#//@architecturalDescription/@organizedBy.1"/>
+  </architecturalDescription>
+  <rationale name="DesignAndDeploy" content="defines the entity-relation diagram and after deploy database to a sever and define acces for client"
+      provides="#//@architecturalDescription"/>
+</IEEE1471Model>
+

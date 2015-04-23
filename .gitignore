@@ -3,4 +3,6 @@ target
 *~
 *.rej
 *.bak
+*.asm
+*.class
 

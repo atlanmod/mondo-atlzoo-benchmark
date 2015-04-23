@@ -1,0 +1,82 @@
+package BibTeX {
+
+ class BibTeXFile {
+    reference entries[*] container : BibTeXEntry;
+  }
+
+  class Author {
+    attribute author : String;
+  }
+
+  abstract class BibTeXEntry {
+    attribute id : String;
+  }
+
+  abstract class AuthoredEntry extends BibTeXEntry {
+    reference authors[1-*] container : Author;
+  }
+
+  abstract class DatedEntry extends BibTeXEntry {
+    attribute year : String;
+  }
+
+  abstract class TitledEntry extends BibTeXEntry {
+    attribute title : String;
+  }
+
+  abstract class BookTitledEntry extends BibTeXEntry {
+    attribute booktitle : String;
+  }
+
+  class Article extends AuthoredEntry, DatedEntry, TitledEntry {
+    attribute journal : String;
+  }
+
+  class TechReport extends AuthoredEntry, DatedEntry, TitledEntry {
+  }
+
+  class Unpublished extends AuthoredEntry, TitledEntry {
+    attribute note : String;
+  }
+
+  class Manual extends TitledEntry {
+  }
+
+  class Proceedings extends DatedEntry, TitledEntry {
+  }
+
+  class InProceedings extends Proceedings, AuthoredEntry, BookTitledEntry {
+  }
+
+  class Booklet extends DatedEntry {
+  }
+
+  class Book extends AuthoredEntry, DatedEntry, TitledEntry {
+    attribute publisher : String;
+  }
+
+  class InCollection extends Book, BookTitledEntry {
+  }
+
+  class InBook extends Book {
+    attribute chapter : Integer;
+  }
+
+  class Misc extends BibTeXEntry {
+  }
+
+  abstract class ThesisEntry extends AuthoredEntry, DatedEntry, TitledEntry {
+    attribute school : String;
+  }
+
+  class PhDThesis extends ThesisEntry {
+  }
+
+  class MasterThesis extends ThesisEntry {
+  }
+}
+
+package PrimitiveTypes {
+  datatype String;
+  datatype Integer;
+}
