@@ -46,6 +46,8 @@ usage: java -jar <this-file.jar> -m <path_to_metamodel.ecore> [-a <path_to_metam
                                                        variable length (defaults to 64).
                                                        Actual sizes may vary +/- 10%.
  -e,--seed <seed>                                      Seed number (random by default)
+ -f,--force                                            Force the generation, even if 
+                                                       input metamodels contain errors
  -g,--diagnose                                         Run diagnosis on the result model
 ```
 
