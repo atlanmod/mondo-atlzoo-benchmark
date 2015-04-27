@@ -6,7 +6,7 @@ A default configuration using uniform probability distributions for each meta-cl
 
 A generation configuration holds information such as (i) metaclasses that should (not) be involved in the generation; and (ii) probability distributions to establish how many instances should be generated for each metaclass, and which values should be assigned to structural features. Details of the configuration can be found [here](https://github.com/atlanmod/mondo-atlzoo-benchmark/blob/master/fr.inria.atlanmod.instantiator/src/fr/inria/atlanmod/instantiator/GenericMetamodelConfig.java). 
 
-The instantiation process is guided by a goal number of *EObjects* (i.e., expected size of the result instance in terms of number of elements). The generation stops once this number of elements is reached and no multiplicity constraint is violated. To guarantee that the generated instances are valid, the tool can (optionally) run a diagnosis on the set of generated models.
+The instantiation process is guided by a goal number of *EObjects* (i.e., expected size of the result instance in terms of number of elements). The generation stops once this number of elements is reached and no multiplicity constraint is violated. To guarantee that the generated instances are valid, the tool can (optionally) run a diagnosis on the set of generated models and provide a detailed report if any error is found.
 
 ## Running the *EMF random instantiator*
 
