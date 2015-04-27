@@ -8,7 +8,7 @@ A generation configuration holds information such as (i) metaclasses that should
 
 The instantiation process is guided by a goal number of *EObjects* (i.e., expected size of the result instance in terms of number of elements). The generation stops once this number of elements is reached and no multiplicity constraint is violated.
 
-The current implementation uses XMI as the persistence format for the generated models. So that, although models of up to ~2 billions of elements are theoretically supported, the actual maximum number is limited by the hardware configuration. With the proper hardware we have been able to generate models of up to 30M elements in aour experiments.
+The current implementation uses XMI as the persistence format for the generated models. So that, although models of up to ~2 billions of elements are theoretically supported, the actual maximum number is limited by the hardware configuration. With the proper hardware we have been able to generate models of up to 30M elements in our experiments, with a final XMI size of 20GB.
 
 To guarantee that the generated instances are valid, the tool can (optionally) run a diagnosis on the set of generated models and provide a detailed report if any error is found.
 
