@@ -21,7 +21,9 @@ The only required argument is the file containing the metamodel to instantiate. 
 ```
 $ java -jar dist/instantiator.jar
 Missing required option: m
-usage: java -jar <this-file.jar> -m <path_to_metamodel.ecore> [-a <path_to_metamodel.ecore>] [-o <path_to_output.dir>] [-n <models>] [-s <size>] [-p <proportion>] [-d <degree>] [-z <size>] [-e <seed>] [-g]
+usage: java -jar <this-file.jar> -m <path_to_metamodel.ecore> [-a <path_to_metamodel.ecore>] 
+[-o <path_to_output.dir>] [-n <models>] [-s <size>] [-p <proportion>] [-d <degree>]
+[-z <size>] [-e <seed>] [-g]
  -m,--metamodel <path_to_metamodel.ecore>              Ecore metamodel
  -a,--additional-metamodel <path_to_metamodel.ecore>   Additional ecore metamodel(s)
                                                        that need to be registered
