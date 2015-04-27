@@ -10,7 +10,7 @@ The instantiation process is guided by a goal number of *EObjects* (i.e., expect
 
 ## Running the *EMF random instantiator*
 
-The *EMF random instantiator* can be directly executed using the provided (fat jar)[] which contains all the required dependencies:
+The *EMF random instantiator* can be directly executed using the provided (fat jar)[https://github.com/atlanmod/mondo-atlzoo-benchmark/blob/master/fr.inria.atlanmod.instantiator/dist/instantiator-fatjar.jar?raw=true] which contains all the required dependencies:
 
 ```
 $ java -jar dist/instantiator.jar <program arguments>
