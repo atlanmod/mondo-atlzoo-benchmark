@@ -1,2 +1,8 @@
+bin/
+target
+*~
+*.rej
+*.bak
 *.asm
 *.class
+
