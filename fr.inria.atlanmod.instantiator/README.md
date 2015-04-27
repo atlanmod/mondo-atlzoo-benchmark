@@ -32,7 +32,7 @@ usage: java -jar <this-file.jar> -m <path_to_metamodel.ecore> [-a <path_to_metam
  -n,--number-models <models>                           Number of generated models
                                                        (defaults to 1)
  -s,--size <size>                                      Average models' size
-                                                      (defaults to 1 000)
+                                                       (defaults to 1 000)
  -p,--variation <proportion>                           Variation ([0..1]) in the
                                                        models' size (defaults to 0,1)
  -d,--references-degree <degree>                       Average number of references per
