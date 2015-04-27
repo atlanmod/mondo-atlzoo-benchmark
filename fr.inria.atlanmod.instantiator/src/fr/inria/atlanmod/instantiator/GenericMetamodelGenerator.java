@@ -80,7 +80,9 @@ public class GenericMetamodelGenerator {
 			}
 			for (Resource resource :  resourceSet.getResources()) {
 				LOGGER.info(MessageFormat.format("Saving resource {0}", resource.getURI()));
-				resource.save(Collections.emptyMap());
+				if (resource.isModified()) {
+					resource.save(Collections.emptyMap());
+				}
 			}
 			LOGGER.info("All resources have been saved");
 		} catch (IOException e) {
