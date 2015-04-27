@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import com.google.common.base.Optional;
 import com.google.common.collect.ArrayListMultimap;
@@ -103,11 +104,23 @@ public class SpecimenGenerator {
 		LOGGER.info(MessageFormat.format("Actual #EObject={0}", ImmutableSet.copyOf(indexByKind.values()).size()));
 
 		for (Map.Entry<EClass, Collection<EObject>> entry : indexByKind.asMap().entrySet()) {
+			// Log number of elements for resolved EClasses
 			EClass eClass = entry.getKey();
-			LOGGER.info(MessageFormat.format("#{0}::{1}={2}", 
-					eClass.getEPackage().getNsURI(),
-					entry.getKey().getName(),
-					entry.getValue().size()));
+			if (!eClass.eIsProxy() || (eClass.eIsProxy() && EcoreUtil.resolve(eClass, resource) != eClass)) {
+				LOGGER.info(MessageFormat.format("#{0}::{1}={2}", 
+						eClass.getEPackage().getNsURI(),
+						eClass.getName(),
+						entry.getValue().size()));
+			}
+		}
+		for (Map.Entry<EClass, Collection<EObject>> entry : indexByKind.asMap().entrySet()) {
+			EClass eClass = entry.getKey();
+			if (eClass.eIsProxy() && EcoreUtil.resolve(eClass, resource) == eClass) {
+				// Warn about unresolved EClasses
+				LOGGER.warning(MessageFormat.format("#{0} (unresolved)={1}", 
+						EcoreUtil.getURI(eClass),
+						entry.getValue().size()));
+			}
 		}
 
 		LOGGER.info(MessageFormat.format("Generation finished for resource ''{0}''", resource.getURI()));
