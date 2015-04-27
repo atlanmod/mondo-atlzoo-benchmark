@@ -45,7 +45,7 @@ usage: java -jar <this-file.jar> -m <path_to_metamodel.ecore> [-a <path_to_metam
 
 ## Example
 
-The next example shows the command line arguments to generate a set of 2 random models, of an average size of 100 elements, and using the default configuration with a random seed. The file `logging.default.properties` is used to control the verbosity of the log messages: `INFO` level for the `java.util.logging.ConsoleHandler` and `FINE` level for the `java.util.logging.FileHandler`. When a `FINE` log level is requested, the *EMF random instantiator* will provide **extensive** information about each object and cross-reference creation. 
+The next example shows the command line arguments to generate a set of 2 random models, of an average size of 100 elements, and using the default configuration with a random seed. The file `logging.default.properties` is used to control the verbosity of the log messages: `INFO` level for the `java.util.logging.ConsoleHandler` and `FINE` level for the `java.util.logging.FileHandler`. When a `FINE` log level is requested, the *EMF random instantiator* will provide **extensive** information (not shown here) about each object and cross-reference creation. 
 
 ```
 $ >java -Djava.util.logging.config.file=logging.default.properties -jar instantiator-fatjar.jar -m Grafcet.ecore -n 2 -s 100 -g
