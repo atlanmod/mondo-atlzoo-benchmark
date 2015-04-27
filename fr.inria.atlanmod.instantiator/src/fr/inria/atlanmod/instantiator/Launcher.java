@@ -12,6 +12,8 @@
 package fr.inria.atlanmod.instantiator;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.nio.file.Paths;
 import java.text.MessageFormat;
 import java.util.Collections;
@@ -38,6 +40,7 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.Diagnostician;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
@@ -53,6 +56,8 @@ public class Launcher {
 	private static final int DEFAULT_AVERAGE_MODEL_SIZE = 1000;
 	private static final float DEFAULT_MODEL_SIZE_DEVIATION = 0.1f;
 	
+	private static final int ERROR = 1;
+
 	private static final String METAMODEL 					= "m";
 	private static final String METAMODEL_LONG 				= "metamodel";
 	private static final String ADDITIONAL_METAMODEL 		= "a";
@@ -71,13 +76,15 @@ public class Launcher {
 	private static final String VALUES_SIZE_LONG			= "values-size";
 	private static final String SEED 						= "e";
 	private static final String SEED_LONG 					= "seed";
+	private static final String FORCE 						= "f";
+	private static final String FORCE_LONG 					= "force";
 	private static final String DIAGNOSE	 				= "g";
 	private static final String DIAGNOSE_LONG				= "diagnose";
 
 
 
 	private static class OptionComarator<T extends Option> implements Comparator<T> {
-	    private static final String OPTS_ORDER = "maonspdzeg";
+	    private static final String OPTS_ORDER = "maonspdzefg";
 
 	    @Override
 		public int compare(T o1, T o2) {
@@ -108,6 +115,33 @@ public class Launcher {
 			
 			Resource metamodelResource = new XMIResourceImpl(URI.createFileURI(metamodel));
 			metamodelResource.load(Collections.emptyMap());
+			EcoreUtil.resolveAll(metamodelResource);
+			{
+				BasicDiagnostic diagnosticChain = diagnoseResource(metamodelResource);
+				if (isFailed(diagnosticChain)) {
+					LOGGER.severe(MessageFormat.format(
+							"Found ''{0}'' unrecoverable issues(s) in the resource ''{1}''. Please fix them before attempting a generation or use option -{2}|--{3}.",
+							diagnosticChain.getChildren().size(), metamodelResource.getURI(), FORCE, FORCE_LONG));
+					for (Diagnostic diagnostic : diagnosticChain.getChildren()) {
+						LOGGER.severe(diagnostic.getMessage());
+					}
+					if (commandLine.hasOption(FORCE)) {
+						LOGGER.info(MessageFormat.format(
+								"An attempt to run the generation will be done anyway (-{0}|--{1} option selected)",
+								FORCE, FORCE_LONG));
+					} else {
+						System.exit(ERROR);
+					}
+				} else if (isWarning(diagnosticChain)) {
+					LOGGER.warning(MessageFormat.format(
+							"Found ''{0}'' issue(s) in the resource ''{1}''. An attempt to run the generation will be done anyway.",
+							diagnosticChain.getChildren().size(), metamodelResource.getURI()));
+					for (Diagnostic diagnostic : diagnosticChain.getChildren()) {
+						LOGGER.fine(diagnostic.getMessage());
+					}
+				}
+			}
+			
 			registerPackages(metamodelResource);
 
 			int size = Launcher.DEFAULT_AVERAGE_MODEL_SIZE;
@@ -142,6 +176,31 @@ public class Launcher {
 					URI additionalMetamodelUri = URI.createFileURI(additionalMetamodel);
 					Resource resource = new XMIResourceImpl(additionalMetamodelUri);
 					resource.load(Collections.emptyMap());
+					
+					BasicDiagnostic diagnosticChain = diagnoseResource(resource);
+					if (isFailed(diagnosticChain)) {
+						LOGGER.severe(MessageFormat.format(
+								"Found ''{0}'' unrecoverable issues(s) in the resource ''{1}''. Please fix them before attempting a generation or use option -{2}|--{3}.",
+								diagnosticChain.getChildren().size(), resource.getURI(), FORCE, FORCE_LONG));
+						for (Diagnostic diagnostic : diagnosticChain.getChildren()) {
+							LOGGER.severe(diagnostic.getMessage());
+						}
+						if (commandLine.hasOption(FORCE)) {
+							LOGGER.info(MessageFormat.format(
+									"An attempt to run the generation will be done anyway (-{0}|--{1} option selected)",
+									FORCE, FORCE_LONG));
+						} else {
+							System.exit(ERROR);
+						}
+					} else if (isWarning(diagnosticChain)) {
+						LOGGER.warning(MessageFormat.format(
+								"Found ''{0}'' issue(s) in the resource ''{1}''. An attempt to run the generation will be done anyway.",
+								diagnosticChain.getChildren().size(), resource.getURI()));
+						for (Diagnostic diagnostic : diagnosticChain.getChildren()) {
+							LOGGER.fine(diagnostic.getMessage());
+						}
+					}
+					
 					registerPackages(resource);
 				}
 			}
@@ -189,12 +248,8 @@ public class Launcher {
 			if (commandLine.hasOption(DIAGNOSE)) {
 				for (Resource resource : resourceSet.getResources()) {
 					LOGGER.info(MessageFormat.format("Requested validation for resource ''{0}''", resource.getURI()));
-					BasicDiagnostic diagnosticChain = new BasicDiagnostic();
-					for (EObject eObject : resource.getContents()) {
-						Diagnostician.INSTANCE.validate(eObject, diagnosticChain);
-					}
-					boolean error = (diagnosticChain.getSeverity() & Diagnostic.ERROR) == Diagnostic.ERROR;
-					if (!error) {
+					BasicDiagnostic diagnosticChain = diagnoseResource(resource);
+					if (!isFailed(diagnosticChain)) {
 						LOGGER.info(MessageFormat.format("Result of the diagnosis of resurce ''{0}'' is ''OK''",
 												resource.getURI()));
 					} else {
@@ -215,10 +270,35 @@ public class Launcher {
 			try {
 				formatter.setWidth(Math.max(TerminalFactory.get().getWidth(), 80));
 			} catch (Throwable t) {
-				// Nothing to do...
+				LOGGER.warning("Unable to get console information");
 			};
 			formatter.printHelp("java -jar <this-file.jar>", options, true);
+			System.exit(ERROR);
+		} catch (Throwable t) {
+			System.err.println("ERROR: " + t.getLocalizedMessage());
+			StringWriter stringWriter = new StringWriter();
+			t.printStackTrace(new PrintWriter(stringWriter));
+			LOGGER.fine(stringWriter.toString());
+			System.exit(ERROR);
+		} 
+	}
+
+
+
+	private static BasicDiagnostic diagnoseResource(Resource resource) {
+		BasicDiagnostic diagnosticChain = new BasicDiagnostic();
+		for (EObject eObject : resource.getContents()) {
+			Diagnostician.INSTANCE.validate(eObject, diagnosticChain);
 		}
+		return diagnosticChain;
+	}
+	
+	private static boolean isFailed(BasicDiagnostic diagnosticChain) {
+		return (diagnosticChain.getSeverity() & Diagnostic.ERROR) == Diagnostic.ERROR;
+	}
+
+	private static boolean isWarning(BasicDiagnostic diagnosticChain) {
+		return (diagnosticChain.getSeverity() & Diagnostic.WARNING) == Diagnostic.WARNING;
 	}
 
 
@@ -295,6 +375,10 @@ public class Launcher {
 		degreeOption.setType(Number.class);
 		degreeOption.setArgs(1);
 		
+		Option forceOption = OptionBuilder.create(FORCE);
+		forceOption.setLongOpt(FORCE_LONG);
+		forceOption.setDescription("Force the generation, even if input metamodels contain errors");
+		
 		Option diagnoseOption = OptionBuilder.create(DIAGNOSE);
 		diagnoseOption.setLongOpt(DIAGNOSE_LONG);
 		diagnoseOption.setDescription("Run diagnosis on the result model");
@@ -309,6 +393,7 @@ public class Launcher {
 		options.addOption(valuesSizeOption);
 		options.addOption(degreeOption);
 		options.addOption(seedOption);
+		options.addOption(forceOption);
 		options.addOption(diagnoseOption);
 	}
 
