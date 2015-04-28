@@ -13,8 +13,14 @@ create  XML1 : XMLMaven  , XML2 : XMLProject
 -- helper getXmlnsAux : returns the name of the Xmlns element having
 -- the same value that given in parameter
 helper def:getXmlnsAux(name: String): String =
-	MavenMaven!Xmlns.allInstances() ->
-		select(e|e.value=name)-> first().name;
+	let nameSpaceSet : Sequence (MavenMaven!Xmlns)  = MavenMaven!Xmlns.allInstances() ->
+		select(e|e.value=name) in
+	if not nameSpaceSet -> first().oclIsUndefined() then 
+		nameSpaceSet ->select(e|e.value=name)-> first().name
+	else '_'
+	endif;
+	
+	
 
 -- helper getXmlns : returns the prefix corresponding to name
 helper def:getXmlns(name: String): String =

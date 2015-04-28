@@ -37,8 +37,8 @@
 <mapEntry key="OUT" value="OWL"/>
 </mapAttribute>
 <mapAttribute key="Path">
-<mapEntry key="IN" value="/eu.opensourceprojects.mondo.benchmarks.transformationzoo/data/inputs/UML2OWL/Museum.uml"/>
-<mapEntry key="OUT" value="/eu.opensourceprojects.mondo.benchmarks.transformationzoo/data/inputs/UML2OWL/Museum.owl.xmi"/>
+<mapEntry key="IN" value="/eu.opensourceprojects.mondo.benchmarks.transformationzoo/data/inputs/UML2OWL/umlModel.xmi"/>
+<mapEntry key="OUT" value="/eu.opensourceprojects.mondo.benchmarks.transformationzoo/data/inputs/UML2OWL/owlModel.xmi"/>
 <mapEntry key="OWL" value="/eu.opensourceprojects.mondo.benchmarks.transformationzoo/data/inputs/UML2OWL/OWL.ecore"/>
 <mapEntry key="UML" value="uri:http://www.eclipse.org/uml2/2.1.0/UML"/>
 </mapAttribute>

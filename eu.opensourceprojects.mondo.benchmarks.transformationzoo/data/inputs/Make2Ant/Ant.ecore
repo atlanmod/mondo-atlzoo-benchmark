@@ -327,7 +327,7 @@
           eType="#/1/String"/>
     </eClassifiers>
   </ecore:EPackage>
-  <ecore:EPackage name="PrimitiveTypes">
-    <eClassifiers xsi:type="ecore:EDataType" name="String"/>
+  <ecore:EPackage name="PrimitiveTypes" nsURI="PrimitiveTypes" nsPrefix="PrimitiveTypes">
+    <eClassifiers xsi:type="ecore:EDataType" name="String" instanceClassName="java.lang.String"/>
   </ecore:EPackage>
 </xmi:XMI>

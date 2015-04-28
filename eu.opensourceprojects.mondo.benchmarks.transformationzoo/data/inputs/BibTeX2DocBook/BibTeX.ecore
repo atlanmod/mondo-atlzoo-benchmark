@@ -2,10 +2,10 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore">
   <ecore:EPackage name="PrimitiveTypes" nsURI="PrimitiveTypes">
-    <eClassifiers xsi:type="ecore:EDataType" name="String"/>
-    <eClassifiers xsi:type="ecore:EDataType" name="Integer"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="String" instanceClassName="java.lang.String"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="Integer" instanceClassName="java.lang.Integer"/>
   </ecore:EPackage>
-  <ecore:EPackage name="BibTeX" nsURI="BibTex">
+  <ecore:EPackage name="BibTeX" nsURI="BibTex" nsPrefix="BibTex">
     <eClassifiers xsi:type="ecore:EClass" name="BibTeXFile">
       <eStructuralFeatures xsi:type="ecore:EReference" name="entries" ordered="false"
           upperBound="-1" eType="#/1/BibTeXEntry" containment="true"/>

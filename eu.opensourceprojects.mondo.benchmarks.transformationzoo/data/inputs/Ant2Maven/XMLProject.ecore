@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<xmi:XMI xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore">
-  <ecore:EPackage name="PrimitiveTypes">
-    <eClassifiers xsi:type="ecore:EDataType" name="Boolean"/>
-    <eClassifiers xsi:type="ecore:EDataType" name="Integer"/>
-    <eClassifiers xsi:type="ecore:EDataType" name="String"/>
+  <ecore:EPackage name="PrimitiveTypes" nsURI="PrimitiveTypes" nsPrefix="PrimitiveTypes">
+    <eClassifiers xsi:type="ecore:EDataType" name="Boolean" instanceClassName="java.lang.Boolean"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="Integer" instanceClassName="java.lang.Integer"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="String" instanceClassName="java.lang.String"/>
   </ecore:EPackage>
-  <ecore:EPackage name="XML">
+  <ecore:EPackage name="XMLProject" nsURI="XMLProject" nsPrefix="XMLProject">
     <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="startLine" ordered="false"
           eType="#/0/Integer"/>
@@ -28,7 +27,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="Text" eSuperTypes="#/1/Node"/>
     <eClassifiers xsi:type="ecore:EClass" name="Element" eSuperTypes="#/1/Node">
       <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
-          eType="#/1/Node" containment="true" eOpposite="#/1/Node/parent"/>
+          eType="#/1/Node" eOpposite="#/1/Node/parent"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Root" eSuperTypes="#/1/Element"/>
   </ecore:EPackage>

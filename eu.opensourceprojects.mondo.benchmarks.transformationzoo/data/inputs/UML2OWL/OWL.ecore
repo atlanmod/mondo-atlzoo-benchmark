@@ -353,9 +353,9 @@
           ordered="false" eType="#/1/AllValuesFromRestriction" eOpposite="#/1/AllValuesFromRestriction/OWLAllValuesFromDataRange"/>
     </eClassifiers>
   </ecore:EPackage>
-  <ecore:EPackage name="PrimitiveTypes">
-    <eClassifiers xsi:type="ecore:EDataType" name="Boolean"/>
-    <eClassifiers xsi:type="ecore:EDataType" name="Integer"/>
-    <eClassifiers xsi:type="ecore:EDataType" name="String"/>
+  <ecore:EPackage name="PrimitiveTypes" nsURI="PrimitiveTypes" nsPrefix="PrimitiveTypes">
+    <eClassifiers xsi:type="ecore:EDataType" name="Boolean" instanceClassName="java.lang.Boolean"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="Integer" instanceClassName="java.lang.Integer"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="String" instanceClassName="java.lang.String"/>
   </ecore:EPackage>
 </xmi:XMI>

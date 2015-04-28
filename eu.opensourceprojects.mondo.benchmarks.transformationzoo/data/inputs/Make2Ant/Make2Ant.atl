@@ -12,7 +12,7 @@ rule Makefile2Project{
 	to
 		a : Ant!Project(
 			name       <- m.name,
-			description <- m.comment.text,
+			--description <- m.comment.text,
 			properties <- m.elements ->
 				select(c | c.oclIsKindOf(Make!Macro)),
 			targets    <- m.elements ->
