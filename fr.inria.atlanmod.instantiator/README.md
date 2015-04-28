@@ -1,4 +1,4 @@
-# EMF random instantiator
+# EMF (pseudo) random instantiator
 
 This program produces sets of random instances for EMF (Ecore) metamodels. The *EMF random instantiator* is deterministic, and provides the same set of result instances when a seed is specified.
 
