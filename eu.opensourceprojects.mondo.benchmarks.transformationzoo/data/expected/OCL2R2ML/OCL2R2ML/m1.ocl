@@ -1,2 +1,0 @@
-context Customer 
-  	inv ofAge: self.age >= 18
