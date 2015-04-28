@@ -253,7 +253,7 @@ public class Launcher {
 						LOGGER.info(MessageFormat.format("Result of the diagnosis of resurce ''{0}'' is ''OK''",
 												resource.getURI()));
 					} else {
-						LOGGER.severe(MessageFormat.format("Found ''{0}'' error in the resurce ''{1}''",
+						LOGGER.severe(MessageFormat.format("Found ''{0}'' error(s) in the resource ''{1}''",
 								diagnosticChain.getChildren().size(), resource.getURI()));
 						for (Diagnostic diagnostic : diagnosticChain.getChildren()) {
 							LOGGER.fine(diagnostic.getMessage());

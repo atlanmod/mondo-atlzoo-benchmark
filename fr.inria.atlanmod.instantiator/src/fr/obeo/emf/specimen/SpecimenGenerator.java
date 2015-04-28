@@ -383,6 +383,6 @@ public class SpecimenGenerator {
 
 	private boolean booleanInDistribution(IntegerDistribution distribution) {
 		int sample = distribution.sample();
-		return sample < distribution.getNumericalMean();
+		return sample <= distribution.getNumericalMean();
 	}
 }
