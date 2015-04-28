@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
+<jardesc>
+    <jar path="fr.inria.atlanmod.instantiator/dist/instantiator.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/fr.inria.atlanmod.instantiator/dist/instantiator.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="false" manifestLocation="/fr.inria.atlanmod.instantiator/META-INF/MANIFEST.MF" manifestVersion="1.0" reuseManifest="false" saveManifest="true" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+        <file path="/fr.inria.atlanmod.instantiator/README.md"/>
+        <javaElement handleIdentifier="=fr.inria.atlanmod.instantiator/src"/>
+        <file path="/fr.inria.atlanmod.instantiator/epl-v10.html"/>
+    </selectedElements>
+</jardesc>
