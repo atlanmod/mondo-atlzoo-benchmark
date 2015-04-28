@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="SPL">
+  <Program>
+    <service name="unnamed">
+      <declarations xsi:type="LocalFunctionDeclaration" name="KBfyaKF3zWMaFbArj985T351f1fsA">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="l9Ls8NrABsQYoXjCTn2YeTWS8nXRIQQMGK6">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="oX5p8dPZSfZQk2ZWuLUtBZGBC3cwbk">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="ptNoPwYV6yXqHjAI00phFSKukKKqCX0QgGg">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="RV6PPXv6dx0IcIMzmwX3I11bobWHYfWLiAI">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="nwqJo7JTL9qzctMg78HySxn28oGdQ">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="s1ONVkgxH1yILGA7k9oW3PdyGcPzSyqoX">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="O1nNlq72M10mviYBbUnNpVUHeDNMLszT">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="7IX86VIKpE2fFLl3RtNFmqI1wRYPC5i13VT">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="Mc5lD7yBqmubE08CVAfFZDrkESUS3">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="BTheYP7h9u1j18uDCsTLBQ7TF25uemR3oK">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="IvweCHVzaHMZLBzP1aupKx2nffJCQj">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="K4RRfhSYLFuNFV1A2Fx99Zyh3NPctuEaE">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="SPfnK1dyoGazF1ScQGCS3So6h2HwQwh1we">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="BykxTAbdJ76lPqFLCoIwFW1MsQIAvgA9w">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="rX4fGbOXCWthDxKb34Emr39d2O2g5K">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="T9Ur5z4TGyTrjmLhasjt5kqcC8cDHmYbttH">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="oSuKn0UZeptHR5U5Hk6KiN5Z7j2zwABx">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="H3HL6iFzJE3PZHWosNa0QJp0xLenc8okf36">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="SylJhdCPeLmG2tYvQVmAkjHgfqGdz">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="h1ilwIhYLbUnQ00rJ2nmbcYdeHsVdbmBE">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="CYElwuE56NY2km5uhmPFIZCDzVxwxF">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="nuqXXVZvh89VOzmKLPdcEDaXyVbr6">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="2LMBXSNPVIt8eahmrmxxDJT2tBphKx8at">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="sthyUg6tAtQTyogUvqGwqxBsjXAzjk9f">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="UWX0NJ8cWEypE345Ms7txeMADo2NZdod">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="EDLXtzLYcQhk5U36wA1gThyF7NQ1o">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="VinVTEvZnzlQS2RuA9CatX15cCcgPiXjNzB">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="YgBtSzukXGYrQyKoEiIo3kVH5zTeixV">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="TwuLFhEVkXIphd4wxhFfEPs0DHdmAgSiBp">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="D4AE4SbaSSgV6UMYIBO6pLpYSwAhaKx">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="Nw4E1EzMCHh9aurB1byftMJrPr65mjSu">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="YVdyC8TklXrQGVz4VfsBBkzJv1tEqB">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="Bg37J9X9m9FrRZDN0lIK8VRMH1qhi">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="MdcLKwZvKuNYWlswSYjnRmlD3LW7F">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="HBxz9wsanuSvhIsOLejvd2yQHAQ5Kv">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="O1XR75rAdT8DNu3c3kM4jMi2HBw910zOlU">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="Fx2WEYFCwDeV8fgY2IyyoJf5HDyhKbuf0">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="fOqBEdveLkB0y91k5ssUvmXF7Ax9vK6">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="TbotZ48xUbE1bjnczGrlibFnMU2Wku">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="nrWd388wDH9YfNAnHpUtDJQFvyd7NroR">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="rT4HpTof94uxRYEJza3U0kPIVLeLIsje">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="kJFvsfBvLhjWikLvWh7UtvjIk1BgTGLIrXT">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="zTQdxXtOpX58ghxOW4OionWuyeTITTRn2dC">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <sessions xsi:type="Dialog"/>
+    </service>
+  </Program>
+  <Program>
+    <service name="unnamed">
+      <declarations xsi:type="LocalFunctionDeclaration" name="OWK2hB76TbFe9SARl7FliehdyGuswwX">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="IFsuTr7D8n7TOwdW5vXr0w7hudTeb">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="xIG3ZWU64Z5X8mUPnsECazZXavEdj">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="5G2rVWobh17JhN7Xt3WCs2EYlhAU0Dg">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="xDhygctvN5AnBLJb6wGDeHOEXTdAMXUkLW">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="sCz4GI3DMoQWIHOpQDjC9A6tK0BewY">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="xoMp7LUrtnc2cgMFCtHHSppUO4Fzy0c">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="IzMj8WbCaaYrQRbRFF7yqJLy3WAlY">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="KYEKVDY1FKlALchPmChcgHv8p89cRSfXj">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="9zeZ6ooa5oWjn55XTafC5jFWGC5uWg">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="fR5UdAnQpeg8VyTWekLW2NVtA8R0ZxcoAV">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="zsYLmgQiumqdmiTljmEJVyeWV3ZhmJ08HC">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="fc3l6Wnx31gufWbWXYklRMDgQVeMla3">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="234zSPvodOWASMP6mZT9gOpI8JAi9Xp">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="lbtr8JppYWeEt6ESurdfCxDujhWvTRDLa">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="NRAbzlADnD2mZOSxDSwuNyM97bYN1LBmFGj">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="bQ7ADuUE2spUEgya6DOBNXANVTCWQ">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="BXiRazJ0bmSyjXgJDS7p7poWRNTj7n7xd">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="2yv4HRDhbfQPHBwF25uRFA1QPrrThmHbFW">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="HzZGTrwGflHZFK1QKOqzYk0byW0hXuD">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="BcM42bm85bm730hONVVBTyCKdSI2IQ4y">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="NXCN1WgGPztvjANvK3nk8tOSazjJCzsiXJm">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="5a0cudsHnJDRieSQ3aDiaEJmubwxCTN6I">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="H2kwksKmtVhxVCgL76sDjrlPsFIs1RdOJFS">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="4BP7CNRi1RcKygUyco9iEznyKWbFI">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="uvDjv3cM4RI44q4xUoOOX2EsV8etw9j">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="6PedYGHp1zm8vfOHd9zXvZPtCgVty">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="aJxCnfMkTw7CAbnTeHNXt5HTfTyadfvJ">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="6uQhIEDwvDuGNpvF2EzhNQPht9L6XeG">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="M3N4WuST34EbUM4shGwBTvX4mCsHyjxHq7">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="x4ibrrjh8wd9KxXDXiTQTcud4x2s46UwRm">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="h71Jib2pyL1024LrkiRa1kszWJcSGDbTQmq">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="j9qbgJucD2nlMOwix1pEQU36JVuUS">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="gzBNXHBntWAtScNkvyMrPGbiEaeZ7wGYH85">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="kK1xHFnpJDfdruo9szuBn4ggO3yfs">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="SrBWPLj3hkaoxs1yzUJSQnROutmfdbJ">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="UCYajOYfWum68BiuGSmYLwDAHIU5i1E">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="RoMOimzCb1hwmngznlioIcn8FuTDMdM">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="krRqR22VUeztFV2w0a0cev4aclNJURav">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="qFM1Fqru6gvkKnw9r09Xf3ytlDtP4">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="qmjZYJlvcSSYjL5Pi0rANOOvH5NZI5">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="MOosWwB93tFeAwvVf7ZyW9f6dw0CREMxQC">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="54zWrWvoeol7cPOoCGwg0An5Bw87Z1LY6n8">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="7gl7v5tczvzd0Qak3qzWgthtPOx3MEA">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="I7qZF8w4jESL5kMbIjzjKrsgRUnfl5fHaq">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="IEINu7oJns1DmFM9hu7rWqRQrzlCOb6B">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="xI38euaBjCudkcVjHNLwfMpr9b4LboyVZFm">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="EG25WSu3hX1zHfW8w9nL5yNqtBv9c4qZkiy">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="is7AXc7L35BsczAcXdRXjvpucMAT5UMPRh">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="8Nm1mpQPU6HKL1Or2nNIDplW0TuN6s">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <sessions xsi:type="Dialog"/>
+    </service>
+  </Program>
+  <Program>
+    <service name="unnamed">
+      <declarations xsi:type="LocalFunctionDeclaration" name="Eq6VYYn05E5C3zcPrHkeSxKv7tjQU">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="UGZZDCcQOOfVTDUAllukAbXOfbByMZsX3p">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="B1i1WwmRWRkmB6sfkaOnoNelrYp2KRhZvk6">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="e3up3Lk3Lz0oxqRUWalgvZ7bGAXnKRU">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="2M878tyHQDs5ARuCptp3ceR5FIIyPGW4UIy">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="evyIys4jV7rXFAZrsITSNhkbPcvWRl9">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="q99VVLGvmLUCUAwaIvlnJtZJCklgjR">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="wJawURRWXZXo7G2QNaQHQPDnkYb0w">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="LrjvASEvrPwusACsMXt0WmrYstIux1VSBqe">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="HySweVDAs3JdG6ZkIaRanrMAVeYTJtGCw">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="KPWeGUisMOcrRgz5L7VCQpkP5bSaOh1SBgn">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="cr05361Wy7jaQJo3Ku9W9MhPOPIAWGh">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="1ypeeN9c0ScewdwcIv1p6CsG3o4Dqlf">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="ZvJvUmOhIGfePkU33baC5wZmxFlLZMyt4Y">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="1oZNdDZGqOZGVs22BkioC3Y5aAGrXhvV">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="Y42lQCToFmBqnvfmH8jASgBYtHcnj">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="UZoYug2l6aqLAwhaqdTCcdLhSCrzkhO">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="NeJG0kKsZcNYTi1cHinkXA9oiQw0CjH">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="NDRYWSjbogujxBiMOtjnFBivqrSyrQH8">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="OQgbYiyccnSdjT61A8aTdiSC5HGAHNl0PYu">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="b6bSquJEBPO1pVgvgZNA6ix12JkySa7">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="g5yjtAJcBMMGRNr5KSBKCEaSWU05AHOj">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="t3SoseR8Zj5vPpHFS6ADeJdp7sSDc0GLVR">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="yKRuGFbm85svmdrocfIU2JOaBfr87">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="oLNcwYg4NEmCcvEjQ9sK8batt2lymTq">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="zE1vJJd3ypOrumVYqOCktplvy1OIum">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="7bXvdGNmEmnA0g8AfncQ7oYWh15xIa">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="ICCFztvqqHAeNUkgwXe26DeqVnmka">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="WTvYsLVyXBKV3GANsHmXNsvMluTv2">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="rUuSkBR25XQvGfAL9o25iDS5pBfP2mDlX">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="QMGbPcnlbzRMeiKAtQ6hcISPU4eUvhyuE">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="ZpxV8XMNuOgcOrolOCNhUGn17f5tlO">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="xpxxG7bUeagVv4PIoFj8vlU9xHcsXc">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="q2lJRgPjvDAQ6F4mdfCpmKFoh6xdFGGvhYz">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="O8abzgNU0QQMfVKmrIheYkDO8e65jyAb">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="zVjWbMHRPBMcuT1xKZK9ALRzO1hHXTSLbh">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="8MNezOpcjB4h3haK1jnk8oaogHvP5LkIwi">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="aZuwqvha30b1PWFYhWSnR8XXAOFURFLv3PY">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="k8OzEPmnXeKiBPRaSIV28qfc47eHzUN">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="40rhF0g3f4nztCBTeZ8wTNKrwlaO41dU4fh">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="dfBProjFV8bsNJUj0p5DKiNGCbNCeqXtBam">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="Ng9A2sEKSNwmKLyznOcEa7yxf0U9g">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="xZ1CO2ZMtpFRGqx0eEomimTK1LkrHW">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="LycHsGD7pOK9JbvrIcIbLWU9freiDYi">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <sessions xsi:type="Dialog"/>
+    </service>
+  </Program>
+  <Program>
+    <service name="unnamed">
+      <declarations xsi:type="LocalFunctionDeclaration" name="hcqIKau7f24IMfHTPCPYxE02KMgOoqGOn">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="kFfcbaiMDCXPLitUSZYv4qpPHBOPQXkgm">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="KQUwZlrhcptYplbFi2LH3vmdgJsvi">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="6JXxdDwAWr5o0PlHnkpKiLHWykUjX">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="UW1Ko20Fvvnzx0gd8FLNK7DEIaaoX">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="JpQeqevmqwe1qlAbaSTdq1m8hX94yLxB2ef">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="E90QbwSXLjGHVxR2XmSiIrhKzaefCouyLZ">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="AZ2GsZvjWYgz66DbuDL7JOb7k74McW2">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="hcF71FzLB9CckFll6E4c61I3NsO4Q3z">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="tPmQYWVm55Qv2fdEQeoQgJucAfsO0sEx">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="wQGq6MheMgwBIW2uZY8UNXjy56bdobYnl9">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="ZHpggGnKJPe1IGjIoYZ6W7DYIrCtVC">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="lcEYR3mZAcUjs1rt4D48jpH0za1tMBXPd">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="L7kYnbzr2WgvobPDq4oJBL2KnGFOGcvlus">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="wPhi4txOb96QRGWQxchOhMDo5BsUAYawWP8">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="L47uvOMM6RpV6vML1qWw3tdxohwLFhew">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="vkUYwEyLI67HXMRI2hrsMCYaSi0o4BY">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="pKLt0p6O6JPCdoaopo12Q1GU4spzfjBRU">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="x5HowPzkOZuFSMDpYzHT7fMSbFm8z">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="csKpO90d6tAjsvFp2Su3xhJlthUrSYjxb">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="Zdg3rh88WPbRAYtnsQDE3YqiXRlAC3cPO">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="WtoYj5QjkYcprYIJZzMnRz14Oh6cdKdx">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="nFD5pEV37ZfnReqRSgV1Xc4ZC9cgb42iASt">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="hcPIh4FjoFBpKsbLM1IE2OwSZbPE09gW7lF">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="yxRAQUhgCaNYPsQyW4Rt3fGjhoZ7rIE1Fio">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="9bbeMOFp9PrWxtcR1jP2gndCCRbkF">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="kHO4MggnowpPL9FibwVwZMDJfTr3sGfn5">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="7fj7luJYJuLvbfH3CnBOIOlhRFHJ1TUBgb">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="qmoIOD5E0NOQZ9AW1ps96BkOZkGU4">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="cU8nP4zsG4cb6m65v53kc04AFxO9ybmXxsN">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="q6ZrzTD77z2WhEsO0NPDtR1F3gX62w">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="mY3wtXwFLbKIjQKdsTL6yYFI41lOJiC">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="5iumBa7swANQVuUnaRhQbyMidHtz8H4JY">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="2oSAXxV4U9H6JSMd8DXFE1WNmesUmFWjIy">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="y5v17KnKIeqN8mq66EvE5xU0UB8jfCjrXN">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="66X2hLwq7mND5MYJ7mjhjoUJYLCIyy9k">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="HayTUSxYQdmLjZnxdvlZrmdoeXJZfHdYZXH">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="cuwqASGJ3GBgNUjtXn2y6YIVJu456575ITN">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="IXRQtL0XAsqMJKMIGkObRrQexMegF">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="qgowVtuyPvYcPrYXxPBQ3QQvnKC90fDQSS">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="hi5Sf1pp2vTV5pVLGEZtJauCedo5SPt">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="y3W9keGJ6KYrx5e155bBAgvhhEcBTiOpwL">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="oUySwbLayuu15UlxO5pkpN9GtDRdiWIuSlg">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="VkY2osUR6WiZ4Mps1sG75053un3GGuPNjC">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="k483LK4bv35UwDfoFCegxxfei3mED">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="WcI4SPweHOe24W3xl6GkNV1KyfTx8Z">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="irksR6nwB9OMHqwpSmAQzZRsN1jTo">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="5WcCbgQTiDMT6By6wfm1uUu3lI25Qpus">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="TZeYeltTSLJ1Cdcw8udgyr8Hap4ezJlMF0R">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="4N9O7OOlRqfYSHWMX9m8aAnBICgzUkT">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="81jsIPC1pJIp1MAu3HJlGTp0izwWvxJUpa">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="u8DBkQw0bsJ3TmN6hMWWQYFTFUVBmH">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <declarations xsi:type="LocalFunctionDeclaration" name="Aq0zKZSiek7g2JJOQqpIXMbQrTcMrsDaX">
+        <returnType xsi:type="SimpleType" type="response"/>
+      </declarations>
+      <sessions xsi:type="Dialog"/>
+    </service>
+  </Program>
+  <LocalFunctionDeclaration name="aodzTpebA4RSao0MkWljnk9tw2OUD">
+    <returnType xsi:type="SimpleType" type="response"/>
+  </LocalFunctionDeclaration>
+  <Method direction="in">
+    <type xsi:type="SimpleType" type="response"/>
+    <methodName xsi:type="SIPMethodName" name="INVITE"/>
+  </Method>
+  <Method direction="in">
+    <type xsi:type="SimpleType" type="response"/>
+    <methodName xsi:type="SIPMethodName" name="INVITE"/>
+  </Method>
+  <Method direction="in">
+    <type xsi:type="SimpleType" type="response"/>
+    <methodName xsi:type="SIPMethodName" name="INVITE"/>
+  </Method>
+  <Method direction="in">
+    <type xsi:type="SimpleType" type="response"/>
+    <methodName xsi:type="SIPMethodName" name="INVITE"/>
+  </Method>
+  <ReturnStat>
+    <returnedValue xsi:type="ForwardExp" isParallel="false">
+      <exp xsi:type="ConstantExp"/>
+    </returnedValue>
+  </ReturnStat>
+  <ReturnStat>
+    <returnedValue xsi:type="ForwardExp" isParallel="false">
+      <exp xsi:type="ConstantExp"/>
+    </returnedValue>
+  </ReturnStat>
+  <ReturnStat>
+    <returnedValue xsi:type="ForwardExp" isParallel="false">
+      <exp xsi:type="ConstantExp"/>
+    </returnedValue>
+  </ReturnStat>
+  <SelectCase>
+    <commentsBefore>// busy</commentsBefore>
+    <values xsi:type="ResponseConstant">
+      <response xsi:type="ClientErrorResponse" errorKind="BUSY_HERE"/>
+    </values>
+  </SelectCase>
+  <SelectCase>
+    <commentsBefore>// busy</commentsBefore>
+    <values xsi:type="ResponseConstant">
+      <response xsi:type="ClientErrorResponse" errorKind="BUSY_HERE"/>
+    </values>
+  </SelectCase>
+  <SelectCase>
+    <commentsBefore>// busy</commentsBefore>
+    <values xsi:type="ResponseConstant">
+      <response xsi:type="ClientErrorResponse" errorKind="BUSY_HERE"/>
+    </values>
+  </SelectCase>
+  <SelectCase>
+    <commentsBefore>// noanswer</commentsBefore>
+    <values xsi:type="ResponseConstant">
+      <response xsi:type="ClientErrorResponse" errorKind="REQUEST_TIMEOUT"/>
+    </values>
+  </SelectCase>
+  <SelectCase>
+    <commentsBefore>// noanswer</commentsBefore>
+    <values xsi:type="ResponseConstant">
+      <response xsi:type="ClientErrorResponse" errorKind="REQUEST_TIMEOUT"/>
+    </values>
+  </SelectCase>
+  <SelectCase>
+    <commentsBefore>// noanswer</commentsBefore>
+    <values xsi:type="ResponseConstant">
+      <response xsi:type="ClientErrorResponse" errorKind="REQUEST_TIMEOUT"/>
+    </values>
+  </SelectCase>
+  <SelectCase>
+    <commentsBefore>// noanswer</commentsBefore>
+    <values xsi:type="ResponseConstant">
+      <response xsi:type="ClientErrorResponse" errorKind="REQUEST_TIMEOUT"/>
+    </values>
+  </SelectCase>
+  <SelectCase>
+    <commentsBefore>// redirection</commentsBefore>
+    <values xsi:type="ResponseConstant">
+      <response xsi:type="RedirectionErrorResponse"/>
+    </values>
+  </SelectCase>
+  <SelectCase>
+    <commentsBefore>// redirection</commentsBefore>
+    <values xsi:type="ResponseConstant">
+      <response xsi:type="RedirectionErrorResponse"/>
+    </values>
+  </SelectCase>
+  <SelectCase>
+    <commentsBefore>// redirection</commentsBefore>
+    <values xsi:type="ResponseConstant">
+      <response xsi:type="RedirectionErrorResponse"/>
+    </values>
+  </SelectCase>
+  <SelectCase>
+    <commentsBefore>// redirection</commentsBefore>
+    <values xsi:type="ResponseConstant">
+      <response xsi:type="RedirectionErrorResponse"/>
+    </values>
+  </SelectCase>
+  <SelectCase>
+    <commentsBefore>// redirection</commentsBefore>
+    <values xsi:type="ResponseConstant">
+      <response xsi:type="RedirectionErrorResponse"/>
+    </values>
+  </SelectCase>
+  <SelectDefault>
+    <commentsBefore>// default</commentsBefore>
+  </SelectDefault>
+  <ReturnStat>
+    <returnedValue xsi:type="FunctionCallExp">
+      <functionCall/>
+    </returnedValue>
+  </ReturnStat>
+  <ReturnStat>
+    <returnedValue xsi:type="FunctionCallExp">
+      <functionCall/>
+    </returnedValue>
+  </ReturnStat>
+  <ReturnStat>
+    <returnedValue xsi:type="FunctionCallExp">
+      <functionCall/>
+    </returnedValue>
+  </ReturnStat>
+  <SelectCase>
+    <values xsi:type="StringConstant"/>
+  </SelectCase>
+  <SelectCase>
+    <values xsi:type="StringConstant"/>
+  </SelectCase>
+  <SelectDefault/>
+  <SelectDefault/>
+  <SelectDefault/>
+</xmi:XMI>
