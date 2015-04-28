@@ -24,7 +24,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.internal.resource.UMLResourceFactoryImpl;
 import org.eclipse.uml2.uml.resource.UMLResource;
 
-import eu.opensourceprojects.mondo.benchmarks.transformationzoo.unit.TestNonRegressionTransfo;
+import eu.opensourceprojects.mondo.benchmarks.transformationzoo.unit.TransformationBenchmark;
 
 /**
  * Specifies TestNonRegressionTransfo for the emfvm.
@@ -32,12 +32,12 @@ import eu.opensourceprojects.mondo.benchmarks.transformationzoo.unit.TestNonRegr
  * @author <a href="mailto:william.piers@obeo.fr">William Piers</a>
  */
 @SuppressWarnings("restriction")
-public class TestNonRegressionEMFVM extends TestNonRegressionTransfo {
+public class EMFVMTransformationBenchmark extends TransformationBenchmark {
 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see eu.opensourceprojects.mondo.benchmarks.transformationzoo.unit.TestNonRegressionTransfo#getVMName()
+	 * @see eu.opensourceprojects.mondo.benchmarks.transformationzoo.unit.TransformationBenchmark#getVMName()
 	 */
 	@Override
 	protected String getVMName() {
@@ -47,13 +47,13 @@ public class TestNonRegressionEMFVM extends TestNonRegressionTransfo {
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see eu.opensourceprojects.mondo.benchmarks.transformationzoo.unit.TestNonRegressionTransfo#setUp()
+	 * @see eu.opensourceprojects.mondo.benchmarks.transformationzoo.unit.TransformationBenchmark#setUp()
 	 */
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
 		Properties properties = new Properties();	
-		properties.load(TestNonRegressionEMFVM.class.getResourceAsStream("TestNonRegressionEMFVM.properties")); //$NON-NLS-1$
+		properties.load(EMFVMTransformationBenchmark.class.getResourceAsStream("EMFVMBenchmark.properties")); //$NON-NLS-1$
 		setProperties(properties);
 		
 		CoreService.registerLauncher("EMF-specific VM", EMFVMLauncher.class); //$NON-NLS-1$

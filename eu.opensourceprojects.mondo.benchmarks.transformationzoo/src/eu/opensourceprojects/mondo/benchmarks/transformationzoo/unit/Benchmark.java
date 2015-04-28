@@ -29,7 +29,7 @@ import eu.opensourceprojects.mondo.benchmarks.transformationzoo.util.FileUtils;
  * 
  * @author <a href="mailto:william.piers@obeo.fr">William Piers</a>
  */
-public abstract class TestNonRegression extends TestCase {
+public abstract class Benchmark extends TestCase {
 
 	/** The path for usecases. */
 	protected static final String INPUT_PATH = "/data/inputs/"; //$NON-NLS-1$
@@ -56,7 +56,7 @@ public abstract class TestNonRegression extends TestCase {
 		final File[] directories = FileUtils.listDirectories(inputDir);
 		assertNotNull(directories);
 		for (int i = 0; i < directories.length; i++) {
-			compareSnapshots(directories[i], true);
+			launchSnapshots(directories[i], true);
 		}
 	}
 
@@ -68,7 +68,7 @@ public abstract class TestNonRegression extends TestCase {
 	 * @throws Exception
 	 *             Thrown if an operation has failed or been interrupted.
 	 */
-	protected void compareSnapshots(File directory, boolean useEmfCompare) throws IOException {
+	protected void launchSnapshots(File directory, boolean useEmfCompare) throws IOException {
 		String[] testsToJump = getTestsToJump(directory);
 		if (testsToJump != null) {
 			for (int i = 0; i < testsToJump.length; i++) {
@@ -80,7 +80,7 @@ public abstract class TestNonRegression extends TestCase {
 		}
 		if (FileUtils.listDirectories(directory).length != 0) {
 			for (int i = 0; i < FileUtils.listDirectories(directory).length; i++) {
-				compareSnapshots(FileUtils.listDirectories(directory)[i], useEmfCompare);
+				launchSnapshots(FileUtils.listDirectories(directory)[i], useEmfCompare);
 			}
 		} else {
 			singleTest(directory);

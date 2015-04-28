@@ -20,8 +20,7 @@ import junit.textui.TestRunner;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
 
-import eu.opensourceprojects.mondo.benchmarks.transformationzoo.unit.atlvm.TestNonRegressionEMFVM;
-import eu.opensourceprojects.mondo.benchmarks.transformationzoo.unit.atlvm.TestNonRegressionVM;
+import eu.opensourceprojects.mondo.benchmarks.transformationzoo.unit.atlvm.EMFVMTransformationBenchmark;
 
 /**
  * Launches all the JUnit tests for ATL.
@@ -47,9 +46,7 @@ public class LaunchAll extends TestCase implements IApplication {
 	 */
 	public static Test suite() {
 		final TestSuite suite = new TestSuite("ATL test suite"); //$NON-NLS-1$	
-		suite.addTestSuite(TestNonRegressionEMFVM.class);
-		//suite.addTestSuite(TestNonRegressionVM.class);
-
+		suite.addTestSuite(EMFVMTransformationBenchmark.class);
 		return suite;
 	}
 

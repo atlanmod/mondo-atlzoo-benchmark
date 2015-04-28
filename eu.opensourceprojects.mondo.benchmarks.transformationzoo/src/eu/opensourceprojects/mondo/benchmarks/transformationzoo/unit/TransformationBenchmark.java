@@ -47,7 +47,7 @@ import eu.opensourceprojects.mondo.benchmarks.transformationzoo.util.ModelUtils;
  * 
  * @author <a href="mailto:william.piers@obeo.fr">William Piers</a>
  */
-public abstract class TestNonRegressionTransfo extends TestNonRegression {
+public abstract class TransformationBenchmark extends Benchmark {
 
 	protected static boolean recompileBeforeLaunch;
 
@@ -62,7 +62,7 @@ public abstract class TestNonRegressionTransfo extends TestNonRegression {
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see eu.opensourceprojects.mondo.benchmarks.transformationzoo.unit.TestNonRegression#setUp()
+	 * @see eu.opensourceprojects.mondo.benchmarks.transformationzoo.unit.Benchmark#setUp()
 	 */
 	@Override
 	protected void setUp() throws Exception {
@@ -72,7 +72,7 @@ public abstract class TestNonRegressionTransfo extends TestNonRegression {
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see eu.opensourceprojects.mondo.benchmarks.transformationzoo.unit.TestNonRegression#singleTest(java.io.File)
+	 * @see eu.opensourceprojects.mondo.benchmarks.transformationzoo.unit.Benchmark#singleTest(java.io.File)
 	 */
 	@Override
 	protected void singleTest(File directory) {
