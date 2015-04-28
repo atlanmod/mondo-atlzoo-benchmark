@@ -50,7 +50,11 @@ rule SubAction2Function {
 		t : SPL!LocalFunctionDeclaration (
 			name <- s.id,
 			returnType <- rt,
-			statements <- s.contents.statement
+			statements <- if s.contents.oclIsUndefined() then
+					Sequence {}
+				else
+					Sequence {s.contents.statement}
+				endif
 		),
 		rt : SPL!SimpleType (
 			type <- #response
@@ -101,7 +105,11 @@ rule Proxy2Return {
 			exp <- exp
 		),
 		exp : SPL!ConstantExp (
-			value <- thisModule.Location2URIConstant(s.locations->first())
+--			value <- if not s.locations.oclIsUndefined() then
+--					      thisModule.Location2URIConstant(s.locations->first())
+--					 else 
+--					 	  OclUndefined	  
+--					 endif
 		)
 }
 
@@ -154,7 +162,7 @@ rule Busy2SelectCase {
 		t : SPL!SelectCase (
 			commentsBefore <- Sequence {'// busy'},
 			values <- Sequence {v},
-			statements <- Sequence {s.contents.statement}
+			statements <- if s.contents.oclIsUndefined() then Sequence {} else Sequence {s.contents.statement} endif
 		),
 		v : SPL!ResponseConstant (
 			response <- r
@@ -171,7 +179,7 @@ rule NoAnswer2SelectCase {
 		t : SPL!SelectCase (
 			commentsBefore <- Sequence {'// noanswer'},
 			values <- Sequence {v},
-			statements <- Sequence {s.contents.statement}
+			statements <- if s.contents.oclIsUndefined() then Sequence {} else Sequence {s.contents.statement} endif
 		),
 		v : SPL!ResponseConstant (
 			response <- r
@@ -188,7 +196,7 @@ rule Redirection2SelectCase {
 		t : SPL!SelectCase (
 			commentsBefore <- Sequence {'// redirection'},
 			values <- Sequence {v},
-			statements <- Sequence {s.contents.statement}
+			statements <- if s.contents.oclIsUndefined() then Sequence {} else Sequence {s.contents.statement} endif
 		),
 		v : SPL!ResponseConstant (
 			response <- r
@@ -204,7 +212,7 @@ rule Default2SelectDefault {
 	to
 		t : SPL!SelectDefault (
 			commentsBefore <- Sequence {'// default'},
-			statements <- Sequence {s.contents.statement}
+			statements <- if s.contents.oclIsUndefined() then Sequence {} else Sequence {s.contents.statement} endif
 		)
 }
 -- @end Complex Proxy
@@ -260,7 +268,7 @@ rule Redirect2Return {
 			exp <- contactConstant
 		),
 			contactConstant : SPL!ConstantExp (
-				value <- thisModule.Location2URIConstant(s.locations->first())
+--				value <- thisModule.Location2URIConstant(s.locations->first())
 			)
 }
 
@@ -289,7 +297,7 @@ rule SwitchedAddress2SelectCase {
 	to
 		t : SPL!SelectCase (
 			values <- Sequence {v},
-			statements <- Sequence {s.contents.statement}
+			statements <- if s.contents.oclIsUndefined() then Sequence {} else Sequence {s.contents.statement} endif
 		),
 		v : SPL!StringConstant (
 			value <- s.is
@@ -301,7 +309,7 @@ rule Otherwise2SelectDefault {
 		s : CPL!Otherwise
 	to
 		t : SPL!SelectDefault (
-			statements <- s.contents.statement
+			statements <- if s.contents.oclIsUndefined() then Sequence {} else Sequence {s.contents.statement} endif
 		)
 }
 -- @end Switches

@@ -2,7 +2,6 @@
 <launchConfiguration type="org.eclipse.m2m.atl.adt.launching.atlTransformation">
 <stringAttribute key="ATL File Name" value="/org.eclipse.m2m.atl.tests/data/inputs/Ant2Maven/Ant2Maven/Ant2Maven.atl"/>
 <stringAttribute key="ATL VM" value="EMF-specific VM"/>
-<stringAttribute key="ATL_COMPILER" value="atl2006"/>
 <booleanAttribute key="AllowInterModelReferences" value="false"/>
 <booleanAttribute key="IS_REFINING" value="false"/>
 <mapAttribute key="Input">
@@ -36,8 +35,8 @@
 <listEntry value="IN"/>
 </listAttribute>
 <listAttribute key="OrderedOutput">
-<listEntry value="OUTProject"/>
 <listEntry value="OUTMaven"/>
+<listEntry value="OUTProject"/>
 </listAttribute>
 <mapAttribute key="Output">
 <mapEntry key="OUTMaven" value="MavenMaven"/>
