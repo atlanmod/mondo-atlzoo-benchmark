@@ -69,6 +69,9 @@ public class SpecimenGenerator {
 	}
 
 	public void generate(Resource resource) {
+		
+		resource.setModified(true);
+		
 		ListMultimap<EClass, EObject> indexByKind = ArrayListMultimap.create();
 
 		ImmutableSet<EClass> possibleRootEClasses = configuration.possibleRootEClasses();

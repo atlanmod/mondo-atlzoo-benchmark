@@ -79,8 +79,8 @@ public class GenericMetamodelGenerator {
 				generator.generate(resource);
 			}
 			for (Resource resource :  resourceSet.getResources()) {
-				LOGGER.info(MessageFormat.format("Saving resource {0}", resource.getURI()));
 				if (resource.isModified()) {
+					LOGGER.info(MessageFormat.format("Saving resource {0}", resource.getURI()));
 					resource.save(Collections.emptyMap());
 				}
 			}
