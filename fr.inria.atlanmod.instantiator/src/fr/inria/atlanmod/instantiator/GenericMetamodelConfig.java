@@ -1,19 +1,22 @@
 /*******************************************************************************
- * Copyright (c) 2015 Abel Gómez (AtlanMod) 
+ * Copyright (c) 2015 Abel Gï¿½mez (AtlanMod) 
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Eclipse Public License v1.0 which
  * accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  * 
  * Contributors:
- *     Abel Gómez (AtlanMod) - Additional modifications      
+ *     Abel Gï¿½mez (AtlanMod) - Additional modifications      
  *******************************************************************************/
 
 package fr.inria.atlanmod.instantiator;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
@@ -21,6 +24,7 @@ import java.util.Set;
 import org.apache.commons.lang3.Range;
 import org.apache.commons.math3.distribution.IntegerDistribution;
 import org.apache.commons.math3.distribution.UniformIntegerDistribution;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -34,7 +38,7 @@ import fr.obeo.emf.specimen.ISpecimenConfiguration;
 import fr.obeo.emf.specimen.SpecimenGenerator;
 
 /**
- * @author <a href="mailto:abel.gomez-llana@inria.fr">Abel Gómez</a>
+ * @author <a href="mailto:abel.gomez-llana@inria.fr">Abel Gï¿½mez</a>
  *
  */
 public class GenericMetamodelConfig implements ISpecimenConfiguration {
@@ -95,7 +99,9 @@ public class GenericMetamodelConfig implements ISpecimenConfiguration {
 		this.elementsRange = elementsRange;
 		this.seed = seed;
 		this.random = new Random(seed);
+		//initReferencesMap();
 	}
+
 
 	/**
 	 * Creates a new {@link GenericMetamodelConfig} using
@@ -254,23 +260,80 @@ public class GenericMetamodelConfig implements ISpecimenConfiguration {
 
 	@Override
 	public ImmutableSet<EClass> possibleRootEClasses() {
-		Set<EClass> eClasses = new HashSet<EClass>();
+		List<EClass> eClasses = new LinkedList<EClass>();
+		// creating a subtypes map
+		Map<EClass,Set<EClass>> eSubtypesMap = computeSubtypesMap();
+		
+		// Eclasses.filter( instance of EClass && not abstract && not interface) 
 		for (Iterator<EObject> it = metamodelResource.getAllContents(); it.hasNext();) {
 			EObject eObject = (EObject) it.next();
 			if (eObject instanceof EClass) {
 				EClass eClass = (EClass) eObject;
 				if (!eClass.isAbstract() && !eClass.isInterface()) {
-					// All non-abstract and non-interfaces EClasses can be root
-					if (!needsContainer(eClass)) {
-						// With the exception of those that have a require a
-						// container
-						eClasses.add(eClass);
+					eClasses.add(eClass);
 					}
-				}
 			}
 		}
-		return ImmutableSet.copyOf(eClasses);
+		
+		//copying the list of eClasses 
+		List <EClass> result = new LinkedList<EClass>(eClasses);
+//		Collections.copy(result , eClasses);
+		
+		// iterating eClasses and removing elements (along with subtypes) being 
+		// subject to a container reference 
+		for (EClass cls : eClasses ) {
+			for (EReference cont : cls.getEAllContainments()) {
+				List<EClass> list = eSubtypesClosure(eSubtypesMap, (EClass)cont.getEType());
+				if (list.size() == 0) {
+					result.remove((EClass)cont.getEType());
+				} else {
+					result.removeAll(list); 
+					}
+			}
+		}
+		
+		return ImmutableSet.copyOf(result);
 	}
+
+	@SuppressWarnings("unchecked")
+	private List<EClass> eSubtypesClosure(Map<EClass, Set<EClass>> eSubtypesMap, EClass eType) {
+		List<EClass> result = new LinkedList<EClass> ();
+			if (!eSubtypesMap.containsKey(eType)) {
+				return Collections.EMPTY_LIST;
+			} else {
+				for (EClass eSubType : eSubtypesMap.get(eType)) {
+					if (! eSubType.equals(eType))
+						result.addAll(eSubtypesClosure(eSubtypesMap, eSubType));
+				}
+			}
+		return result;
+	}
+
+
+	private Map<EClass, Set <EClass>> computeSubtypesMap() {
+		Map<EClass, Set<EClass>> result = new HashMap<EClass, Set<EClass>> (); 
+		TreeIterator<EObject> iter = metamodelResource.getAllContents();
+		
+		 for (EObject ecls = null ;  iter.hasNext(); ) {
+			 ecls = iter.next();
+			 if (ecls instanceof EClass) {
+				 EClass clazz = (EClass) ecls;
+				 for (EClass cls : clazz.getEAllSuperTypes()) {
+					 if (result.containsKey(cls)) {
+						 result.get(cls).add(clazz);
+					 } else {
+						 Set<EClass> list = new HashSet<EClass>();
+						 list.add(cls);
+						 list.add(clazz);
+						 result.put(cls, list);
+					 }
+				 }
+			 }
+		 }
+			 
+		return result;
+	}
+
 
 	/**
 	 * Returns whether instances of this {@link EClass} need a container, i.e.,
