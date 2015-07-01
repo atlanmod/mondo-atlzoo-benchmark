@@ -345,6 +345,7 @@ public class GenericMetamodelConfig implements ISpecimenConfiguration {
 	 *            The {@link EClass}
 	 * @return Whether the {@link EClass} needs a <code>container</code>
 	 */
+	@SuppressWarnings("unused")
 	private static boolean needsContainer(EClass eClass) {
 		for (EReference eReference : eClass.getEAllReferences()) {
 			if (eReference.isContainer() && eReference.isRequired()) {
