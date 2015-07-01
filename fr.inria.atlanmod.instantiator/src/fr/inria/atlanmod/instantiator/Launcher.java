@@ -1,12 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2015 Abel Gómez (AtlanMod) 
+ * Copyright (c) 2015 Abel Gï¿½mez (AtlanMod) 
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Eclipse Public License v1.0 which
  * accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  * 
  * Contributors:
- *     Abel Gómez (AtlanMod) - Additional modifications      
+ *     Abel Gï¿½mez (AtlanMod) - Additional modifications      
  *******************************************************************************/
 
 package fr.inria.atlanmod.instantiator;
@@ -46,7 +46,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 
 /**
- * @author <a href="mailto:abel.gomez-llana@inria.fr">Abel Gómez</a>
+ * @author <a href="mailto:abel.gomez-llana@inria.fr">Abel Gï¿½mez</a>
  *
  */
 public class Launcher {
@@ -83,7 +83,7 @@ public class Launcher {
 
 
 
-	private static class OptionComarator<T extends Option> implements Comparator<T> {
+	private static class OptionComparator<T extends Option> implements Comparator<T> {
 	    private static final String OPTS_ORDER = "maonspdzefg";
 
 	    @Override
@@ -266,7 +266,7 @@ public class Launcher {
 		} catch (ParseException e) {
 			System.err.println(e.getLocalizedMessage());
 			HelpFormatter formatter = new HelpFormatter();
-			formatter.setOptionComparator(new OptionComarator<Option>());
+			formatter.setOptionComparator(new OptionComparator<Option>());
 			try {
 				formatter.setWidth(Math.max(TerminalFactory.get().getWidth(), 80));
 			} catch (Throwable t) {
