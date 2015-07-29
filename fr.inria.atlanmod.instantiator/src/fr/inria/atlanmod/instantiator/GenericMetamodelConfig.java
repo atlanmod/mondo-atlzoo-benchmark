@@ -15,6 +15,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -283,7 +284,7 @@ public class GenericMetamodelConfig implements ISpecimenConfiguration {
 		// subject to a container reference 
 		for (EClass cls : eClasses ) {
 			for (EReference cont : cls.getEAllContainments()) {
-				List<EClass> list = eSubtypesClosure(eSubtypesMap, (EClass)cont.getEType());
+				Set<EClass> list = eSubtypesClosure(eSubtypesMap, (EClass)cont.getEType());
 				if (list.size() == 0) {
 					result.remove((EClass)cont.getEType());
 				} else {
@@ -296,13 +297,14 @@ public class GenericMetamodelConfig implements ISpecimenConfiguration {
 	}
 
 	@SuppressWarnings("unchecked")
-	private List<EClass> eSubtypesClosure(Map<EClass, Set<EClass>> eSubtypesMap, EClass eType) {
-		List<EClass> result = new LinkedList<EClass> ();
+	private Set<EClass> eSubtypesClosure(Map<EClass, Set<EClass>> eSubtypesMap, EClass eType) {
+		Set<EClass> result = new LinkedHashSet<EClass> ();
 			if (!eSubtypesMap.containsKey(eType)) {
-				return Collections.EMPTY_LIST;
+				return Collections.EMPTY_SET;
 			} else {
+				result.addAll(eSubtypesMap.get(eType));
 				for (EClass eSubType : eSubtypesMap.get(eType)) {
-					if (! eSubType.equals(eType))
+					if (! eSubType.equals(eType)) 
 						result.addAll(eSubtypesClosure(eSubtypesMap, eSubType));
 				}
 			}
