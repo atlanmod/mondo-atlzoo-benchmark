@@ -224,7 +224,7 @@ public class Launcher {
 			}
 
 			int referencesSize = GenericMetamodelConfig.DEFAULT_AVERAGE_REFERENCES_SIZE;
-			if (commandLine.hasOption(VALUES_SIZE)) {
+			if (commandLine.hasOption(DEGREE)) {
 				Number number = (Number) commandLine.getParsedOptionValue(DEGREE);
 				referencesSize = (int) Math.min(Integer.MAX_VALUE, number.longValue());
 			}
