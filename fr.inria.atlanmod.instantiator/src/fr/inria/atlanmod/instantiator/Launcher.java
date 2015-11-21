@@ -54,7 +54,7 @@ public class Launcher {
 	private final static Logger LOGGER = Logger.getLogger(Launcher.class.getName());
 
 	private static final int DEFAULT_AVERAGE_MODEL_SIZE = 1000;
-	private static final float DEFAULT_MODEL_SIZE_DEVIATION = 0.1f;
+	private static final float DEFAULT_DEVIATION = 0.1f;
 	
 	private static final int ERROR = 1;
 
@@ -70,6 +70,8 @@ public class Launcher {
 	private static final String SIZE_LONG					= "size";
 	private static final String VARIATION 					= "p";
 	private static final String VARIATION_LONG				= "variation";
+	private static final String PROP_VARIATION 				= "v";
+	private static final String PROP_VARIATION_LONG			= "properties-variation";
 	private static final String DEGREE 						= "d";
 	private static final String DEGREE_LONG 				= "references-degree";
 	private static final String VALUES_SIZE 				= "z";
@@ -150,7 +152,7 @@ public class Launcher {
 				 size = (int) Math.min(Integer.MAX_VALUE, number.longValue());
 			}
 			
-			float variation = Launcher.DEFAULT_MODEL_SIZE_DEVIATION;
+			float variation = Launcher.DEFAULT_DEVIATION;
 			if (commandLine.hasOption(VARIATION)) {
 				Number number = (Number) commandLine.getParsedOptionValue(VARIATION);
 				if (number.floatValue() < 0.0f || number.floatValue() > 1.0f) {
@@ -158,6 +160,16 @@ public class Launcher {
 				}
 				variation = number.floatValue();
 			}
+			
+			float propVariation = Launcher.DEFAULT_DEVIATION;
+			if (commandLine.hasOption(PROP_VARIATION)) {
+				Number number = (Number) commandLine.getParsedOptionValue(PROP_VARIATION);
+				if (number.floatValue() < 0.0f || number.floatValue() > 1.0f) {
+					throw new ParseException(MessageFormat.format("Invalid value for option -{0}: {1}", PROP_VARIATION, number.floatValue()));
+				}
+				propVariation = number.floatValue();
+			}
+			
 			
 			long seed = System.currentTimeMillis();
 			if (commandLine.hasOption(SEED)) {
@@ -224,23 +236,23 @@ public class Launcher {
 			}
 
 			int referencesSize = GenericMetamodelConfig.DEFAULT_AVERAGE_REFERENCES_SIZE;
-			if (commandLine.hasOption(DEGREE)) {
+			if (commandLine.hasOption(VALUES_SIZE)) {
 				Number number = (Number) commandLine.getParsedOptionValue(DEGREE);
 				referencesSize = (int) Math.min(Integer.MAX_VALUE, number.longValue());
 			}
 			
 
 			config.setValuesRange(
-					Math.round(valuesSize * (1 - GenericMetamodelConfig.DEFAULT_VALUES_DEVIATION)), 
-					Math.round(valuesSize * (1 + GenericMetamodelConfig.DEFAULT_VALUES_DEVIATION)));
+					Math.round(valuesSize * (1 - propVariation)), 
+					Math.round(valuesSize * (1 + propVariation)));
 			
 			config.setReferencesRange(
-					Math.round(referencesSize * (1 - GenericMetamodelConfig.DEFAULT_REFERENCES_DEVIATION)), 
-					Math.round(referencesSize * (1 + GenericMetamodelConfig.DEFAULT_REFERENCES_DEVIATION)));
+					Math.round(referencesSize * (1 - propVariation)), 
+					Math.round(referencesSize * (1 + propVariation)));
 			
 			config.setPropertiesRange(
-					Math.round(referencesSize * (1 - GenericMetamodelConfig.DEFAULT_REFERENCES_DEVIATION)), 
-					Math.round(referencesSize * (1 + GenericMetamodelConfig.DEFAULT_REFERENCES_DEVIATION)));
+					Math.round(referencesSize * (1 - propVariation)), 
+					Math.round(referencesSize * (1 + propVariation)));
 			
 			ResourceSetImpl resourceSet = new ResourceSetImpl();
 			modelGen.runGeneration(resourceSet, numberOfModels, size, variation);
@@ -346,10 +358,19 @@ public class Launcher {
 		variationOption.setArgName("proportion");
 		variationOption.setDescription(
 				MessageFormat.format("Variation ([0..1]) in the models'' size (defaults to {0})",
-				Launcher.DEFAULT_MODEL_SIZE_DEVIATION));
+				Launcher.DEFAULT_DEVIATION));
 		variationOption.setType(Number.class);
 		variationOption.setArgs(1);
 
+		Option propVariationOption = OptionBuilder.create(PROP_VARIATION);
+		propVariationOption.setLongOpt(PROP_VARIATION_LONG);
+		propVariationOption.setArgName("properties deviation");
+		propVariationOption.setDescription(
+				MessageFormat.format("Variation ([0..1]) in the properties'' size (defaults to {0})",
+				Launcher.DEFAULT_DEVIATION));
+		propVariationOption.setType(Number.class);
+		propVariationOption.setArgs(1);
+		
 		Option seedOption = OptionBuilder.create(SEED);
 		seedOption.setLongOpt(SEED_LONG);
 		seedOption.setArgName("seed");
@@ -390,6 +411,7 @@ public class Launcher {
 		options.addOption(nModelsOpt);
 		options.addOption(sizeOption);
 		options.addOption(variationOption);
+		options.addOption(propVariationOption);
 		options.addOption(valuesSizeOption);
 		options.addOption(degreeOption);
 		options.addOption(seedOption);
