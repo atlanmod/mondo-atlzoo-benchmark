@@ -1,12 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2015 Abel Gómez (AtlanMod) 
+ * Copyright (c) 2015 Abel Gï¿½mez (AtlanMod) 
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Eclipse Public License v1.0 which
  * accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  * 
  * Contributors:
- *     Abel Gómez (AtlanMod) - Additional modifications      
+ *     Abel Gï¿½mez (AtlanMod) - Additional modifications      
  *******************************************************************************/
 
 package fr.inria.atlanmod.instantiator;
@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.xmi.XMIResource;
 import fr.obeo.emf.specimen.SpecimenGenerator;
 
 /**
- * @author <a href="mailto:abel.gomez-llana@inria.fr">Abel Gómez</a>
+ * @author <a href="mailto:abel.gomez-llana@inria.fr">Abel Gï¿½mez</a>
  *
  */
 public class GenericMetamodelGenerator {
