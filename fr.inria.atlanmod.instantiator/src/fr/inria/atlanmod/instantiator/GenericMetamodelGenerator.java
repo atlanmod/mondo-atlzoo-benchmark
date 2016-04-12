@@ -38,9 +38,23 @@ public class GenericMetamodelGenerator {
 	
 	protected GenericMetamodelConfig config;
 
+	protected SpecimenGenerator generator; 
+	
+	
 	public GenericMetamodelGenerator(GenericMetamodelConfig config) throws IllegalArgumentException {
 		super();
 		this.config = config;
+		generator = new SpecimenGenerator(config, config.getSeed());
+	}
+	
+	public GenericMetamodelGenerator(GenericMetamodelConfig config, Class<?> generator) {
+		this(config);
+		try {
+				this.generator = (SpecimenGenerator)
+							generator.getDeclaredConstructor(SpecimenGenerator.class, Long.class).newInstance(config, config.getSeed());
+			} catch (Exception e) {
+				LOGGER.severe(e.getLocalizedMessage());
+			} 
 	}
 	
 	public Path getSamplesPath() {
@@ -54,8 +68,6 @@ public class GenericMetamodelGenerator {
 	public void runGeneration(ResourceSet resourceSet, int numberOfModels, int averageSize, float variation) throws GenerationException {
 		
 		try {
-
-			SpecimenGenerator generator = new SpecimenGenerator(config, config.getSeed());
 
 			LOGGER.info(MessageFormat.format("Creating {0} models", numberOfModels));
 			
@@ -93,20 +105,20 @@ public class GenericMetamodelGenerator {
 	
 
 
-	private String getMetaModelResourceName() {
+	protected String getMetaModelResourceName() {
 		URI metamodelURI = config.getMetamodelResource().getURI();
 		return metamodelURI.lastSegment().substring(0, metamodelURI.lastSegment().indexOf("."));
 	}
 
-	private URI formatURI(String modelPrefix, long maxElement, int index) {
+	protected URI formatURI(String modelPrefix, long maxElement, int index) {
 		StringBuilder builder = new StringBuilder();
 		builder.append(samplesPath.toString());
 		builder.append(File.separator);
 		builder.append(modelPrefix);
 		builder.append(File.separator);
-		builder.append("model");
-		builder.append(maxElement);
-		builder.append(File.separator);
+//		builder.append("model");
+//		builder.append(maxElement);
+//		builder.append(File.separator);
 		builder.append("result");
 		builder.append(maxElement);
 		builder.append("_");

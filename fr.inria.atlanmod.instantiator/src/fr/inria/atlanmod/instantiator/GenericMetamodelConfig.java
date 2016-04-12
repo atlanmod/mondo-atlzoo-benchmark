@@ -78,7 +78,7 @@ public class GenericMetamodelConfig implements ISpecimenConfiguration {
 	
 	
 	
-	Map<Object, IntegerDistribution> distributions = new HashMap<Object, IntegerDistribution>();
+	protected Map<Object, IntegerDistribution> distributions = new HashMap<Object, IntegerDistribution>();
 
 	/**
 	 * Creates a new {@link GenericMetamodelConfig}

@@ -7,7 +7,7 @@
  * 
  * Contributors:
  *     Obeo - initial API and implementation
- *     Abel Gómez (AtlanMod) - Additional modifications      
+ *     Abel Gï¿½mez (AtlanMod) - Additional modifications      
  *******************************************************************************/
 
 package fr.obeo.emf.specimen;
@@ -46,21 +46,21 @@ import fr.obeo.emf.specimen.internal.EPackagesData;
 
 /**
  * @author <a href="mailto:mikael.barbero@obeo.fr">Mikael Barbero</a>
- * @author <a href="mailto:abel.gomez-llana@inria.fr">Abel Gómez</a>
+ * @author <a href="mailto:abel.gomez-llana@inria.fr">Abel Gï¿½mez</a>
  */
 public class SpecimenGenerator {
 
 	public final static Logger LOGGER = Logger.getLogger(SpecimenGenerator.class.getName());
 
-	private final Random generator;
-	private final ISpecimenConfiguration configuration;
-	private final EPackagesData ePackagesData;
+	protected final Random generator;
+	protected final ISpecimenConfiguration configuration;
+	protected final EPackagesData ePackagesData;
 
 	/* inner Variable state */
-	private int currentDepth;
-	private int currentMaxDepth;
-	private int currentObjects;
-	private int goalObjects;
+	protected int currentDepth;
+	protected int currentMaxDepth;
+	protected int currentObjects;
+	protected int goalObjects;
 
 	public SpecimenGenerator(ISpecimenConfiguration configuration, long seed) {
 		this.configuration = configuration;
@@ -81,13 +81,18 @@ public class SpecimenGenerator {
 		currentObjects = 0;
 		goalObjects = configuration.getResourceSizeDistribution().sample();
 
+		// loop for creating root elements 
 		while (currentObjects < goalObjects) {
 			EClass eClass = configuration.getNextRootEClass(possibleRootEClasses);
-			currentMaxDepth = configuration.getDepthDistributionFor(eClass).sample();
+			IntegerDistribution dist = configuration.getDepthDistributionFor(eClass);
+			if (dist == null) continue;
+			currentMaxDepth = dist.sample();
+			if (currentMaxDepth == 0) currentMaxDepth++;
 			Optional<EObject> generateEObject = generateEObject(eClass, indexByKind);
 			if (generateEObject.isPresent()) {
 				resource.getContents().add(generateEObject.get());
 			}
+			
 		}
 
 		LOGGER.info("Generating cross-references");
@@ -133,7 +138,7 @@ public class SpecimenGenerator {
 	 * @param eObject
 	 * @param indexByKind
 	 */
-	private void generateCrossReferences(EObject eObject, ListMultimap<EClass, EObject> indexByKind) {
+	protected void generateCrossReferences(EObject eObject, ListMultimap<EClass, EObject> indexByKind) {
 		Iterable<EReference> eAllNonContainment = ePackagesData.eAllNonContainment(eObject.eClass());
 		for (EReference eReference : eAllNonContainment) {
 			EClass eReferenceType = eReference.getEReferenceType();
@@ -164,7 +169,7 @@ public class SpecimenGenerator {
 		}
 	}
 
-	private Optional<EObject> generateEObject(EClass eClass, ListMultimap<EClass, EObject> indexByKind) {
+	protected Optional<EObject> generateEObject(EClass eClass, ListMultimap<EClass, EObject> indexByKind) {
 		final EObject eObject;
 		currentObjects++;
 		LOGGER.fine(MessageFormat.format("Generating EObject {0} / ~{1} (EClass={2})", 
@@ -175,7 +180,7 @@ public class SpecimenGenerator {
 		return Optional.fromNullable(eObject);
 	}
 
-	private EObject createEObject(EClass eClass, ListMultimap<EClass, EObject> indexByKind) {
+	protected EObject createEObject(EClass eClass, ListMultimap<EClass, EObject> indexByKind) {
 		EObject eObject = eClass.getEPackage().getEFactoryInstance().create(eClass);
 
 		indexByKind.put(eClass, eObject);
@@ -191,7 +196,7 @@ public class SpecimenGenerator {
 	 * @param eClass
 	 * @param indexByKind
 	 */
-	private void generateEContainmentReferences(EObject eObject, EClass eClass,
+	protected void generateEContainmentReferences(EObject eObject, EClass eClass,
 			ListMultimap<EClass, EObject> indexByKind) {
 		for (EReference eReference : ePackagesData.eAllContainment(eClass)) {
 			if (eReference.isRequired() || (currentObjects < goalObjects && currentDepth <= currentMaxDepth)) {
@@ -206,7 +211,7 @@ public class SpecimenGenerator {
 	 * @param eReference
 	 * @param indexByKind
 	 */
-	private void generateEContainmentReference(EObject eObject, EReference eReference,
+	protected void generateEContainmentReference(EObject eObject, EReference eReference,
 			ListMultimap<EClass, EObject> indexByKind) {
 		currentDepth++;
 
@@ -225,7 +230,7 @@ public class SpecimenGenerator {
 		currentDepth--;
 	}
 
-	private void generateSingleContainmentReference(EObject eObject, EReference eReference,
+	protected void generateSingleContainmentReference(EObject eObject, EReference eReference,
 			ListMultimap<EClass, EObject> indexByKind, ImmutableMultiset<EClass> eAllConcreteSubTypesOrSelf) {
 		IntegerDistribution distribution = configuration.getDistributionFor(eReference);
 		if (eReference.isRequired() || booleanInDistribution(distribution)) {
@@ -238,7 +243,7 @@ public class SpecimenGenerator {
 		}
 	}
 
-	private void generateManyContainmentReference(EObject eObject, EReference eReference,
+	protected void generateManyContainmentReference(EObject eObject, EReference eReference,
 			ListMultimap<EClass, EObject> indexByKind, ImmutableMultiset<EClass> eAllConcreteSubTypesOrSelf) {
 		IntegerDistribution distribution = configuration.getDistributionFor(eReference);
 		@SuppressWarnings("unchecked")
@@ -254,7 +259,7 @@ public class SpecimenGenerator {
 		}
 	}
 
-	private ImmutableMultiset<EClass> getEReferenceTypesWithWeight(EReference eReference,
+	protected ImmutableMultiset<EClass> getEReferenceTypesWithWeight(EReference eReference,
 			ImmutableList<EClass> eAllSubTypesOrSelf) {
 		ImmutableMultiset.Builder<EClass> eAllSubTypesOrSelfWithWeights = ImmutableMultiset.builder();
 		for (EClass eClass : eAllSubTypesOrSelf) {
@@ -267,13 +272,13 @@ public class SpecimenGenerator {
 	 * @param eObject
 	 * @param eClass
 	 */
-	private void generateEAttributes(EObject eObject, EClass eClass) {
+	protected void generateEAttributes(EObject eObject, EClass eClass) {
 		for (EAttribute eAttribute : ePackagesData.eAllAttributes(eClass)) {
 			generateAttributes(eObject, eAttribute);
 		}
 	}
 
-	private void generateAttributes(EObject eObject, EAttribute eAttribute) {
+	protected void generateAttributes(EObject eObject, EAttribute eAttribute) {
 		IntegerDistribution distribution = configuration.getDistributionFor(eAttribute);
 		EDataType eAttributeType = eAttribute.getEAttributeType();
 		Class<?> instanceClass = eAttributeType.getInstanceClass();
@@ -284,7 +289,7 @@ public class SpecimenGenerator {
 		}
 	}
 
-	private void generateSingleAttribute(EObject eObject, EAttribute eAttribute, IntegerDistribution distribution,
+	protected void generateSingleAttribute(EObject eObject, EAttribute eAttribute, IntegerDistribution distribution,
 			Class<?> instanceClass) {
 		if (eAttribute.isRequired() || booleanInDistribution(distribution)) {
 			final Object value;
@@ -303,7 +308,7 @@ public class SpecimenGenerator {
 		}
 	}
 
-	private void generateManyAttribute(EObject eObject, EAttribute eAttribute, IntegerDistribution distribution,
+	protected void generateManyAttribute(EObject eObject, EAttribute eAttribute, IntegerDistribution distribution,
 			Class<?> instanceClass) {
 		@SuppressWarnings("unchecked")
 		List<Object> values = (List<Object>) eObject.eGet(eAttribute);
@@ -324,7 +329,7 @@ public class SpecimenGenerator {
 		}
 	}
 
-	private Object nextValue(Class<?> instanceClass) {
+	protected Object nextValue(Class<?> instanceClass) {
 		final Object value;
 		if (instanceClass.isPrimitive() || isWrapperType(instanceClass)) {
 			value = nextPrimitive(unwrap(instanceClass));
@@ -337,7 +342,7 @@ public class SpecimenGenerator {
 	/**
 	 * @param instanceClass
 	 */
-	private Object nextObject(Class<?> instanceClass) {
+	protected Object nextObject(Class<?> instanceClass) {
 		if (instanceClass == String.class) {
 			return RandomStringUtils.random(
 					configuration.getValueDistributionFor(instanceClass).sample(), 
@@ -355,7 +360,7 @@ public class SpecimenGenerator {
 	 * @param eAttribute
 	 * @param instanceClass
 	 */
-	private Object nextPrimitive(Class<?> instanceClass) {
+	protected Object nextPrimitive(Class<?> instanceClass) {
 		if (instanceClass == boolean.class) {
 			return generator.nextBoolean();
 		} else if (instanceClass == byte.class) {
@@ -381,7 +386,7 @@ public class SpecimenGenerator {
 		}
 	}
 
-	private boolean booleanInDistribution(IntegerDistribution distribution) {
+	protected boolean booleanInDistribution(IntegerDistribution distribution) {
 		int sample = distribution.sample();
 		return sample <= distribution.getNumericalMean();
 	}
