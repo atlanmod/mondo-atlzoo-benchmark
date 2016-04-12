@@ -1,0 +1,205 @@
+<?eclipse.ant.import ?>
+<project name="instantiator-dist" default="dist" xmlns:rsel="antlib:org.apache.tools.ant.types.resources.selectors" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+		<classpath>
+			<pathelement location="${basedir}/ant-contrib.jar" />
+		</classpath>
+	</taskdef>
+
+	<property name="bin" location="bin" />
+	<property name="dist" location="dist" />
+	<property name="dist.libs" location="${dist}/libs" />
+	<property name="dist.libs.ivy" location="${dist.libs}/ivy" />
+	<property name="dist.libs.plugins" location="${dist.libs}/plugins" />
+	<property name="dist.libs.instantiator" location="${dist.libs}/instantiator" />
+	<property name="create.run" value="${dist}/run.sh" />
+	<property name="create.debug" value="${dist}/debug.sh" />
+
+	<property name="jar.file" location="${dist}/${ant.project.name}.jar" />
+
+	<target name="check.kyanos" unless="kyanos.exists">
+		<available property="kyanos.exists" file="${dist.libs.instantiator}/plugins/fr.inria.atlanmod.kyanos.0.1.0.hbase.jar" />
+	</target>
+
+	<target name="dist.kyanos" depends="check.kyanos" unless="${kyanos.exists}">
+		<pde.exportPlugins useworkspacecompiledclasses="true" destination="${dist.libs.instantiator}" exportSource="false" exportType="directory" plugins="fr.inria.atlanmod.kyanos" useJARFormat="true" qualifier="hbase" />
+	</target>
+
+	<target name="dist">
+		<ivy:resolve refresh="true" showprogress="true" />
+		<ivy:retrieve pattern="${dist.libs.ivy}/[conf]/[artifact]-[type]-[revision].[ext]" />
+
+		<jar destfile="${jar.file}">
+			<fileset dir="${bin}" >
+				<include name = "**/*.class"/>
+				<include name = "**/*.xml"/>
+			</fileset>	
+			<manifest>
+				<attribute name="Main-Class" value="fr.inria.atlanmod.instantiator.neoEMF.Launcher" />
+			</manifest>
+		</jar>
+
+		<restrict id="filtered.plugins">
+			<path refid="Plug-in Dependencies.libraryclasspath" />
+			<rsel:name name="*.jar" />
+		</restrict>
+
+		<copy todir="${dist.libs.plugins}" verbose="yes" flatten="yes" failonerror="no">
+			<restrict>
+				<restrict refid="filtered.plugins" />
+			</restrict>
+		</copy>
+
+		<pathconvert property="libjars.plugins" pathsep="," dirsep="/">
+			<map from="${dist.libs.plugins}" to="libs/plugins" />
+			<fileset dir="${dist.libs.plugins}" />
+		</pathconvert>
+
+		<pathconvert property="libsjars.instantiator" pathsep="," dirsep="/">
+			<map from="${dist.libs.instantiator}/plugins" to="libs/instantiator/plugins" />
+			<fileset dir="${dist.libs.instantiator}/plugins" />
+		</pathconvert>
+		
+		<antcall target="create.debug" />
+		<antcall target="create.run" />
+	</target>
+
+	<target name="clean-dist">
+		<delete>
+			<fileset dir="${dist}" includes="**/*" />
+			<dirset dir="${dist}" includes="**/*" />
+		</delete>
+	</target>
+
+	<target name="create.debug">
+		<echo file="${create.debug}">#!/bin/bash
+
+			JARS=libs/instantiator/plugins/*:libs/plugins/*:libs/ivy/default/*
+			ARGS=""
+			
+			while [[ $# > 1 ]]
+						do
+						key="$1"
+						shift
+
+						case $key in
+						    -c | --package)
+						    ARGS=$ARGS' -c '$1
+						    shift
+						    ;;
+						    -u | --suffixe)
+						    ARGS=$ARGS' -u '$1
+						    shift
+						    ;;
+						    -s | --size)
+						    ARGS=$ARGS' -s '$1	
+						    shift
+						    ;;
+						    -n | --number-models)
+						    ARGS=$ARGS' -n '$1
+						    shift
+						    ;; 
+						    -e | --seed)
+						    ARGS=$ARGS' -e '$1
+						    shift
+						    ;; 
+						    -p | --variations)
+						    ARGS=$ARGS' -p '$1	
+						    shift
+						    ;;  
+						    -v | --properties-variation)
+						    ARGS=$ARGS' -v '$1	
+						    shift
+						    ;; 
+						    -d | --reference-degree)
+						    ARGS=$ARGS' -d '$1
+						    shift
+						    ;;
+						    -z | --values-size)
+						    ARGS=$ARGS' -z '$1
+						    shift
+						    ;;
+						    -a | --additional-jars)
+						    JARS="$JARS:$1"
+						    shift
+						    ;;		
+						    *)
+						    ;;
+						esac
+						done				
+
+			echo 'jars are: '$JARS
+			echo 'args are: '$ARGS
+
+			java -Xdebug -Xrunjdwp:transport=dt_socket,address=localhost:8998,server=y,suspend=y -cp fr.inria.atlanmod.instantiator.neoEMF.jar:$JARS fr.inria.atlanmod.instantiator.neoEMF.Launcher $ARGS
+				</echo>
+	</target>
+
+	<target name="create.run">
+		<echo file="${create.run}">#!/bin/bash
+
+			JARS=libs/instantiator/plugins/*:libs/plugins/*:libs/ivy/default/*
+			ARGS=""
+			
+			while [[ $# > 1 ]]
+						do
+						key="$1"
+						shift
+
+						case $key in
+						    -c | --package)
+						    ARGS=$ARGS' -c '$1
+						    shift
+						    ;;
+						    -u | --suffixe)
+						    ARGS=$ARGS' -u '$1
+						    shift
+						    ;;
+						    -s | --size)
+						    ARGS=$ARGS' -s '$1	
+						    shift
+						    ;;
+						    -n | --number-models)
+						    ARGS=$ARGS' -n '$1
+						    shift
+						    ;; 
+						    -e | --seed)
+						    ARGS=$ARGS' -e '$1
+						    shift
+						    ;; 
+						    -p | --variations)
+						    ARGS=$ARGS' -p '$1	
+						    shift
+						    ;;  
+						    -v | --properties-variation)
+						    ARGS=$ARGS' -v '$1	
+						    shift
+						    ;; 
+						    -d | --reference-degree)
+						    ARGS=$ARGS' -d '$1
+						    shift
+						    ;;
+						    -z | --values-size)
+						    ARGS=$ARGS' -z '$1
+						    shift
+						    ;;
+						    -a | --additional-jars)
+						    JARS="$JARS:$1"
+						    shift
+						    ;;		
+						    *)
+						    ;;
+						esac
+						done	
+			
+			echo 'jars are: '$JARS
+			echo 'args are: '$ARGS
+
+			java -cp fr.inria.atlanmod.instantiator.neoEMF.jar:$JARS fr.inria.atlanmod.instantiator.neoEMF.Launcher $ARGS
+		</echo>
+	</target>
+
+
+</project>
+
