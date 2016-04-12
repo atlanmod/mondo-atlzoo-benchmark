@@ -1,2 +1,5 @@
 /test/
 /lib/
+/dist/libs/
+/dist/fr.inria.atlanmod.instantiator.jar
+/dist/instantiator-dist.jar
