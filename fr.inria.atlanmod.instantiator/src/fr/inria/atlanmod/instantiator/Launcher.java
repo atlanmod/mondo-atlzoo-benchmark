@@ -20,8 +20,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.logging.Logger;
 
-import jline.TerminalFactory;
-
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.GnuParser;
@@ -44,6 +42,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
+
+import jline.TerminalFactory;
 
 /**
  * @author <a href="mailto:abel.gomez-llana@inria.fr">Abel G�mez</a>
@@ -280,7 +280,7 @@ public class Launcher {
 			HelpFormatter formatter = new HelpFormatter();
 			formatter.setOptionComparator(new OptionComparator<Option>());
 			try {
-				formatter.setWidth(Math.max(TerminalFactory.get().getWidth(), 80));
+				formatter.setWidth(Math.max(TerminalFactory.get().getTerminalWidth(), 80));
 			} catch (Throwable t) {
 				LOGGER.warning("Unable to get console information");
 			};
