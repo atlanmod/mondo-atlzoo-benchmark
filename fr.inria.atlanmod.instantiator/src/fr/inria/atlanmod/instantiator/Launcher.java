@@ -280,7 +280,7 @@ public class Launcher {
 			HelpFormatter formatter = new HelpFormatter();
 			formatter.setOptionComparator(new OptionComparator<Option>());
 			try {
-				formatter.setWidth(Math.max(TerminalFactory.get().getTerminalWidth(), 80));
+				formatter.setWidth(Math.max(TerminalFactory.get().getWidth(), 80));
 			} catch (Throwable t) {
 				LOGGER.warning("Unable to get console information");
 			};

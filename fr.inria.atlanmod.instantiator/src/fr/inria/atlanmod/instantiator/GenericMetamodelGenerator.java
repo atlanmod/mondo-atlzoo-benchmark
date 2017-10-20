@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.xmi.XMIResource;
 import fr.obeo.emf.specimen.SpecimenGenerator;
 
 /**
- * @author <a href="mailto:abel.gomez-llana@inria.fr">Abel G�mez</a>
+ * @author <a href="mailto:abel.gomez-llana@inria.fr">Abel Gomez</a>
  *
  */
 public class GenericMetamodelGenerator {
